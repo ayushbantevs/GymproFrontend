@@ -1,0 +1,50 @@
+
+
+<h1>Login</h1>
+<mat-card>Simple card
+<div *ngIf="show">
+<form  *ngIf="show" class="form" [formGroup]="LoginForm">
+        <mat-form-field  class="full-width">
+                <input  *ngIf="show" matInput placeholder="Email" formControlName="email" required>
+                <mat-error *ngIf="LoginForm.get('email').invalid">email is required</mat-error>
+              </mat-form-field><br>
+              <mat-form-field class="full-width">
+                <input *ngIf="show" matInput placeholder="Password" formControlName="Password" required>
+                <mat-error *ngIf="LoginForm.get('Password').invalid">Password is required</mat-error>
+              </mat-form-field><br>
+              <button *ngIf="show" mat-raised-button color="primary" class="submit-button" (click)="loginClick()">Submit
+            </button>
+           
+            <button *ngIf="show" (click)="RegisterClick()">register
+          </button>
+          
+
+          <!-- <div class="form-group">
+              <button [disabled]="loading" class="btn btn-primary">
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                  Login
+              </button>
+              <a routerLink="/register" class="btn btn-link">Register</a>
+          </div> -->
+      
+
+</form>
+</div>
+ 
+<div *ngIf="show1">
+    <button class="regbtn hover1" *ngIf="show1" [routerLink]="['../UserRegister']" (click)="loginClick()">Register As User
+      </button>
+     
+      <button  class="regbtn hover1" *ngIf="show1" [routerLink]="['/register']"(click)="openuserpage">Register As Gym Owner
+      </button> 
+      
+      <button class="regbtn hover1" *ngIf="show1"   (click)="showform()">Back To Login
+        </button>
+
+    <!-- <button class="regbtn hover2" *ngIf="show1" (click)="onFormSubmit1()">Back To Login1
+    </button> -->
+  
+
+      </div>
+</mat-card>
+  

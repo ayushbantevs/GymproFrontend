@@ -1,0 +1,55 @@
+
+/* ::-webkit-input-placeholder { 
+  color: r;
+}
+
+:-ms-input-placeholder {
+  color: red;
+}
+
+::placeholder {
+  color: red;
+} */
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .mat-card{
+    background-color:  gray;
+    margin: 0;
+    width: 20%;
+    height: 50%;
+    margin: 10px; 
+  }
+  .form{
+    padding-left:30px;
+    margin: 5px;
+  }
+  button{
+    padding: 5px;
+    margin: 5px;
+    color: #45a049;
+  }
+  .regbtn{
+    padding: 5px;
+    margin-top: 80px;
+    background-color:black;
+    
+  }
+
+  .hover1:hover{
+    background-color: #45a049;
+    cursor: pointer;
+    color: white;
+  }

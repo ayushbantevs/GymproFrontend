@@ -1,0 +1,51 @@
+button:hover{
+    background-color: blue($color: #000000);
+
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+
+
+ button:hover {
+    background-color: rgb(153, 19, 19);
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+
+.ul1{
+   list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:hsla(252, 100%, 14%, 0.877) 
+}
+
+
+//   ul {
+//     list-style-type: none;
+//     margin: 0;
+//     padding: 0;
+//     overflow: hidden;
+//     background-color:hsla(0, 100%, 30%, 0.3);;
+//   }
+
+//   li {
+//      float: left;
+//   }
+
+  .li1 .a1 {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .li1 .a1:hover {
+    background-color: #111;
+  }
+  li a{
+      color: white;
+  }

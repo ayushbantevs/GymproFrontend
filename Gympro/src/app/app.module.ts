@@ -7,6 +7,8 @@ import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AppRoutingModule,
     MatCardModule,
     BrowserAnimationsModule,
-    MatCarouselModule
+    MatCarouselModule,
+    MatMenuModule
     
   ],
   providers: [],

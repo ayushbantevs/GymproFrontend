@@ -2,15 +2,14 @@
 
 
    
-    <form class="registrationForm"[formGroup]="registrationForm">
-        <h1 style="margin-left: 15%;">Register as a Gym Owner</h1>
+<form class="registrationForm"[formGroup]="registrationForm">
+<h1 style="margin-left: 15%;">Register as a Gym Owner</h1>
     
-        <mat-form-field class="full-width">
-            <input matInput placeholder="Gym Name" formControlName="gym_Name" required>
-            <mat-error *ngIf="registrationForm.get('gym_Name').invalid">Gym Name is required</mat-error>
-          </mat-form-field>
+  <mat-form-field class="full-width">
+  <input matInput placeholder="Gym Name" formControlName="gym_Name" required>
+  <mat-error *ngIf="registrationForm.get('gym_Name').invalid">Gym Name is required</mat-error>
+  </mat-form-field>
         
-   
   <mat-form-field class="full-width">
     <input matInput placeholder="Gym Owner Name" formControlName="gym_Owner_Name" required>
     <mat-error *ngIf="registrationForm.get('gym_Owner_Name').invalid">Owner_Name is required</mat-error>
@@ -81,6 +80,6 @@
     <mat-error *ngIf="registrationForm.get('gst_Number').invalid"> Confirm password should be matchable</mat-error>
   </mat-form-field>
 
-  <button class="button2"(click)="onFormSubmit()">Submit</button> 
-  <button class="button1"(click)="onFormSubmit1()">Back To Login </button> 
+  <!-- <button class="button2"(click)="onFormSubmit()">Submit</button> 
+  <button class="button1"(click)="onFormSubmit1()">Back To Login </button>  -->
 </form> 

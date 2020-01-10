@@ -1,7 +1,343 @@
 
+<!-- <div class="row" style="background-color: #333;">
+    <div class="col-sm-12 col-md-4" style="background-color: #333;">
+      <div class="MainDiv" style="background-color: #333;" >
+        <mat-card  style="text-align: left;background-color: #333;">
+          <button mat-button style="margin-left: 10px;" id="Home">Home</button>
+            <a href="#AC_Page"><button mat-button style="margin-left: 20px;">About us</button></a>
+            <a href="#AC_Page"><button mat-button style="margin-left: 20px;" >Contact us</button></a>
+            <a [routerLink]="['/login']"><button mat-button class="btn_Login" style="margin-left: 20px;">Login
+          </button></a>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  
+  
 
-<h1>Login</h1>
-<mat-card>Simple card
+
+
+  <div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+ <div class="modal-content">
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+   <div class="modal-body mx-3">
+     <div class="md-form mb-5">
+       <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+       <input type="email" id="defaultForm-email" [formControl]="loginFormModalEmail" class="form-control"
+              mdbInput mdbValidate>
+       <label for="defaultForm-email">Your email</label>
+       <mdb-error
+         *ngIf="loginFormModalEmail.invalid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">
+         Input invalid
+       </mdb-error>
+       <mdb-success
+         *ngIf="loginFormModalEmail.valid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">Input
+         valid
+       </mdb-success>
+     </div>
+
+     <div class="md-form mb-4">
+       <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+       <input type="password" id="defaultForm-pass" [formControl]="loginFormModalPassword" class="form-control"
+              mdbInput mdbValidate>
+       <label for="defaultForm-pass">Your password</label>
+       <mdb-error
+         *ngIf="loginFormModalPassword.invalid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
+         Input invalid
+       </mdb-error>
+       <mdb-success
+         *ngIf="loginFormModalPassword.valid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
+         Input valid
+       </mdb-success>
+     </div>
+
+   </div>
+   <div class="modal-footer d-flex justify-content-center">
+     <button mdbBtn color="default" class="waves-light" mdbWavesEffect>Login</button>
+   </div>
+ </div>
+</div>
+</div>
+  
+
+
+
+
+  <div class="row" style="margin-left: 8px;margin-top: 20px;">
+    <div class="col-12">
+        <div flex style="height:300px; width: 250px;"></div>
+ 
+  <mat-carousel timings="250ms ease-in"
+             [autoplay]="true"
+             interval="1000"
+             color="accent"
+             maxWidth="auto"
+             proportion="25"
+         
+             slides="5"
+             [loop]="true"
+             [hideArrows]="false"
+             [hideIndicators]="false"
+             [useKeyboard]="true"
+             [useMouseWheel]="false"
+             orientation="ltr">
+             
+             <mat-carousel-slide #matCarouselSlide
+             *ngFor="let slide of imgpro; let i = index"
+             [image]="slide.url"
+             overlayColor="#00000040"
+             [hideOverlay]="false">
+             </mat-carousel-slide> 
+             </mat-carousel>
+            </div>
+  </div>
+  
+  
+  
+  
+  
+  <div class="row" style="margin-top: 20px;">
+  <div class="col-6"  style="height: 360px;"> 
+  
+    <mat-card class="example-card"  style="width: 100%; padding-top: 10px;margin-left: 20px;background-color: pink;">
+      
+        <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
+       
+      <mat-card-content>
+        <p style="color: aliceblue;padding-left: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                     Maiores ratione excepturi nobis quasi atque quia inventore 
+                       </p> 
+                      <button mat-button style="margin-left:20px;background-color: rgb(16, 195, 207);border-radius:10px;width: 90px;height: 40px;">Register</button> <br><br>
+         </mat-card-content>
+     
+    </mat-card>
+  
+  </div>
+  
+  
+  <div class="col-6"  >
+    <img mat-card-image src="../assets/Images/gym-setup-tips-1.jpg" style="padding: 10px;">
+      <mat-card>
+        <mat-card-content>
+
+      </mat-card-content>
+      </mat-card>
+   
+  </div>
+  
+  
+  </div>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="row" style="margin-top: 40px;margin-left: 10px;">
+    <div class="col-6 col-md-4" >
+  
+      <h4 style="margin-left: 16px;" id="AC_Page">Contact US</h4>
+    
+      <div class="container">
+       
+        <form>
+          <div class="form-group">
+            <label for="name"> Your Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="alterEgo">Email</label>
+            <input type="text" class="form-control" id="alterEgo">
+          </div>
+    
+  
+          <div class="form-group">
+            <label for="alterEgo">Contact No</label>
+            <input type="text" class="form-control" id="alterEgo">
+          </div>
+  
+          <div class="form-group">
+            <label for="alterEgo">Message</label>
+            <input type="text" class="form-control" id="alterEgo">
+          </div>
+  
+  
+          <button type="submit" class="btn btn-success">Submit</button>
+    
+        </form>
+    </div>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="col-6 col-md-4"  >
+    <br><br><br>
+  
+  
+        <mat-card id="AC_Page"><Address></Address>
+          <mat-card-content>
+            <p class="mb-0 font-weight-bold">Address</p><br>
+            <p class="mb-4"> 1, Silver Moon, near supreme pallecia, Baner, Pune, Maharashtra 411045</p>
+  
+            <p class="mb-0 font-weight-bold">Phone</p>
+            <p class="mb-4"><a href="#">+91 9637763012</a></p>
+  
+            <p class="mb-0 font-weight-bold">Email Address</p>
+            <p class="mb-0"><a href="#">gympro@domain.com</a></p>
+          </mat-card-content><br>
+        </mat-card>
+  
+  
+  
+  
+    </div>
+  
+  
+  
+  <div class="col-6 col-md-4" >
+    <br><br><br>
+  
+  
+  
+  <mat-card >
+    <p> More Info</p>
+    <mat-card-content>
+      <p>A gymnasium, also known as a gym, is a covered location for gymnastics, athletics and gymnastic services. 
+      <p> word is derived from the ancient Greek gymnasium. They are commonly found in athletic and fitness centres, and as activity and learning spaces in educational institutions.</p><br><br>
+    <button mat-button style="background-color:skyblue;border-radius: 5px;">Learn more</button><br>
+    </mat-card-content>
+  </mat-card>
+  
+  </div>
+  
+  </div>
+ 
+  
+  <mat-card  style=" margin-top: 40px;background-color:cadetblue">
+    <h2 style="text-align: center;"><a href="#" style="text-align: center;">Visit Our Office</a></h2>
+    <mat-card-content>
+      
+    </mat-card-content>
+  </mat-card>
+  
+  
+   
+  
+  <div class="container-fluid" style="margin-top: 20px;background-color: skyblue;">
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="row">
+                <div class="col-6 col-md-4 col-lg-4 mb-5 mb-lg-0">
+                  <h3 class="footer-heading mb-4">Know More</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                  </ul>
+                </div>
+                 <div class="col-6 col-md-4 col-lg-4 mb-5 mb-lg-0">
+                  <h3 class="footer-heading mb-4">Navigations</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="#"></a></li>
+                    <li><a href="#">Admin Login</a></li>
+                    <li><a href="#">TimeTable</a></li>
+                    <li><a href="#">Fintness Analtics Lab</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Advertise</a></li>
+                  </ul>
+                </div> 
+                <div class="col-6 col-md-4 col-lg-4 mb-5 mb-lg-0">
+                  <h3 class="footer-heading mb-4">Quick Menu</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">MemberShip Policy</a></li>
+                    <li><a href="#">Courses offered</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li><a href="#">Classes</a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-5">
+              <div class="row mb-5">
+                <div class="col-md-12"><h3 class="footer-heading mb-4">Maharashtra</h3></div>
+                    <div class="col-md-6">
+                    <p>Baner<br> Pune-411041</p>    
+                    </div>
+                    <div class="col-md-6">
+                  Tel. + (91) 8885832122<br>
+                  Mail. GymPro@youdomain.com
+                    </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-12"><h3 class="footer-heading mb-4"></h3></div>
+                    <div class="col-md-6">
+                        <p>AnandNagar <br>Nanded-431709</p>    
+                    </div>
+                <div class="col-md-6">
+                     Tel. + (91) 9637763012 <br>
+                     Mail. GymPro@youdomain.com
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+           <p>
+             GymPro.in | © 2019 Varseno Solutions.All Rights Reserved |    Privacy Policy  | Terms & Conditions
+            </p>
+        <div>
+          <button style="text-align: end;" mat-raised-button color="#007bff">   <a href="#Home"  style="text-align: right;">Go to Top</a></button><br><br>
+      </div>
+    </div>
+  </div>
+  
+ -->
+
+
+
+<!-- ----------------------------------- --> 
+
+ <mat-card>
+    <h2>Login</h2>
 <div *ngIf="show">
 <form  *ngIf="show" class="form" [formGroup]="LoginForm">
         <mat-form-field  class="full-width">
@@ -12,39 +348,28 @@
                 <input *ngIf="show" matInput placeholder="Password" formControlName="Password" required>
                 <mat-error *ngIf="LoginForm.get('Password').invalid">Password is required</mat-error>
               </mat-form-field><br>
-              <button *ngIf="show" mat-raised-button color="primary" class="submit-button" (click)="loginClick()">Submit
+              <button *ngIf="show" (click)="loginClick()">Submit
             </button>
            
             <button *ngIf="show" (click)="RegisterClick()">register
           </button>
-          
-
-          <!-- <div class="form-group">
-              <button [disabled]="loading" class="btn btn-primary">
-                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                  Login
-              </button>
-              <a routerLink="/register" class="btn btn-link">Register</a>
-          </div> -->
-      
-
 </form>
 </div>
  
 <div *ngIf="show1">
-    <button class="regbtn hover1" *ngIf="show1" [routerLink]="['../UserRegister']" (click)="loginClick()">Register As User
-      </button>
+  <button class="regbtn hover1" *ngIf="show1" [routerLink]="['/user-register']" (click)="loginClick()">Register As User
+  </button>
      
-      <button  class="regbtn hover1" *ngIf="show1" [routerLink]="['/register']"(click)="openuserpage">Register As Gym Owner
-      </button> 
+  <button  class="regbtn hover1" *ngIf="show1" [routerLink]="['./register']"(click)="openuserpage()">Register As Gym Owner
+  </button> 
       
       <button class="regbtn hover1" *ngIf="show1"   (click)="showform()">Back To Login
         </button>
 
-    <!-- <button class="regbtn hover2" *ngIf="show1" (click)="onFormSubmit1()">Back To Login1
-    </button> -->
+     <!-- <button class="regbtn hover2" *ngIf="show1" (click)="onFormSubmit1()">Back To Login1
+    </button>  -->
   
 
-      </div>
+  </div>
 </mat-card>
   

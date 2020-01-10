@@ -2,11 +2,11 @@
   
      padding: 5%;
     height: 750px;
-    width:700px;
+    width:600px;
     padding-right: 0%;
     padding-left: 0%;
-    border: 2px solid black; 
-    background-color: gray;
+    
+   
      text-align: center; 
     
   
@@ -16,6 +16,10 @@
 .full-width{
    
     padding: 5%;
+}
+.full-width-height
+{
+    margin-top: 40%;
 }
 .button2{
     background-color: cadetblue;

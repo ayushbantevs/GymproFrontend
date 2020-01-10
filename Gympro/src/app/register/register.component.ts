@@ -44,11 +44,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  onFormSubmit1()
-  {
-    this.route.navigate(['login']);
+  // onFormSubmit1()
+  // {
+  //   this.route.navigate(['login']);
 
-  }
+  // }
   
 
 }

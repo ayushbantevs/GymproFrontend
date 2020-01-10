@@ -1,5 +1,5 @@
-
-/* ::-webkit-input-placeholder { 
+/* 
+ ::-webkit-input-placeholder { 
   color: r;
 }
 
@@ -9,9 +9,9 @@
 
 ::placeholder {
   color: red;
-} */
+}  */
 
-input[type=text], select {
+ input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -28,9 +28,12 @@ input[type=text], select {
   .mat-card{
     background-color:  gray;
     margin: 0;
-    width: 20%;
+    width: 28%;
     height: 50%;
-    margin: 10px; 
+    margin: 20px;
+    margin-left: 30%; 
+    text-align: center;
+
   }
   .form{
     padding-left:30px;
@@ -43,8 +46,8 @@ input[type=text], select {
   }
   .regbtn{
     padding: 5px;
-    margin-top: 80px;
-    background-color:black;
+    margin-top: 20px;
+    background-color:navajowhite;
     
   }
 
@@ -53,3 +56,4 @@ input[type=text], select {
     cursor: pointer;
     color: white;
   }
+   

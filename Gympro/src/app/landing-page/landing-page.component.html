@@ -1,30 +1,4 @@
-
-<!-- <mat-card>
-<button mat-button >Home</button>
-<button mat-button >About us</button>
-<button mat-button>Contact us</button>
-<button mat-button >Login</button>
-</mat-card>
-  <!-- <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button> -->
-
- 
-
-<!-- 
-<div class="row" style="background-color: #f1f1f1;  height: 60px;padding-top: 15px;">
-    <div class="col-sm-12 col-md-4" >
-     
-        
-          <button mat-button style="margin-left: 10px;" id="Home">Home</button>
-            <a href="#AC_Page"><button mat-button style="margin-left: 20px;">About us</button></a>
-            <a href="#AC_Page"><button mat-button style="margin-left: 20px;" >Contact us</button></a>
-            <a [routerLink]="'/login'"><button mat-button class="btn_Login" style="margin-left: 20px;">Login
-          </button></a>
-        
-      </div>
-    </div> -->
- 
-    <ul class="ul1">
+<ul class="ul1">
       <li style=" float: left;" class="li1"><a class="active a1" href="#Home">Home</a></li>
       <li style=" float: left;" class="li1"><a href="#AC_Page" class="a1">About us</a></li>
       <li style=" float: left;" class="li1"><a href="#AC_Page" class="a1">Contact us</a></li>
@@ -32,9 +6,9 @@
     </ul>
 
 
-  <div class="row" style="  ">
-    <div class="col-12">
-  <mat-carousel timings="250ms ease-in"
+  <div class="row" >
+      <div class="col-12">
+        <mat-carousel timings="250ms ease-in"
              [autoplay]="true"
              interval="1000"
              color="accent"
@@ -56,60 +30,44 @@
              [hideOverlay]="false">
              </mat-carousel-slide> 
              </mat-carousel>
-            </div>
+        </div>
   </div>
   
   
   <div class="row" style="margin-top: 20px; margin-right: 20px;background-color:skyblue;">
-  <div class="col-6"  style="height: 360px;"> 
-  <mat-card class="example-card"  style="width: 100%; padding-top: 10px;background-color: rgb(167, 100, 139);">
-      <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
-       <mat-card-content>
-        <p style="color: aliceblue;padding-left: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    <div class="col-6"  style="height: 360px;"> 
+      <mat-card class="example-card"  style="width: 100%; padding-top: 10px;background-color: rgb(167, 100, 139);">
+        <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
+        <mat-card-content>
+                     <p style="color: aliceblue;padding-left: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
                      Maiores ratione excepturi nobis quasi atque quia inventore 
                        </p> 
-                      <button mat-button  class="btn btn-primary" style="margin-left:20px;width: 90px;height: 40px;">Register</button> <br><br>
+                      <button mat-button  class="btn btn-primary" style="margin-left:20px;width: 90px;height: 40px;">Register</button> <br>
          </mat-card-content>
      </mat-card>
-  </div>
-  
+   </div>
   
         <div class="col-6" style=" margin-top:15px;width:300px;" >
           <img mat-card-image src="../assets/Images/gym-setup-tips-1.jpg" >
-      </div>
-  </div>
+       </div>
+ </div>
   
-
-  
-
-  <!-- <div class="row">
-    <div class="col-sm-4">.col-sm-4</div>
-    <div class="col-sm-4">.col-sm-4</div>
-    <div class="col-sm-4">.col-sm-4</div>
-  </div>
-  .col-xs	.col-sm	.col-md	.col-lg -->
-
-
 
   <div class="row" style="margin-top: 50px;margin-left: 10px;background-color:skyblue;">
     <div class="col-sm-4 col-md	3 col-lg-2" >
-  
       <h4 style="margin-left: 16px;" id="AC_Page">Contact US</h4>
-    
-      <div class="container" >
-       
+        <div class="container" >
         <form>
-          <div class="form-group">
-            <label for="name"> Your Name</label>
-            <input type="text" class="form-control" id="name" required>
-          </div>
-    
+           <div class="form-group">
+              <label for="name"> Your Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+
           <div class="form-group">
             <label for="alterEgo">Email</label>
             <input type="text" class="form-control" id="alterEgo">
           </div>
     
-  
           <div class="form-group">
             <label for="alterEgo">Contact No</label>
             <input type="text" class="form-control" id="alterEgo">
@@ -120,17 +78,12 @@
             <input type="text" class="form-control" id="alterEgo">
           </div>
   
-  
           <button type="submit" class="btn btn-primary">Submit</button>
-    
         </form>
     </div>
-  
   </div>
   
  
-  
-  
   <div class="col-sm-4 col-md	3 col-lg-2"  >
     <br><br><br>
     <mat-card id="AC_Page" style="background-color: rgba(255, 0, 0, 0.2);" >
@@ -149,22 +102,18 @@
     </div>
   
   
-  
-  <div class="col-sm-4 col-md	3 col-lg-2"  style="">
+  <div class="col-sm-4 col-md	3 col-lg-2" >
     <br><br><br>
-  
   <mat-card style="background-color: rgba(255, 0, 0, 0.2);">
-    <strong>More Info</strong> <br>
-    <mat-card-content>
-      <p>A gymnasium, also known as a gym, is a covered location for gymnastics, athletics and gymnastic services. 
-      <p> word is derived from the ancient Greek gymnasium. They are commonly found in athletic and fitness centres, and as activity and learning spaces in educational institutions.</p>
-    <button mat-button class="btn btn-primary">Learn more</button>
-    </mat-card-content>
-  </mat-card>
-  
+      <strong>More Info</strong> <br>
+      <mat-card-content>
+        <p>A gymnasium, also known as a gym, is a covered location for gymnastics, athletics and gymnastic services. They are commonly found in athletic and fitness centres, 
+        <p> word is derived from the ancient Greek gymnasium. </p>
+      <button mat-button class="btn btn-primary">Learn more</button>
+      </mat-card-content>
+    </mat-card>
   </div>
-  
-  </div>
+</div>
  
   
   <mat-card  style=" margin-top: 40px;background-color:rgb(190, 102, 68)">
@@ -173,7 +122,6 @@
       
     </mat-card-content>
   </mat-card>
-  
   
    
   

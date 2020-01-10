@@ -15,11 +15,12 @@ html {
   }
 
 .ul1{
+    width: 100%;
    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:hsla(252, 100%, 14%, 0.877) 
+    background-color:#fa163f; 
 }
 
 
@@ -44,8 +45,9 @@ html {
   }
 
   .li1 .a1:hover {
-    background-color: #111;
+    background-color: #0fabbc;
+    color: white;
   }
   li a{
-      color: white;
+      color: black;
   }

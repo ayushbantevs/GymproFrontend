@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { GymadminComponent } from './gymadmin/gymadmin.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'gymadmin', component:GymadminComponent},
+  {path:'', component:LandingPageComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -10,7 +10,7 @@ import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import {MatMenuModule} from '@angular/material/menu';
+
 import { GymadminComponent } from './gymadmin/gymadmin.component';
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -71,11 +71,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     NavigationComponent,
     Edit_profileComponent,
+
+
+
+    UserprofileComponent,
+
     GymoffersComponent,
     GymcoustomersComponent,
     NavigationComponent,
-
-
 
     UserprofileComponent,
 
@@ -101,6 +104,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatMenuModule,
 
     MatCarouselModule,
+    MatMenuModule,
+
     BrowserModule,
 
 

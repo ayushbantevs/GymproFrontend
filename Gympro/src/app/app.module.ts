@@ -65,6 +65,9 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
     GymadminComponent,
 
     ProfileComponent,
+
+    GymoffersComponent,GymcoustomersComponent,
+
     GymoffersComponent,GymcoustomersComponent,
 
     NavigationComponent

@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { MediaMatcher } from '@angular/cdk/layout';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy ,ViewChild} from '@angular/core';
+
+import {MatSidenav} from '@angular/material';
 
 @Component({
   selector: 'app-gymadmin',
@@ -8,20 +9,34 @@ import { MediaMatcher } from '@angular/cdk/layout';
 })
 export class GymadminComponent implements OnDestroy {
 
-  mobileQuery: MediaQueryList;
+ @ViewChild('Matsidenav',{static: false}) sidenav: MatSidenav;
+  opened: boolean = true;
 
-  
-  array=['profile']
-   
-    private _mobileQueryListener: () => void;
-  
-    constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-      this.mobileQuery = media.matchMedia('(max-width: 600px)');
-      this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-      this.mobileQuery.addListener(this._mobileQueryListener);
+    //tooBarItems:any=[{name:'sideBarButton',icon:'list' }];
+    navItems:any=[{name:'Profile',icon:'face' },{name:'Gym Customers',icon:'assessment' },{name:'Offers',icon:'list' }];
+
+    tooBarItems:any=[{name:'sideBarButton',icon:'list' }];
+    navItems:any=[{name:'Profile',icon:'face',route:"profile" },{name:'Gym Coustomers',icon:'list',route:"gymcoustomers" },{name:'Offers',icon:'list',route:"gymoffers" }];
+
+    shouldShow=false;
+    constructor() {
+      
     }
   
     ngOnDestroy(): void {
-      this.mobileQuery.removeListener(this._mobileQueryListener);
+     
     }
+
+    toggel()
+    {
+      if(this.shouldShow==false)
+      {
+        this.shouldShow=true;
+      }else{
+        this.shouldShow=false;
+      }
+      console.log(this.shouldShow);
+
+    }
+
 }

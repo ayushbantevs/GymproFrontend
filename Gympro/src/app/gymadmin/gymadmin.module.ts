@@ -12,12 +12,14 @@ import { GymcoustomersComponent } from './gymcoustomers/gymcoustomers.component'
 
 
 
+
 @NgModule({
   declarations: [GymadminComponent,ProfileComponent, GymoffersComponent, GymcoustomersComponent],
   imports: [
     CommonModule,
     MatIconModule,MatSidenavModule,
-    ,MatToolbarModule,GymadminRoutingModule
+    ,MatToolbarModule,GymadminRoutingModule,
+    
   ]
 })
 export class GymadminModule { }

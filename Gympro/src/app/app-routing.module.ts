@@ -11,6 +11,7 @@ import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_pr
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
 
+
 // const routes: Routes = [
 //   {path:'gymadmin', component:GymadminComponent},
 //   {path:'userprofile',component:UserprofileComponent},
@@ -45,7 +46,8 @@ const routes: Routes = [
 {
   path:'',
   component:LandingPageComponent
-}
+},
+
 ];
 
 @NgModule({

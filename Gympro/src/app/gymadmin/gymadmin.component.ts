@@ -12,7 +12,7 @@ export class GymadminComponent implements OnDestroy {
  // @ViewChild(MatSidenav) sidenav: MatSidenav;
   opened: boolean = true;
     tooBarItems:any=[{name:'sideBarButton',icon:'list' }];
-    navItems:any=[{name:'Profile',icon:'face' },{name:'Gym Coustomers',icon:'list' },{name:'Offers',icon:'list' }];
+    navItems:any=[{name:'Profile',icon:'face',route:"profile" },{name:'Gym Coustomers',icon:'list',route:"gymcoustomers" },{name:'Offers',icon:'list',route:"gymoffers" }];
     shouldShow=false;
     constructor() {
       

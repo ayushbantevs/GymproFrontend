@@ -30,17 +30,6 @@ const routes: Routes = [
       },
     ]
   },
-  { path: '', redirectTo:'landingpage',pathMatch:'full'},
-  {path: 'gymadmin', component: GymadminComponent},
-  {path: 'edituserprofile', component: Edit_profileComponent},
-  {path:'gymadmin', component:GymadminComponent},
-  {path:'userprofile',component:UserprofileComponent},
-  {path:'', component:LandingPageComponent},
-];
-
-
-
-},
 {
   path:'',
  component:LandingPageComponent

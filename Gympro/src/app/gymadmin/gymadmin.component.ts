@@ -9,10 +9,15 @@ import {MatSidenav} from '@angular/material';
 })
 export class GymadminComponent implements OnDestroy {
 
- // @ViewChild(MatSidenav) sidenav: MatSidenav;
+ @ViewChild('Matsidenav',{static: false}) sidenav: MatSidenav;
   opened: boolean = true;
+
+    //tooBarItems:any=[{name:'sideBarButton',icon:'list' }];
+    navItems:any=[{name:'Profile',icon:'face' },{name:'Gym Customers',icon:'assessment' },{name:'Offers',icon:'list' }];
+
     tooBarItems:any=[{name:'sideBarButton',icon:'list' }];
     navItems:any=[{name:'Profile',icon:'face',route:"profile" },{name:'Gym Coustomers',icon:'list',route:"gymcoustomers" },{name:'Offers',icon:'list',route:"gymoffers" }];
+
     shouldShow=false;
     constructor() {
       
@@ -33,4 +38,5 @@ export class GymadminComponent implements OnDestroy {
       console.log(this.shouldShow);
 
     }
+
 }

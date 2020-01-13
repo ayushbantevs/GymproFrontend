@@ -8,6 +8,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 })
 export class GymadminComponent implements OnDestroy {
 
+<<<<<<< Updated upstream
   mobileQuery: MediaQueryList;
 
   
@@ -19,6 +20,14 @@ export class GymadminComponent implements OnDestroy {
       this.mobileQuery = media.matchMedia('(max-width: 600px)');
       this._mobileQueryListener = () => changeDetectorRef.detectChanges();
       this.mobileQuery.addListener(this._mobileQueryListener);
+=======
+  // @ViewChild(MatSidenav) sidenav: MatSidenav;
+  opened: boolean = true;
+    tooBarItems:any=[{name:'sideBarButton',icon:'list' }];
+    navItems:any=[{name:'Profile',icon:'face' },{name:'Gym Coustomers',icon:'list' },{name:'Offers',icon:'list' }];
+    shouldShow=false;
+    constructor() {
+>>>>>>> Stashed changes
       
     }
   

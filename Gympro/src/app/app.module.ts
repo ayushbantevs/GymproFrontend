@@ -51,7 +51,11 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+
 import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
+
+import { NavigationComponent } from './gymuser/navigation/navigation.component';
+
 
 
 @NgModule({
@@ -59,9 +63,12 @@ import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.c
     AppComponent,
     LandingPageComponent,
     GymadminComponent,
+
     ProfileComponent,
-    GymoffersComponent,GymcoustomersComponent
-  
+    GymoffersComponent,GymcoustomersComponent,
+
+    NavigationComponent
+
   ],
   imports: [
     BrowserModule,

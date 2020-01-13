@@ -7,19 +7,16 @@ import { RegisterComponent } from './register/register.component';
 
 
 
-
-
-
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register',component: RegisterComponent },
-  { path: 'user-register',component: UserRegisterComponent},
-   { path: 'home',component: LandingPageComponent},
-  // { path: '',   redirectTo: 'home', pathMatch: 'full' },
+  // { path: 'login', component: LoginComponent },
+  // { path: 'register',component: RegisterComponent },
+  // { path: 'user-register',component: UserRegisterComponent},
+  //  { path: 'home',component: LandingPageComponent},
+  //  { path: '',   redirectTo: 'home', pathMatch: 'full' },
   
-  // {path: '', redirectTo: 'register', pathMatch: 'full'},
-  // {path: '', redirectTo: 'user-register', pathMatch: 'full'}
-  // { path: '**', component: PageNotFoundComponent }
+  // // {path: '', redirectTo: 'register', pathMatch: 'full'},
+  // // {path: '', redirectTo: 'user-register', pathMatch: 'full'}
+  // // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

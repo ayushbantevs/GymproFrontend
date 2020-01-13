@@ -27,7 +27,7 @@ export class Edit_profileComponent implements OnInit {
   ngOnInit() {
 
   }
-  onSubmitEdit(){
-    
+  onSubmitEdit() {
+console.log(this.profileForm.value);
   }
 }

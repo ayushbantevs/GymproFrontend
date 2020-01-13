@@ -56,6 +56,9 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
 
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
+import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -65,7 +68,15 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
     LandingPageComponent,
     GymadminComponent,
 
+
     UserprofileComponent,
+
+    NavigationComponent,
+    Edit_profileComponent,
+
+
+    UserprofileComponent,
+
 
 
     ProfileComponent,
@@ -75,6 +86,7 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
     GymoffersComponent,GymcoustomersComponent,
 
     NavigationComponent
+
   ],
   imports: [
     BrowserModule,
@@ -130,7 +142,8 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
     MatTreeModule,
     PortalModule,
     ScrollingModule,
-    
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

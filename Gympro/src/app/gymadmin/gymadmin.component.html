@@ -3,13 +3,14 @@
       <mat-icon>menu</mat-icon>
     </button> 
    GymPro 
-   <button class="abc"  mat-button [matMenuTriggerFor]="menu"> <mat-icon>account_circle</mat-icon>profile</button> 
+   <span><button class="abc"  mat-button [matMenuTriggerFor]="menu"> <mat-icon>account_circle</mat-icon>profile</button> 
        <mat-menu #menu="matMenu"  [class]="myMenu">
       <button mat-menu-item class="myMenuItem" ><mat-icon>add_a_photo</mat-icon>Add photo</button>
      <button mat-menu-item class="myMenuItem"> <mat-icon>perm_identity</mat-icon>Name</button>
      <button mat-menu-item class="myMenuItem"><mat-icon>email</mat-icon>Email</button>
      <button mat-menu-item class="myMenuItem" ><mat-icon>power_settings_new</mat-icon> signout</button>
    </mat-menu>
+  </span>
   </mat-toolbar>
   
     <mat-sidenav-container class="example-container" >

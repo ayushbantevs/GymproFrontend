@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'app-edit_profile',
   templateUrl: './edit_profile.component.html',
   styleUrls: ['./edit_profile.component.scss']
@@ -14,20 +15,19 @@ export class Edit_profileComponent implements OnInit {
 
   }
   profileForm = this.fb.group({
-    username: [''],
-    phoneNumber: [''],
+    username: ['', [Validators.required]],
+    phoneNumber: ['', [Validators.required]],
     passWord: [''],
     address: [''],
     logitude: [''],
     latitude: [''],
-      zip: [''],
   });
 
 
   ngOnInit() {
 
   }
-  onSubmitEdit() {
-console.log(this.profileForm.value);
+  onSubmit() {
+    console.log(this.profileForm.value);
   }
 }

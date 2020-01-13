@@ -70,7 +70,10 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
 
 
     ProfileComponent,
-    GymoffersComponent,GymcoustomersComponent
+
+    GymoffersComponent,GymcoustomersComponent,
+
+    GymoffersComponent,GymcoustomersComponent,
 
     NavigationComponent
   ],

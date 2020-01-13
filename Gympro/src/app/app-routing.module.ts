@@ -9,17 +9,10 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
 
 import { UserprofileComponent } from './userprofile/userprofile.component';
-
-
-const routes: Routes = [
-  {path: 'gymadmin', component: GymadminComponent},
-  {path: 'edituserprofile', component: Edit_profileComponent},
-
-  {path:'gymadmin', component:GymadminComponent},
-  {path:'userprofile',component:UserprofileComponent},
-  {path:'', component:LandingPageComponent}
-
 import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
+
+// const routes: Routes = [
+//   
 
 
 const routes: Routes = [
@@ -49,6 +42,15 @@ const routes: Routes = [
   redirectTo:'landingpage',
   pathMatch:'full'
 }
+,
+{path: 'gymadmin', component: GymadminComponent},
+//   {path: 'edituserprofile', component: Edit_profileComponent},
+
+//   {path:'gymadmin', component:GymadminComponent},
+//   {path:'userprofile',component:UserprofileComponent},
+//   {path:'', component:LandingPageComponent}
+
+
 ];
 
 @NgModule({

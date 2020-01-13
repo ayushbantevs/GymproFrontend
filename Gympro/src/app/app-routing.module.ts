@@ -12,6 +12,17 @@ import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.c
 
 
 
+// const routes: Routes = [
+//   {path:'gymadmin', component:GymadminComponent},
+//   {path:'userprofile',component:UserprofileComponent},
+//   {path:'', component:LandingPageComponent}
+
+
+
+
+
+
+
 const routes: Routes = [
   {
     path:'gymadmin', 
@@ -38,6 +49,16 @@ const routes: Routes = [
   {path:'gymadmin', component:GymadminComponent},
   {path:'userprofile',component:UserprofileComponent},
   {path:'', component:LandingPageComponent},
+
+
+
+]
+
+},
+{
+  path:'',
+  component:LandingPageComponent
+}
 
 ];
 

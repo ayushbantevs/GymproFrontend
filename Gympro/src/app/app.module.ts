@@ -68,11 +68,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     LandingPageComponent,
     GymadminComponent,
+
     NavigationComponent,
     Edit_profileComponent,
     GymoffersComponent,
     GymcoustomersComponent,
     NavigationComponent,
+
+
+
+    UserprofileComponent,
+
+    NavigationComponent,
+    Edit_profileComponent,
+
+
+    UserprofileComponent,
+
+
+
+
     ProfileComponent,
     UserprofileComponent
 
@@ -84,8 +99,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatCarouselModule,
     MatMenuModule,
+
     MatCarouselModule,
     BrowserModule,
+
+
+    MatCarouselModule,    BrowserModule,
+
     AppRoutingModule,
     BrowserAnimationsModule,
     A11yModule,

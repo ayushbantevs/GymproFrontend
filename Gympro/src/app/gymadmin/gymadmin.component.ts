@@ -17,7 +17,7 @@ export class GymadminComponent implements OnDestroy {
     constructor() {
       
     }
-  
+
     ngOnDestroy(): void {
      
     }
@@ -33,5 +33,6 @@ export class GymadminComponent implements OnDestroy {
       console.log(this.shouldShow);
 
     }
+
 
 }

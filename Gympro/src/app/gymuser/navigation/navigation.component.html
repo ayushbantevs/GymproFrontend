@@ -1,24 +1,33 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="matcolor">
     <mat-toolbar-row>
-      <button mat-icon-button>
+      <button mat-icon-button class="menu">
         <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
       </button>
-      <h1>SimpleCRM</h1>
+       <div class="logo-image">
+                <!-- <img src="ezgif.com-gif-maker.jpg" class="img-fluid"> -->
+          </div> 
+     
       <span class="menu-spacer"></span>
       <div>
-        <a mat-button [routerLink]="'/accounts'"> Accounts </a>
-        <a mat-button [routerLink]="'/create-account'"> Create Account </a>
-        <a mat-button [routerLink]="'/contacts'"> Contacts </a>
-        <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
-        <a mat-button [routerLink]="'/activities'"> Activities </a>
-        <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
+        <a mat-button [routerLink]="'/accounts'" class="user"> Welcome User..</a>
+         <mat-icon class="notify">notification_important</mat-icon>
+      
+         <button class="abc"  mat-button [matMenuTriggerFor]="menu"> <mat-icon class="abcd">account_circle</mat-icon></button> 
+         <mat-menu #menu="matMenu"  [class]="myMenu">
+            <img src="gym-setup-tips-1.jpg" class="img">
+            <p>User-Name</p>
+            <button mat-menu-item class="myMenuItem" ><mat-icon>account_circle</mat-icon>Edit_Profile</button>
+            <!-- <button mat-menu-item class="myMenuItem"> <mat-icon>perm_identity</mat-icon>Name</button>
+            <button mat-menu-item class="myMenuItem"><mat-icon>email</mat-icon>Email</button> -->
+             <button mat-menu-item class="myMenuItem" > <mat-icon>exit_to_app</mat-icon>signout</button>
+     </mat-menu>
+    </div> 
+ 
+   </mat-toolbar-row>
   
-      </div>
-    </mat-toolbar-row>
-  
-    <mat-toolbar-row>
+    <!-- <mat-toolbar-row>
         <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
-      </mat-toolbar-row>
+      </mat-toolbar-row> -->
   </mat-toolbar>
 
   <mat-sidenav-container>
@@ -42,3 +51,7 @@
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+
+
+  

@@ -1,3 +1,7 @@
+import { GymoffersComponent } from './gymadmin/gymoffers/gymoffers.component';
+import { GymadminModule } from './gymadmin/gymadmin.module';
+import { ProfileComponent } from './gymadmin/profile/profile.component';
+import { GymadminRoutingModule } from './gymadmin/gymadmin-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -47,7 +51,11 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+
+import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
+
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
+
 
 
 @NgModule({
@@ -55,7 +63,12 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
     AppComponent,
     LandingPageComponent,
     GymadminComponent,
+
+    ProfileComponent,
+    GymoffersComponent,GymcoustomersComponent
+
     NavigationComponent
+
   ],
   imports: [
     BrowserModule,
@@ -107,6 +120,7 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
     MatTreeModule,
     PortalModule,
     ScrollingModule,
+ 
     
   ],
   providers: [],

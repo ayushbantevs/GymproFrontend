@@ -35,7 +35,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
-import {MatMenuModule} from '@angular/material/menu';
+
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -73,16 +73,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Edit_profileComponent,
 
 
+
+    UserprofileComponent,
+
+    GymoffersComponent,
+    GymcoustomersComponent,
+    NavigationComponent,
+
+    UserprofileComponent,
+
+    NavigationComponent,
+    Edit_profileComponent,
+
+
     UserprofileComponent,
 
 
+
+
     ProfileComponent,
-
-    GymoffersComponent,GymcoustomersComponent,
-
-    GymoffersComponent,GymcoustomersComponent,
-
-    NavigationComponent
+    UserprofileComponent
 
   ],
   imports: [
@@ -90,11 +100,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     MatCardModule,
     BrowserAnimationsModule,
+    MatCarouselModule,
+    MatMenuModule,
 
     MatCarouselModule,
     MatMenuModule,
 
+    BrowserModule,
+
+
     MatCarouselModule,    BrowserModule,
+
     AppRoutingModule,
     BrowserAnimationsModule,
     A11yModule,

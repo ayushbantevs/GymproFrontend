@@ -3,13 +3,14 @@
 .backgroundImage{
 background-image: url("src/assets/Images/gettyimages-515238274-2048x2048.jpg");
 color: ivory;
+opacity: 0.8;
+position: fixed;
+width: 100%;
 }
   .form-container {
     width: 100%;
-    border: 1px solid black ;
     padding: 100px;
-    margin: 10px 10px;
-    
+   margin-left: 800px;
     color: rgb(229, 223, 233);
   }
 
@@ -25,4 +26,7 @@ color: ivory;
   }
   mat-label{
     color: ivory;
+  }
+  input{
+    color: whitesmoke;
   }

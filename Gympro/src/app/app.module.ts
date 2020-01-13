@@ -48,6 +48,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
+import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
+
 
 
 @NgModule({
@@ -55,7 +57,8 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
     AppComponent,
     LandingPageComponent,
     GymadminComponent,
-    NavigationComponent
+    NavigationComponent,
+    Edit_profileComponent
   ],
   imports: [
     BrowserModule,
@@ -107,7 +110,6 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
     MatTreeModule,
     PortalModule,
     ScrollingModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

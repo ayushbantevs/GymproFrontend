@@ -1,0 +1,22 @@
+// .form-container {
+//     display: flex;
+//     flex-direction: column;
+   
+//   }
+@import '~@angular/material/theming';
+  .form-container {
+    width: 30%;
+    border: 1px solid black ;
+    padding: 100px;
+    margin: 30px 500px;
+   
+  }
+  div{
+      width: 80%;
+      margin-left: 10px;
+  }
+  button{
+     background-color: cornflowerblue;
+     display: flex;
+     
+  }

@@ -2,7 +2,7 @@
 @import '~@angular/material/theming';
 .backgroundImage{
 background-image: url("src/assets/Images/gettyimages-515238274-2048x2048.jpg");
-color: ivory;
+
 opacity: 0.8;
 position: fixed;
 width: 100%;
@@ -10,14 +10,16 @@ width: 100%;
   .form-container {
     width: 100%;
     padding: 100px;
-   margin-left: 800px;
-    color: rgb(229, 223, 233);
+    margin-left: 800px;
+    color:rgb(0, 0, 0);
+    background-color: rgba(255,255,255,0.3);
   }
 
   div{
       width: 80%;
       margin-left: 10px;
-    color: rgb(238, 238, 238);
+      color: rgb(0, 0, 0);
+      font-weight: bolder;
   }
   button{
      background-color: rgb(48, 107, 216);
@@ -25,8 +27,8 @@ width: 100%;
      
   }
   mat-label{
-    color: ivory;
+    color: rgb(0, 0,0);
   }
   input{
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
   }

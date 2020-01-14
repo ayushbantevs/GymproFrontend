@@ -1,72 +1,206 @@
-<mat-toolbar class="matcolor">
-    <mat-toolbar-row>
-      <button mat-icon-button class="menu">
-        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-      </button>
-       <div class="logo-image">
-                <!-- <img src="ezgif.com-gif-maker.jpg" class="img-fluid"> -->
-          </div> 
-     
-      <span class="menu-spacer"></span>
 
-      <div>
-        <a mat-button [routerLink]="'/accounts'" class="user"> Welcome User..</a>
-         <mat-icon class="notify">notification_important</mat-icon>
-      
-         <button class="abc"  mat-button [matMenuTriggerFor]="menu"> <mat-icon class="abcd">account_circle</mat-icon></button> 
-         <mat-menu #menu="matMenu"  [class]="myMenu">
-            <img src="gym-setup-tips-1.jpg" class="img">
-            <p>User-Name</p>
-            <button mat-menu-item class="myMenuItem" ><mat-icon>account_circle</mat-icon>Edit_Profile</button>
-            <!-- <button mat-menu-item class="myMenuItem"> <mat-icon>perm_identity</mat-icon>Name</button>
-            <button mat-menu-item class="myMenuItem"><mat-icon>email</mat-icon>Email</button> -->
-             <button mat-menu-item class="myMenuItem" > <mat-icon>exit_to_app</mat-icon>signout</button>
-     </mat-menu>
-    </div> 
+
+<div class="row"> 
+    <div class="col-lg-12 col-md-12 col-sm-4" >
+      <mat-card  style="background-color:#66656598">
+        <button mat-icon-button class="menu" style="margin-left: 15px;">
+          <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </button>
+            <img mat-list-avatar src="../assets/Images/GYM_LOGO.PNG" alt="" class="image" style="margin-left: 30px;"> 
+              <button mat-button style="margin-left: 10px; color: red;" id="Home">Welcome User..</button>
+                    <a><button mat-button style="margin-left: 20px;color: red;">About us</button></a>
+               <button class="abc"  mat-button [matMenuTriggerFor]="menu" style="color: red;"> 
+                    <mat-icon class="abcd" aria-placeholder="end">account_circle</mat-icon>
+                </button> 
+              <mat-menu #menu="matMenu"  [class]="myMenu">
+                <img src="../assets/Images/GYM_LOGO.PNG" class="img" style="border-radius: 50px; height: 50px; width: 50px;margin-left: 40px;margin-top: 10px;">
+                <p style="text-align: center;">User-Name</p>
+                 <button mat-menu-item class="myMenuItem"  (click)="Editprofile()"><mat-icon>account_circle</mat-icon>Edit_Profile</button>
+                <button mat-menu-item class="myMenuItem" > <mat-icon>exit_to_app</mat-icon>signout</button>
+              </mat-menu>
+           </mat-card>
+  </div>
+</div>
  
-   </mat-toolbar-row>
   
-    <!-- <mat-toolbar-row>
+  <!-- <div class="row" style="margin-left: 8px;margin-top: 20px;">
+    <div class="col-12">
+  <mat-carousel timings="250ms ease-in"
 
-       <div>
-        <a mat-button [routerLink]="'/accounts'"> Accounts </a>
-        <a mat-button [routerLink]="'/create-account'"> Create Account </a>
-        <a mat-button [routerLink]="'/contacts'"> Contacts </a>
-        <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
-        <a mat-button [routerLink]="'/activities'"> Activities </a>
-        <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
+             [autoplay]="true"
+             interval="1000"
+             color="accent"
+             maxWidth="auto"
+             proportion="25"
+         
+             slides="5"
+             [loop]="true"
+             [hideArrows]="false"
+             [hideIndicators]="false"
+             [useKeyboard]="true"
+             [useMouseWheel]="false"
+             orientation="ltr">
+             
+             <mat-carousel-slide #matCarouselSlide
+             *ngFor="let slide of imgpro; let i = index"
+             [image]="slide.url"
+             overlayColor="#00000040"
+             [hideOverlay]="false">
+             </mat-carousel-slide> 
+             </mat-carousel> -->
+
+ 
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-lg-2 col-sm-12">
+    </div>
+    <div class="col-lg-4 col-sm-12" style="padding:50px;   background-color: #12cad6;" > 
+      <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px; background-color: pink;">
+        <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
+      <mat-card-content>
+        <p style="color: aliceblue;padding-left: 20px;">
+                       </p> 
+                      <button mat-button style="margin:20px; margin-left: 60px; background-color:  gray;border-radius:10px;width: 150px;height: 60px;">Register</button> <br><br>
+         </mat-card-content>
+    </mat-card>
+        </div>
+        <div class="col-lg-1 col-sm-12">
+        </div>
+         <div class="col-lg-4 col-sm-12" style="padding:50px; background-color: #12cad6;" >
+          <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px; background-color: pink;">
+            <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
+          <mat-card-content>
+            <p style="color: aliceblue;padding-left: 20px;">
+            </p> 
+           <button mat-button style="margin:20px; margin-left: 60px; background-color: gray;border-radius:10px;width: 150px;height: 60px;">Register</button> <br><br>
+             </mat-card-content>
+        </mat-card>
+          </div>
+   </div>
   
-      </div> -->
-    </mat-toolbar-row>
+
+   <div class="row" style="margin-top: 20px;">
+    <div class="col-lg-2 col-sm-12">
+    </div>
+    <div class="col-lg-4 col-sm-12" style="padding:50px;   background-color: gray" > 
+      <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px; background-color: pink;">
+        <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
+      <mat-card-content>
+        <p style="color: aliceblue;padding-left: 20px;">
+        </p> 
+       <button mat-button style="margin:20px; margin-left: 60px; background-color: rgb(16, 195, 207);border-radius:10px;width: 150px;height: 60px;">Register</button> <br><br>
+         </mat-card-content>
+    </mat-card>
+        </div>
+        <div class="col-lg-1 col-sm-12">
+        </div>
+         <div class="col-lg-4 col-sm-12" style="padding:50px; background-color: gray" >
+          <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px; background-color: pink;">
+            <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
+          <mat-card-content>
+            <p style="color: aliceblue;padding-left: 20px;">
+                       </p> 
+                      <button mat-button style="margin:20px; margin-left: 60px; background-color: rgb(16, 195, 207);border-radius:10px;width: 150px;height: 60px;">Register</button> <br><br></mat-card-content>
+        </mat-card>
+          </div>
+   </div>
   
-    <mat-toolbar-row>
+   <router-outlet></router-outlet>
 
-        <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
-      </mat-toolbar-row> -->
-  </mat-toolbar>
-
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav>
+  
+  
+  
+  
+  <!-- <div class="row" style="margin-top: 20px;">
+  <div class="col-6"  style="height: 360px;"> 
+  
+   
+  
+  </div> -->
+  <!-- <mat-sidenav-container >
+    <mat-sidenav #sidenav style="width: 200px; background-color: black;"
+    class="md-sidenav-left"
+    mat-component-id="left"
+    mat-is-locked-open="$mdMedia('gt-md')"
+    mat-whiteframe="4">>
+     
       <mat-nav-list>
-  
-        <a mat-list-item [routerLink]="'/accounts'"> Gyms </a>
-        <a mat-list-item [routerLink]="'/create-account'"> Create Account </a>
-        <a mat-list-item [routerLink]="'/contacts'"> Contacts </a>
-        <a mat-list-item [routerLink]="'/create-contact'"> Create Contact </a>
-        <a mat-list-item [routerLink]="'/activities'"> Activities </a>
-        <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>
-        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-  
+        <a class="side heading"  mat-list-item [routerLink]="'/create-account'"> Gyms_Pro </a>
+        <a class="side"  mat-list-item [routerLink]="'/gymadmin'"> Gyms </a>
+        <a class="side"  mat-list-item [routerLink]="'/create-contact'"> Sessions </a>
+        <a class="side"  mat-list-item [routerLink]="'/activities'"> Offers</a>
+        <a class="side"  mat-list-item [routerLink]="'/activities'"> More..</a>
+        <a class="side"  mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
-      <div style="height: 88vh;">
-  
-        <!-- <router-outlet></router-outlet> -->
-      </div>
-    </mat-sidenav-content>
   </mat-sidenav-container>
+   -->
+<!--  
+  </div> -->
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- <div class="row" style="margin-top: 40px;margin-left: 10px;">
+   
+  <div class="row" style="margin-top: 30px;margin-left: 10px;">
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <h4 style="margin-left: 16px;" id="AC_Page">Contact US</h4>
+        <div class="container" >
+        <form>
+           <div class="form-group">
+              <label for="name"> Your Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
 
-
+          <div class="form-group">
+            <label for="alterEgo">Email</label>
+            <input type="text" class="form-control" id="alterEgo">
+          </div>
+    
+          <div class="form-group">
+            <label for="alterEgo">Contact No</label>
+            <input type="text" class="form-control" id="alterEgo">
+          </div>
+  
+          <div class="form-group">
+            <label for="alterEgo">Message</label>
+            <input type="text" class="form-control" id="alterEgo">
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+  </div>
+  
+ 
+  <div class="col-sm-4 col-md-4 col-lg-4"  >
+    <br><br><br>
+    <mat-card id="AC_Page" style="background-color:  #fa163f" >
+          <mat-card-content>
+            <p class="mb-0 font-weight-bold" >Address</p>
+            <p class="mb-4" style="color: white;"> 1, Silver Moon, near supreme pallecia, Baner, Pune, Maharashtra 411045</p>
+  
+            <p class="mb-0 font-weight-bold" >Phone</p>
+            <p class="mb-4" style="color: white;">+91 9637763012</p>
+  
+            <p class="mb-0 font-weight-bold" >Email Address</p>
+            <p class="mb-0" style="color: white;">gympro@domain.com</p>
+          </mat-card-content><br>
+        </mat-card>
+  
+    </div> -->
+  
+      
+ 
+  
+  
   

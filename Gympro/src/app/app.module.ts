@@ -35,7 +35,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
-import {MatMenuModule} from '@angular/material/menu';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -59,6 +58,8 @@ import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.c
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -71,10 +72,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GymadminComponent,
 
     NavigationComponent,
-    Edit_profileComponent
+    Edit_profileComponent,
 
 
-    UserprofileComponent
+    UserprofileComponent,
 
 
     ProfileComponent,
@@ -93,9 +94,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
 
     MatCarouselModule,
-    MatMenuModule
-
-    MatCarouselModule,    BrowserModule,
+    MatMenuModule,
+HttpClientModule,
+    MatCarouselModule,   
+     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     A11yModule,
@@ -141,7 +143,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PortalModule,
     ScrollingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,10 +17,10 @@ export class Edit_profileComponent implements OnInit {
   profileForm = this.fb.group({
     username: ['', [Validators.required]],
     phoneNumber: ['', [Validators.required]],
-    passWord: [''],
-    address: [''],
-    logitude: [''],
-    latitude: [''],
+    passWord: ['',[Validators.required]],
+    address: ['',[Validators.required]],
+    logitude: ['',[Validators.required]],
+    latitude: ['',[Validators.required]],
   });
 
 

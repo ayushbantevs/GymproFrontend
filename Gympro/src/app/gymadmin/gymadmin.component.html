@@ -1,9 +1,10 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button (click)="sidenav.toggle()">
+    <span><button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button> 
-   GymPro 
-   <span><button class="abc"  mat-button [matMenuTriggerFor]="menu"> <mat-icon>account_circle</mat-icon>profile</button> 
+   GymPro </span>
+   <span class="example-fill-remaining-space"> </span>
+<span><button class="abc"  mat-button [matMenuTriggerFor]="menu"> <mat-icon>account_circle</mat-icon>profile</button> 
        <mat-menu #menu="matMenu"  [class]="myMenu">
       <button mat-menu-item class="myMenuItem" ><mat-icon>add_a_photo</mat-icon>Add photo</button>
      <button mat-menu-item class="myMenuItem"> <mat-icon>perm_identity</mat-icon>Name</button>
@@ -16,7 +17,7 @@
     <mat-sidenav-container class="example-container" >
         <mat-sidenav #Matsidenav mode="side" [(opened)]="opened"  >
             
-                     <div class="row" *ngFor="let navitem of navItems" style="background-color: #3f51b5; margin: 3px;" (click)="toggel()" >
+                     <div class="row" *ngFor="let navitem of navItems" style=" margin: 3px;" (click)="toggel()" >
                 <div class="col-sm-2" >
                             <mat-icon aria-hidden="false" aria-label="item.name"  >{{navitem.icon}}</mat-icon>
                           </div>

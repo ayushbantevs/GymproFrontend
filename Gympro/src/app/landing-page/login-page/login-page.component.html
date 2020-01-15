@@ -1,0 +1,46 @@
+<mat-card *ngIf="showLogin" mat-dialog-content>
+        <h2>Login</h2>
+    <div *ngIf="show">
+    <form  *ngIf="show" class="form" [formGroup]="LoginForm">
+            <mat-form-field  class="full-width">
+                    <input  *ngIf="show" matInput placeholder="Email" formControlName="email" required>
+                    <mat-error *ngIf="LoginForm.get('email').invalid">email is required</mat-error>
+                  </mat-form-field><br>
+                  <mat-form-field class="full-width">
+                    <input *ngIf="show" matInput placeholder="Password" type="password" formControlName="Password" required>
+                    <mat-error *ngIf="LoginForm.get('Password').invalid">Password is required</mat-error>
+                  </mat-form-field><br>
+                  <button *ngIf="show" (click)="loginClick()">Submit
+                </button>
+               
+                <button *ngIf="show" (click)="RegisterClick()">register
+              </button>
+              <!-- <div mat-dialog-actions> -->
+                <!-- <button mat-button (click)="onNoClick()">Mark Read</button> -->
+                <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
+                <!-- </div> -->
+    </form>
+    </div>
+     
+    <div *ngIf="show1">
+      <button class="regbtn hover1" *ngIf="show1"  (click)="funUserRegClick()">Register As User
+      </button>
+         
+      <button  class="regbtn hover1" *ngIf="show1" (click)="funGymUserRegClick()">Register As Gym Owner
+      </button> 
+          
+          <!-- <button class="regbtn hover1" *ngIf="show1"   (click)="showform()">Back To Login
+            </button> -->
+    
+         <!-- <button class="regbtn hover2" *ngIf="show1" (click)="onFormSubmit1()">Back To Login1
+        </button>  -->
+      
+    
+      </div>
+    </mat-card>
+     <app-gym-page *ngIf="showRegister" (otp)="GymLogin($event)"></app-gym-page> 
+     <app-user-page *ngIf="showuser" (otp)="UserLogin($event)"></app-user-page>
+     
+  
+
+    

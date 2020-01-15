@@ -1,13 +1,15 @@
+import { UserPageComponent } from './user-page/user-page.component';
+import { GymPageComponent } from './gym-page/gym-page.component';
+import { AppComponent } from './../app.component';
+import { AppModule } from './../app.module';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
-import { LandingPageComponent } from './landing-page/landing-page.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,21 +17,23 @@ import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule} from '@angular/material';
-import { LoginPageComponent } from './landing-page/login-page/login-page.component';
-import { UserPageComponent } from './landing-page/user-page/user-page.component';
-import { GymPageComponent } from './landing-page/gym-page/gym-page.component';
-import { LandingPageModule } from './landing-page/landing-page.module';
-import {MatDialogModule} from '@angular/material/dialog';
 
+import { MatDialogModule,  MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+
+
+import { LoginPageComponent } from './login-page/login-page.component';
 @NgModule({
   declarations: [
-    AppComponent,
-    LandingPageComponent,
-    
+
+      
+      LoginPageComponent,
+      GymPageComponent,
+      UserPageComponent
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+  
     MatCardModule,
     BrowserAnimationsModule,
     MatCarouselModule,
@@ -44,16 +48,16 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatNativeDateModule,
     HttpClientModule,
     MatDialogModule,
-    LandingPageModule
- 
+     
      
 
     
   ],
+  exports:[ ],
   entryComponents: [
     LoginPageComponent
   ],
-  providers: [ ],
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}} ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class LandingPageModule { }

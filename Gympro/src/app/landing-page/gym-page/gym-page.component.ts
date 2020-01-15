@@ -1,26 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, EventEmitter,Output} from '@angular/core';
+import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-gym-page',
+  templateUrl: './gym-page.component.html',
+  styleUrls: ['./gym-page.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class GymPageComponent implements OnInit {
 
-  constructor(
-    private fb: FormBuilder,
-      //private router: Router,
-     // private service: RegistrationService,
-      private http: HttpClient,
-      private route: Router
-  ) {
+ // control : FormControl=new FormControl("");
+  @Output() otp = new EventEmitter();
 
-   }
-   registrationForm = this.fb.group({
+  constructor(private fb: FormBuilder,
+    
+    private http: HttpClient,
+    private route: Router,public dialog: MatDialog) { }
+    
+  ngOnInit() {
+  }
+  registrationForm = this.fb.group({
     
     gym_Name: ['', [Validators.required]],
     gym_Owner_Name: ['', [Validators.required]],
@@ -40,15 +40,15 @@ export class RegisterComponent implements OnInit {
   },
   );
 
-
-  ngOnInit() {
-  }
-
-  // onFormSubmit1()
-  // {
-  //   this.route.navigate(['login']);
-
+  // funbacktologin()
+  //  {
+  //   this.route.navigateByUrl("home/login");
+  //   //this.route.navigate(['/login']);
   // }
-  
+
+  backtoLogin()
+  {
+     this.otp.emit();
+  }
 
 }

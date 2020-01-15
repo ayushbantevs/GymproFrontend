@@ -1,0 +1,71 @@
+
+.registrationForm{
+    width: auto;
+    padding: 9%;
+    height: auto;
+    margin-left: 5%;
+    //border: 2px solid black;
+   // padding-right: 0%;
+    //background-color: gainsboro;
+    font-size: 13px;
+    //padding-top: 0%;
+}
+
+.full-width {
+    margin-left: auto;
+    padding: 2%;
+   
+}
+
+.button {
+    margin: 5%;
+    background-color:goldenrod;
+    font-size: 15px;
+    margin-left: 80px;
+
+}
+
+
+.button1 {
+  
+    font-size: 15px;
+    background-color: rgb(0, 255, 64);
+    margin-left: 40px;
+  
+    font-style: unset;
+    
+}
+h2{
+   //@debug margin-top: 10%;
+    text-align: center;
+    color:green;
+
+}
+/* .registrationForm-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .registrationForm-container > * {
+    width: 100%;
+  } */
+
+
+//   @media screen and (max-width: 767px) {
+
+//     .registrationForm > *:not(.circle-link) ,
+//     .terminal {
+//     width: 100%;
+//     }
+    
+//     .card:not(.highlight-card) {
+//     height: 16px;
+//     margin: 50pxpx;
+//     }
+    
+//     .card.highlight-card span {
+//     margin-left: 0px;
+//     }
+    
+    
+//     }

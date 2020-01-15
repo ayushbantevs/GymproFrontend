@@ -5,19 +5,22 @@
           <button mat-button style="margin-left: 10px;" id="Home">Home</button>
             <a href="#AC_Page"><button mat-button style="margin-left: 20px;">About us</button></a>
             <a href="#AC_Page"><button mat-button style="margin-left: 20px;" >Contact us</button></a>
-            <a [routerLink]="['/login']"><button mat-button class="btn_Login" style="margin-left: 20px;">Login
+            <a><button mat-button class="btn_Login" style="margin-left: 20px;"  (click)="Login()">Login
           </button></a>
+          
         </mat-card>
       </div>
     </div>
   </div>
   <!---gh-->
   
+  <router-outlet></router-outlet>
   <div class="row" style="margin-left: 8px;margin-top: 20px;">
-    <div class="col-12">
-  <mat-carousel timings="250ms ease-in"
+     <div class="col-12">
+      
+  <mat-carousel 
              [autoplay]="true"
-             interval="1000"
+             interval ="1000"
              color="accent"
              maxWidth="auto"
              proportion="25"
@@ -35,7 +38,10 @@
              [image]="slide.url"
              overlayColor="#00000040"
              [hideOverlay]="false">
+            
              </mat-carousel-slide> 
+             
+ 
              </mat-carousel>
             </div>
   </div>

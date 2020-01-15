@@ -11,7 +11,7 @@
   color: red;
 }  */
 
- input[type=text], select {
+input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -26,12 +26,12 @@
   }
 
   .mat-card{
-    background-color:  gray;
-    margin: 0;
-    width: 28%;
-    height: 50%;
-    margin: 20px;
-    margin-left: 30%; 
+    //background-color:  gray;
+   // margin: 0;
+    width: auto;
+    height: auto;
+   // margin: 20px;
+    //margin-left: 30%; 
     text-align: center;
 
   }

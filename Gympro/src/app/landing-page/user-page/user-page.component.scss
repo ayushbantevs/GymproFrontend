@@ -1,0 +1,57 @@
+
+
+// .full-width {
+//     /* margin-left: auto; */
+//     padding: 5%;
+   
+// }
+
+.button{
+    margin-top: 10%;
+    margin-left: 20%;
+    background-color: orchid;
+}
+
+.full-width{
+    padding: 2%;
+}
+h2{
+    margin-top: 10%;
+    text-align: center;
+    color:yellowgreen;
+}
+
+
+//   @media (max-width: 400px){
+//       .form{
+//         width: auto;
+//         padding: 5%;
+//         height:auto;
+//         margin-right: 5%;
+//         border: 2px solid black;
+//         padding-right: 0%;
+//         //background-color: gainsboro;
+//         font-size: 13px;
+//          padding-top: 0%;
+//       }
+  
+  //}
+
+  .mat-card{
+      width: auto;
+
+    //   font-size:1px;
+    //   text-align: center;
+    //   padding: 2%;
+  }
+
+.form{
+    height:auto;
+    width:auto;
+}
+
+//   @media mat-card and (min-width: 480px) {
+//     body {
+//        background-color: lightgreen;
+//     }
+//    }

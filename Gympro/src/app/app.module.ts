@@ -60,6 +60,10 @@ import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_pr
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
+import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/sessionlist.component';
+
+
 
 
 
@@ -70,6 +74,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LandingPageComponent,
     GymadminComponent,
+    GymlistComponent,
 
     NavigationComponent,
     Edit_profileComponent,
@@ -84,7 +89,13 @@ import { HttpClientModule } from '@angular/common/http';
 
     GymoffersComponent,GymcoustomersComponent,
 
-    NavigationComponent
+    NavigationComponent,
+
+    GymlistComponent,
+
+    SessionlistComponent,
+
+
 
   ],
   imports: [
@@ -92,6 +103,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatCardModule,
     BrowserAnimationsModule,
+    
 
     MatCarouselModule,
     MatMenuModule,

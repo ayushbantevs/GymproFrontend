@@ -2,14 +2,14 @@
 
 <div class="row"> 
     <div class="col-lg-12 col-md-12 col-sm-4" >
-      <mat-card  style="background-color:#66656598">
+      <mat-card  style="background-color:#9dab86">
         <button mat-icon-button class="menu" style="margin-left: 15px;">
-          <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+          <mat-icon (click)="right.toggle()">menu</mat-icon>
         </button>
             <img mat-list-avatar src="../assets/Images/GYM_LOGO.PNG" alt="" class="image" style="margin-left: 30px;"> 
-              <button mat-button style="margin-left: 10px; color: red;" id="Home">Welcome User..</button>
-                    <a><button mat-button style="margin-left: 20px;color: red;">About us</button></a>
-               <button class="abc"  mat-button [matMenuTriggerFor]="menu" style="color: red;"> 
+              <button mat-button style="margin-left: 10px; color: rgb(0, 0, 0); font-size: 30px;" id="Home">Welcome User..</button>
+                    <a><button mat-button style="margin-left: 20px;color: rgb(0, 0, 0);">About us</button></a>
+               <button class="abc"  mat-button [matMenuTriggerFor]="menu" style="color: rgb(253, 0, 0);"> 
                     <mat-icon class="abcd" aria-placeholder="end">account_circle</mat-icon>
                 </button> 
               <mat-menu #menu="matMenu"  [class]="myMenu">
@@ -50,62 +50,84 @@
              </mat-carousel> -->
 
  
-  <div class="row" style="margin-top: 20px;">
-    <div class="col-lg-2 col-sm-12">
-    </div>
-    <div class="col-lg-4 col-sm-12" style="padding:50px;   background-color: #12cad6;" > 
-      <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px; background-color: pink;">
-        <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
-      <mat-card-content>
-        <p style="color: aliceblue;padding-left: 20px;">
-                       </p> 
-                      <button mat-button style="margin:20px; margin-left: 60px; background-color:  gray;border-radius:10px;width: 150px;height: 60px;">Register</button> <br><br>
-         </mat-card-content>
-    </mat-card>
-        </div>
-        <div class="col-lg-1 col-sm-12">
-        </div>
-         <div class="col-lg-4 col-sm-12" style="padding:50px; background-color: #12cad6;" >
-          <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px; background-color: pink;">
-            <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
-          <mat-card-content>
-            <p style="color: aliceblue;padding-left: 20px;">
-            </p> 
-           <button mat-button style="margin:20px; margin-left: 60px; background-color: gray;border-radius:10px;width: 150px;height: 60px;">Register</button> <br><br>
-             </mat-card-content>
-        </mat-card>
-          </div>
-   </div>
+  <div>
+      <mat-sidenav-container class="main" >
   
+          <mat-sidenav #right mode="side" [opened]="trues"  style="width: 200px;background-color: #000000; ">
+            <mat-nav-list>
+    
+              <a class=" side heading"  mat-list-item [routerLink]="'/create-account'"> Gyms_Pro </a>
+              <a class="side"  mat-list-item  (click)=" gymlist()"> Gyms </a>
+              <a class="side"  mat-list-item [routerLink]="'/create-contact'"> Sessions </a>
+              <a class="side"  mat-list-item [routerLink]="'/create-contact'"> Classes </a>
+              <a class="side"  mat-list-item [routerLink]="'/activities'"> Offers</a>
+              <p *ngIf="showFiller"  class="side" style="margin-left: 20px;">Lorem</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button style="color:rgb(96, 133, 243); background-color: black;">
+      More..
+    </button>
+            </mat-nav-list>
+        </mat-sidenav>
 
-   <div class="row" style="margin-top: 20px;">
-    <div class="col-lg-2 col-sm-12">
-    </div>
-    <div class="col-lg-4 col-sm-12" style="padding:50px;   background-color: gray" > 
-      <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px; background-color: pink;">
-        <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
-      <mat-card-content>
-        <p style="color: aliceblue;padding-left: 20px;">
-        </p> 
-       <button mat-button style="margin:20px; margin-left: 60px; background-color: rgb(16, 195, 207);border-radius:10px;width: 150px;height: 60px;">Register</button> <br><br>
-         </mat-card-content>
-    </mat-card>
-        </div>
-        <div class="col-lg-1 col-sm-12">
-        </div>
-         <div class="col-lg-4 col-sm-12" style="padding:50px; background-color: gray" >
-          <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px; background-color: pink;">
-            <mat-card-title style="color: aliceblue;padding-left: 20px;">Welcome To GymPro</mat-card-title>
-          <mat-card-content>
-            <p style="color: aliceblue;padding-left: 20px;">
-                       </p> 
-                      <button mat-button style="margin:20px; margin-left: 60px; background-color: rgb(16, 195, 207);border-radius:10px;width: 150px;height: 60px;">Register</button> <br><br></mat-card-content>
-        </mat-card>
+            
+         <mat-sidenav-content class="content">
+     
+          <div style="height: 88vh;">
+              <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-1 col-sm-12">
+                </div>
+                <div class="col-lg-3 col-sm-12" style="padding:50px;" > 
+                        <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px;">
+                          <mat-card-title style="color: aliceblue;padding: 20px;"><mat-icon class="icon">room</mat-icon></mat-card-title>
+                        <mat-card-content>
+                          <p style="color: aliceblue;padding-left: 20px;">
+                                        </p> 
+                                       <button mat-button style="margin-left: 30px; color: white; background-color:  #000000;border-radius:10px;width: 100px;height: 40px; font-weight: bold; font-size: 20px;">GYMS</button> <br><br>
+                          </mat-card-content>
+                          </mat-card>
+                </div>
+               
+             
+                <div class="col-lg-3 col-sm-12" style="padding:50px;" >
+                          <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px; ">
+                            <mat-card-title style="color: aliceblue;padding: 20px;"><mat-icon class="icon">room</mat-icon></mat-card-title>
+                          <mat-card-content>
+                            <p style="color: aliceblue;padding-left: 20px;">
+                            </p> 
+                            <button mat-button style="margin-left: 30px; color: white; background-color:  #000000;border-radius:10px;width: 110px;height: 40px; font-weight: bold; font-size: 20px;">Sessions</button> <br><br>
+                            </mat-card-content>
+                        </mat-card>
+                </div>0
+               
+                <div class="col-lg-3 col-sm-12" style="padding:50px;" > 
+                  <mat-card class="example-card"  style="width: 80%; padding-top:30px; margin-left:30px; ">
+                    <mat-card-title style="color: aliceblue;padding: 20px;"><mat-icon class="icon">room</mat-icon></mat-card-title>
+                  <mat-card-content>
+                    <p style="color: aliceblue;padding-left: 20px;">
+                    </p> 
+                    <button mat-button style="margin-left: 30px; color: white; background-color:  #000000;border-radius:10px;width: 100px;height: 40px; font-weight: bold; font-size: 20px;">Classes</button> <br><br>
+                    </mat-card-content>
+                </mat-card>
+                    </div>
+                    <!-- <div class="col-lg-3 col-sm-12" style="padding:50px;" >
+                      <mat-card   style="width: 80%; padding-top:30px; margin-left:30px; background-color: gray; ">
+                        <mat-card-title style="color: aliceblue;padding: 20px;"></mat-card-title>
+                      <mat-card-content>
+                        <p style="color: aliceblue;padding-left: 20px;">
+                                  </p> 
+                                  <button mat-button style="margin-left: 30px; color: white; background-color:  #000000;;border-radius:10px;width: 100px;height: 40px; font-weight: bold; font-size: 20px;">More..</button> <br><br>
+                                </mat-card-content>
+                      </mat-card>
+                   </div> -->
+             </div>
+             <div class="row" style="margin-top: 40px;">
+                     
+                </div>
           </div>
-   </div>
-  
-   <router-outlet></router-outlet>
-
+          </mat-sidenav-content> 
+      </mat-sidenav-container>
+  </div>
+    
+ 
   
   
   

@@ -57,9 +57,36 @@
     width:60px;
     height:60px;
 }
-// .side{
-//     color: white;
-// } 
+.main{
+   background-color: #ffffff;
+}
+
+.icon{
+    color: rgb(3, 3, 3);
+    justify-content: center;
+    margin-left: 40%;
+    transition: 1s;
+    transform: rotate(0deg);
+}
+
+
+.side{
+    color: #ffffff;
+    font-weight: bold;
+} 
+.heading{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: 30px;;
+  
+}
+.example-card{
+    background-color: gray;
+    background-image: url("E:/GymproFrontend/Gympro/src/assets/img/map.webp");
+    background-repeat: no-repeat;
+    background-size:200px 150px;
+}
+
 // .content{
 //     margin: 5%;
 //     margin-left: 20%;

@@ -7,11 +7,10 @@ import { Routes, RouterModule, ChildrenOutletContexts } from '@angular/router';
 import { GymadminComponent } from './gymadmin/gymadmin.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
-
 import { UserprofileComponent } from './userprofile/userprofile.component';
-
 import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
+import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
 
 
 // const routes: Routes = [
@@ -56,6 +55,7 @@ const routes: Routes = [
         component: NavigationComponent,
         children: [
           { path: 'edituserprofile', component: Edit_profileComponent},
+          { path: 'gymlist', component: GymlistComponent},
 
         ]
       }

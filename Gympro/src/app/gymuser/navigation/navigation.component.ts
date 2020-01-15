@@ -1,3 +1,4 @@
+import { GymlistComponent } from './gymlist/gymlist/gymlist.component';
 import { Edit_profileComponent } from './edit_profile/edit_profile.component';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -24,4 +25,13 @@ export class NavigationComponent implements OnInit {
     });
     }
 
-}
+    gymlist():void{
+      const dialogRef=this.dialog.open(GymlistComponent,{
+        height:'700px',
+        width:'900px',
+        data: {name: '', animal: ''}
+      });
+      }
+    }
+
+

@@ -10,7 +10,7 @@ import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import {MatMenuModule} from '@angular/material/menu';
+
 import { GymadminComponent } from './gymadmin/gymadmin.component';
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -35,6 +35,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
+
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -58,12 +59,16 @@ import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.c
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
 import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/sessionlist.component';
 
 
+
+
+import { MatMenuModule } from '@angular/material';
 
 
 
@@ -80,14 +85,25 @@ import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/ses
     Edit_profileComponent,
 
 
+
+    UserprofileComponent,
+
+    UserprofileComponent,
+
+    GymoffersComponent,
+    GymcoustomersComponent,
+    NavigationComponent,
+
+    UserprofileComponent,
+
+    NavigationComponent,
+    Edit_profileComponent,
+
+
     UserprofileComponent,
 
 
-    ProfileComponent,
 
-    GymoffersComponent,GymcoustomersComponent,
-
-    GymoffersComponent,GymcoustomersComponent,
 
     NavigationComponent,
 
@@ -97,12 +113,17 @@ import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/ses
 
 
 
+
+    ProfileComponent,
+    UserprofileComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
     BrowserAnimationsModule,
+
     
 
     MatCarouselModule,
@@ -110,6 +131,14 @@ import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/ses
 HttpClientModule,
     MatCarouselModule,   
      BrowserModule,
+
+    MatCarouselModule,
+    MatMenuModule,
+    MatCarouselModule,
+    BrowserModule,
+    MatCarouselModule,    BrowserModule,
+
+
     AppRoutingModule,
     BrowserAnimationsModule,
     A11yModule,

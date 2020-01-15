@@ -1,6 +1,4 @@
 <div class="backgroundImage">
-    
-</div>
     <form class="form-container" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       
         <h1>Edit Profile</h1>
@@ -62,7 +60,7 @@
           
           </div> -->
     </form>
-    
+
     <table *ngFor='let item of Data'>
       <td>{{item.UserName}}</td>
       <td>{{item.UserEmail}}</td>
@@ -71,3 +69,7 @@
       <td>{{item.UserAge}}</td>
       <td>{{item.UserAddress}}</td>
     </table>
+
+  </div>
+    
+

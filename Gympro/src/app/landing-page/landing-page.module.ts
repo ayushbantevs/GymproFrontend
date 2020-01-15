@@ -1,7 +1,6 @@
 import { UserPageComponent } from './user-page/user-page.component';
 import { GymPageComponent } from './gym-page/gym-page.component';
 import { AppComponent } from './../app.component';
-import { AppModule } from './../app.module';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

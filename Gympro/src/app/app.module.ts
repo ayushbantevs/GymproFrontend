@@ -38,6 +38,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
+import {LandingPageModule} from  './landing-page/landing-page.module';
 
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -170,7 +171,8 @@ import { MatMenuModule } from '@angular/material';
     PortalModule,
     ScrollingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LandingPageModule
 
   ],
   entryComponents: [

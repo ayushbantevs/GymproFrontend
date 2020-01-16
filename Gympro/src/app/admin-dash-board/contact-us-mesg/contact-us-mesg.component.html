@@ -1,0 +1,25 @@
+
+
+
+
+
+
+<div fxLayout="row">
+  <div   class="listdiv" fxFlex.gt-sm="100%" >
+          <mat-card>
+                  <mat-card-content>
+                      <mat-card-title>Contact Messages</mat-card-title>
+                        <mat-divider></mat-divider>
+                          <div mat-dialog-content>
+                            <h5 >{{data.message}}</h5>
+                          </div>
+                          <p >From: {{data.name}}</p>
+                          <h6>{{data.email}}</h6>
+                          <div mat-dialog-actions>
+                            <button mat-button (click)="onNoClick()">Mark Read</button>
+                            <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
+                          </div>
+                  </mat-card-content>        
+          </mat-card>
+  </div>
+</div> 

@@ -11,6 +11,36 @@ import { HttpClient,HttpEventType } from '@angular/common/http';
 })
 export class UserPageComponent implements OnInit {
 
+  //myimg:string;
+  file:boolean=true;
+  public imagePath;
+  imgURL: any;
+  public message: string;
+ 
+  preview(files) {
+    if (files.length === 0)
+      return;
+ 
+    var mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message = "Only images are supported.";
+      return;
+    }
+ 
+    var reader = new FileReader();
+    this.imagePath = files;
+    reader.readAsDataURL(files[0]); 
+    reader.onload = (_event) => { 
+      this.imgURL = reader.result; 
+    
+      
+    }
+    reader.onloadend=(_event)=>
+    {
+       this.file=false;
+    }
+  
+  }
   
 
   @Output() otp = new EventEmitter();
@@ -41,6 +71,9 @@ export class UserPageComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  
+
 //   onFormSubmit1()
 //   {
 //       // alert("hii");
@@ -48,10 +81,22 @@ export class UserPageComponent implements OnInit {
 //       this.router.navigateByUrl("home/login");
 //  }
 
+
 backtoLogin()
  {
    this.otp.emit();
  }
 
+ myfun()
+  {
+    console.log("image added");
+    //var imgg =document.getElementsByName("myimg1") ;
+  }
+  click()
+  {
+     this.file=true;
+  }
+
+  
 }
 

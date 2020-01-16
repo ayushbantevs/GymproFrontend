@@ -25,7 +25,7 @@ export class LandingPageComponent implements OnInit {
 
        const dialogRef = this.dialog.open(LoginPageComponent, {
          height:'auto',
-      width: '40%',
+        width: 'auto',
       data: {name: '', animal: ''}
 
     

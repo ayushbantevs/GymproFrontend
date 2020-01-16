@@ -21,6 +21,8 @@ import { MatDialogModule,  MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/d
 
 
 import { LoginPageComponent } from './login-page/login-page.component';
+import { MaterialFileInputModule  } from 'ngx-material-file-input';
+
 @NgModule({
   declarations: [
 
@@ -47,6 +49,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
     MatNativeDateModule,
     HttpClientModule,
     MatDialogModule,
+    MaterialFileInputModule
      
      
 

@@ -1,57 +1,79 @@
 
 
-// .full-width {
-//     /* margin-left: auto; */
-//     padding: 5%;
-   
-// }
 
-.button{
-    margin-top: 10%;
-    margin-left: 20%;
-    background-color: orchid;
-}
-
-.full-width{
-    padding: 2%;
-}
-h2{
-    margin-top: 10%;
+.example-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 5px;
+    
+    }
+    
+    .example-container > * {
+    width: 100%;
+    }
+    
+    
+    .user_register {
+    width: 500px;
+    height: 800px;
+    //color:yellowgreen;
+   // margin-left: 50px;
+  //  margin-top: 50px;
+    }
+    
+    .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+    }
+    
+    
+    .example-container {
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .example-container > * {
+    width: 100%;
+    }
+    
+    button{
+    margin: 10px;
+    align-items: center;
+    // color: rgb(78, 76, 76);
     text-align: center;
-    color:yellowgreen;
-}
-
-
-//   @media (max-width: 400px){
-//       .form{
-//         width: auto;
-//         padding: 5%;
-//         height:auto;
-//         margin-right: 5%;
-//         border: 2px solid black;
-//         padding-right: 0%;
-//         //background-color: gainsboro;
-//         font-size: 13px;
-//          padding-top: 0%;
-//       }
-  
-  //}
-
-  .mat-card{
-      width: auto;
-
-    //   font-size:1px;
-    //   text-align: center;
-    //   padding: 2%;
-  }
-
-.form{
-    height:auto;
-    width:auto;
-}
-
-//   @media mat-card and (min-width: 480px) {
-//     body {
-//        background-color: lightgreen;
-//     }
-//    }
+    background-color: rgb(82, 80, 80);
+    color: white;
+    }
+    button:hover{
+    
+    background-color: rgb(24, 22, 22);
+    cursor: pointer;
+    
+    
+    }
+    @media only screen and (max-width: 600px) {
+        mat-card {
+       // margin: 10px;
+      // width: 
+        // max-width: 100%;
+        width:500px;
+        display: inline-flex;
+        flex-flow: row wrap;
+        }
+        }
+        
+        @media only screen and (min-width: 600px) {
+        mat-card {
+            width:500px;
+       // margin: 10px;
+        
+        // max-width: 100%;
+        }
+        }
+        img{
+            border-radius: 50px;
+            height: 50px;
+            width:50px;
+        }
+    

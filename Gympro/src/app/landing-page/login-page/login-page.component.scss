@@ -1,59 +1,112 @@
-/* 
- ::-webkit-input-placeholder { 
-  color: r;
-}
+// /* 
+//  ::-webkit-input-placeholder { 
+//   color: r;
+// }
 
-:-ms-input-placeholder {
-  color: red;
-}
+// :-ms-input-placeholder {
+//   color: red;
+// }
 
-::placeholder {
-  color: red;
-}  */
+// ::placeholder {
+//   color: red;
+// }  */
 
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+// input[type=text], select {
+//     width: 100%;
+//     padding: 12px 20px;
+//     margin: 8px 0;
+//     display: inline-block;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     box-sizing: border-box;
+//   }
+  
+//   input[type=submit]:hover {
+//     background-color: #45a049;
+//   }
+
+//   .mat-card{
+//     //background-color:  gray;
+//    // margin: 0;
+//     width: auto;
+//     height: auto;
+//    // margin: 20px;
+//     //margin-left: 30%; 
+//     text-align: center;
+
+//   }
+//   .form{
+//     padding-left:30px;
+//     margin: 5px;
+//   }
+//   button{
+//     padding: 5px;
+//     margin: 5px;
+//     color: #45a049;
+//   }
+//   .regbtn{
+//     padding: 5px;
+//     margin-top: 20px;
+//     background-color:navajowhite;
+    
+//   }
+
+//   .hover1:hover{
+//     background-color: #45a049;
+//     cursor: pointer;
+//     color: white;
+//   }
+
+.show {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 5px;
+  
   }
   
-  input[type=submit]:hover {
-    background-color: #45a049;
+  .show > * {
+  width: 100%;
   }
-
-  .mat-card{
-    //background-color:  gray;
-   // margin: 0;
-    width: auto;
-    height: auto;
-   // margin: 20px;
-    //margin-left: 30%; 
-    text-align: center;
-
+  
+  
+  .user_register {
+  width: 500px;
+  height: 800px;
+  //color:yellowgreen;
+ // margin-left: 50px;
+//  margin-top: 50px;
   }
-  .form{
-    padding-left:30px;
-    margin: 5px;
+  
+  .example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
   }
+  
+  
+  .show {
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .show > * {
+  width: 100%;
+  }
+  
   button{
-    padding: 5px;
-    margin: 5px;
-    color: #45a049;
+  margin: 10px;
+  align-items: center;
+  // color: rgb(78, 76, 76);
+  text-align: center;
+  background-color:orchid;
+  color:white;
+  color: bold;
   }
-  .regbtn{
-    padding: 5px;
-    margin-top: 20px;
-    background-color:navajowhite;
-    
-  }
-
-  .hover1:hover{
-    background-color: #45a049;
-    cursor: pointer;
-    color: white;
+  button:hover{
+  
+  background-color: yellowgreen;
+  cursor: pointer;
+  
+  
   }
    

@@ -1,70 +1,108 @@
-<form class="registrationForm"[formGroup]="registrationForm" mat-dialog-content>
-        <h2>Register Gym Owner</h2>
-            
-          <mat-form-field class="full-width">
-          <input matInput placeholder="Gym Name" formControlName="gym_Name" required>
-          <mat-error *ngIf="registrationForm.get('gym_Name').invalid">Gym Name is required</mat-error>
-          </mat-form-field>
-                
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Gym Owner Name" formControlName="gym_Owner_Name" required>
-            <mat-error *ngIf="registrationForm.get('gym_Owner_Name').invalid">Owner_Name is required</mat-error>
-          </mat-form-field>
-        
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Gym MailId" formControlName="gym_MailId" required>
-            <mat-error *ngIf="registrationForm.get('gym_MailId').invalid">Email is required</mat-error>
-          </mat-form-field>
-        
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Phone Number" formControlName="phoneNumber" required>
-            <mat-error *ngIf="registrationForm.get('phoneNumber').invalid">Phone Number is required</mat-error>
-          </mat-form-field>
-        
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Enter password" type="password" formControlName="password" required>
-            <mat-error *ngIf="registrationForm.get('password').invalid">password is required</mat-error>
-          </mat-form-field>
-        
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Gym Address"  formControlName="gym_Address" required>
-            <mat-error *ngIf="registrationForm.get('gym_Address').invalid"> Gym Address required </mat-error>
-          </mat-form-field>
-        
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Gym Pincode"  formControlName="gym_Pincode" required>
-            <mat-error *ngIf="registrationForm.get('gym_Pincode').invalid">Gym pincode required</mat-error>
-          </mat-form-field>
-        
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Gym Website"  formControlName="gym_Website" required>
-            <mat-error *ngIf="registrationForm.get('gym_Website').invalid"> Gym website required</mat-error>
-          </mat-form-field>
-        
-          <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Choose Date Of Birth">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field> 
-        
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Gym Certification Number" type="password" formControlName="gym_Certification_Number" required>
-            <mat-error *ngIf="registrationForm.get('gym_Certification_Number').invalid"> Certificate number required</mat-error>
-          </mat-form-field>
-        
-         
-           <mat-form-field class="full-width">
-            <input matInput placeholder="Enter Service Tax Number" type="password" formControlName="service_Tax_Number" required>
-            <mat-error *ngIf="registrationForm.get('service_Tax_Number').invalid">servuice tax required</mat-error>
-          </mat-form-field>
-        
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Enter GST Number" type="password" formControlName="gst_Number" required>
-            <mat-error *ngIf="registrationForm.get('gst_Number').invalid"> Gst id required</mat-error>
-          </mat-form-field>  
-        
-           <button class="button"(click)="onFormSubmit()">Submit</button> 
-          <button class="button" (click)="backtoLogin()">Back To Login </button>  
 
-          
-        </form> 
+<mat-card class="example-card">
+    <mat-card-header>
+      
+      <mat-card-title style="color:yellowgreen">Registration As a gym Owner</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    
+       <mat-card-content> 
+          <form [formGroup]="Gym_register" mat-dialog-content>
+          <div class="example-container">  
+
+              <mat-form-field class="full-width">
+                 <input matInput placeholder="Gym Name" formControlName="gym_Name">
+                 <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+                  <mat-error *ngIf="hasError('gym_Name','required')">Gym Name is required<strong>required</strong></mat-error>
+                  <mat-error *ngIf="hasError('gym_Name', 'maxlength')">You have more than 60 characters</mat-error>
+              </mat-form-field>
+                        
+               <mat-form-field class="full-width">
+                  <input matInput placeholder="Gym Owner Name" [formControl]="gym_owner_Name"  [errorStateMatcher]="matcher">
+                  <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+                  <mat-error *ngIf="hasError('gym_owner_Name','required')">Gym Owner Name is required<strong>required</strong></mat-error>
+                  <mat-error *ngIf="hasError('gym_owner_Name', 'maxlength')">You have more than 100 characters</mat-error>
+               </mat-form-field>
+                
+               <mat-form-field class="full-width">
+                  <input matInput placeholder="Enter Email" [formControl]="email_id"  [errorStateMatcher]="matcher">
+                  <mat-hint align="end">Not more then 100 characters long.</mat-hint>
+                   <mat-error *ngIf="hasError('email_id','required')">Email is required<strong>required</strong></mat-error>
+                   <mat-error *ngIf="hasError('email_id', 'maxlength')">You have more than 60 characters</mat-error>
+               </mat-form-field>
+                
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Enter Phone Number" [formControl]="phone_number"  [errorStateMatcher]="matcher">
+                  <mat-hint align="end">Not more then 10 characters long.</mat-hint>
+                   <mat-error *ngIf="hasError('phone_number','required')">Phone number is required<strong>required</strong></mat-error>
+                   <mat-error *ngIf="hasError('phone_number', 'maxlength')">You have more than 10 characters</mat-error>
+               </mat-form-field>
+                
+                
+               <mat-form-field class="full-width">
+                  <input matInput placeholder="Enter Password" type="password" [formControl]="password"  [errorStateMatcher]="matcher">
+                  <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+                   <mat-error *ngIf="hasError('password','required')">password is required<strong>required</strong></mat-error>
+                   <mat-error *ngIf="hasError('password', 'maxlength')">You have more than 60 characters</mat-error>
+               </mat-form-field>
+                
+               <mat-form-field class="full-width">
+                  <input matInput placeholder="Enter gym Address" [formControl]="gym_address"  [errorStateMatcher]="matcher">
+                  <mat-hint align="end">Not more then 100 characters long.</mat-hint>
+                   <mat-error *ngIf="hasError('gym_address','required')">Gym Address is required<strong>required</strong></mat-error>
+                   <mat-error *ngIf="hasError('gym_address', 'maxlength')">You have more than 100characters</mat-error>
+               </mat-form-field>
+                
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Enter gym pincode" [formControl]="pincode"  [errorStateMatcher]="matcher">
+                  <mat-hint align="end">Not more then 6 characters long.</mat-hint>
+                   <mat-error *ngIf="hasError('pincode','required')">Pincode is required<strong>required</strong></mat-error>
+                   <mat-error *ngIf="hasError('pincode', 'maxlength')">You have more than 6 characters</mat-error>
+               </mat-form-field>
+                
+               <mat-form-field class="full-width">
+                  <input matInput placeholder="Enter gym Website" [formControl]="website"  [errorStateMatcher]="matcher">
+                  <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+                   <mat-error *ngIf="hasError('website','required')">Gym Website is required<strong>required</strong></mat-error>
+                   <mat-error *ngIf="hasError('website', 'maxlength')">You have more than 100 characters</mat-error>
+               </mat-form-field>
+                
+               <mat-form-field>
+                  <input matInput [matDatepicker]="picker" placeholder="Choose a date of birth" formControlName="dateOfBirth" id="dateOfBirth" 
+                      readonly (click)="picker.open()">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                
+                     <mat-form-field class="full-width">
+                        <input matInput placeholder="Enter gym certificate Number" [formControl]="certificate_no"  [errorStateMatcher]="matcher">
+                        <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+                         <mat-error *ngIf="hasError('certificate_no','required')">Gym Certificate is required<strong>required</strong></mat-error>
+                         <mat-error *ngIf="hasError('certificate_no', 'maxlength')">You have more than 60 characters</mat-error>
+                     </mat-form-field>
+                
+                 
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="Enter gym Service Tax Number" [formControl]="service_tax"  [errorStateMatcher]="matcher">
+                        <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+                         <mat-error *ngIf="hasError('service_tax','required')">Gym service tax is required<strong>required</strong></mat-error>
+                         <mat-error *ngIf="hasError('service_tax', 'maxlength')">You have more than 60 characters</mat-error>
+                     </mat-form-field>
+                
+                     <mat-form-field class="full-width">
+                        <input matInput placeholder="Enter GST Number" [formControl]="Gst_no"  [errorStateMatcher]="matcher">
+                        <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+                         <mat-error *ngIf="hasError('Gst_no','required')">GST number is required<strong>required</strong></mat-error>
+                         <mat-error *ngIf="hasError('Gst_no', 'maxlength')">You have more than 60 characters</mat-error>
+                     </mat-form-field> 
+
+            </div> 
+          </form>
+          </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="onFormSubmit()">Submit </button>
+        <button mat-button (click)="backtoLogin()">Back to Login</button>
+      </mat-card-actions>
+    </mat-card>
+
+

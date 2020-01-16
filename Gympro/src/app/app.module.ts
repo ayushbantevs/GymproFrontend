@@ -18,7 +18,7 @@ import { GymadminComponent } from './gymadmin/gymadmin.component';
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {PortalModule} from '@angular/cdk/portal';
-import {ScrollingModule} from '@angular/cdk/scrolling';
+//import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkStepperModule} from '@angular/cdk/stepper';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
@@ -64,6 +64,7 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material';
+import { MaterialFileInputModule,  } from 'ngx-material-file-input';
 
 
 
@@ -111,6 +112,7 @@ import { MatMenuModule } from '@angular/material';
     MatCarouselModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialFileInputModule,
     //MatButtonModule,
 
     MatInputModule,
@@ -169,7 +171,7 @@ import { MatMenuModule } from '@angular/material';
     MatTooltipModule,
     MatTreeModule,
     PortalModule,
-    ScrollingModule,
+   // ScrollingModule,
     FormsModule,
     ReactiveFormsModule,
     LandingPageModule

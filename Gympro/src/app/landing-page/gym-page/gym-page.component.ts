@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter,Output} from '@angular/core';
-import { FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -10,42 +10,40 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class GymPageComponent implements OnInit {
 
+  
  // control : FormControl=new FormControl("");
   @Output() otp = new EventEmitter();
+
+  public  Gym_register:FormGroup;
 
   constructor(private fb: FormBuilder,
     
     private http: HttpClient,
     private route: Router,public dialog: MatDialog) { }
     
-  ngOnInit() {
-  }
-  registrationForm = this.fb.group({
-    
-    gym_Name: ['', [Validators.required]],
-    gym_Owner_Name: ['', [Validators.required]],
-    gym_Address: ['', [Validators.required]],
-    gym_Pincode:['', [Validators.required]],
-    phoneNumber: ['', [Validators.required]],
-    gym_Website:['', [Validators.required]],
-    gym_MailId: ['', [Validators.required]],
-    registration_Date: ['', [Validators.required]],
-    password: ['', [Validators.required]],
-    gym_Certification_Number: ['', [Validators.required]],
-    gym_Location_logitude: ['', [Validators.required]],
-    gym_Location_latitude: ['', [Validators.required]],
-    company_Registration_Date: ['', [Validators.required]],
-    service_Tax_Number: ['', [Validators.required]],
-    gst_Number: ['', [Validators.required]],
-  },
-  );
+  public ngOnInit(): void{
+  
 
-  // funbacktologin()
-  //  {
-  //   this.route.navigateByUrl("home/login");
-  //   //this.route.navigate(['/login']);
-  // }
+    this.Gym_register = new FormGroup({
+      gym_Name: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      gym_owner_Name: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      email_id: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      phone_number: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      password: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      gym_address: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      pincode: new FormControl('', [Validators.required, Validators.maxLength(6)]),
+      website: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      certificate_no: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      service_tax: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      dateOfBirth: new FormControl(new Date()),
+      Gst_no: new FormControl('', [Validators.required, Validators.maxLength(100)])
+    });
 
+}
+public hasError = (controlName: string, errorName: string) =>{
+  return this.Gym_register.controls[controlName].hasError(errorName);
+}
+  
   backtoLogin()
   {
      this.otp.emit();

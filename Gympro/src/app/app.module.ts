@@ -60,6 +60,7 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -106,6 +107,7 @@ import { MatMenuModule } from '@angular/material';
     MatCarouselModule,
     BrowserModule,
     MatCarouselModule,    BrowserModule,
+    HttpClientModule,
 
     AppRoutingModule,
     BrowserAnimationsModule,

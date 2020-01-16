@@ -1,3 +1,4 @@
+import { GymcustomerserviceService } from './../../Services/gymcustomerservice.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GymcoustomersComponent implements OnInit {
 
-  data:any=[{name:'Ayush',joindate:new Date('1/14/2020'),substype:'Monthly',Paidfees:'500',Pending:'0'},{name:'Ayush',joindate:new Date('1/14/2020'),substype:'Monthly',Paidfees:'500',Pending:'0'},{name:'Ayush',joindate:new Date('1/14/2020'),substype:'Monthly',Paidfees:'500',Pending:'0'}];
-  constructor() { }
+  data:any;
+  constructor(private gymcCoustomerService:GymcustomerserviceService) { }
 
   ngOnInit() {
+    this.gymcCoustomerService.getAllCustomers("G101").subscribe((data=>{
+      console.log(data);
+      this.data=JSON.parse (JSON.stringify(data));
+    }));
+
+  }
+
+
+   dateReturn(dateObj:string)
+  {
+   // console.log(dateObj.substring(1,10));
+       var convertedDate=new Date(dateObj.substring(1,10));
+      // console.log(convertedDate);
+      return convertedDate.toDateString();
+    
+  }
+
+  changeStatus(Gymid:string,UserId:string)
+  {
+    console.log(Gymid+"---"+UserId);
   }
 
 }

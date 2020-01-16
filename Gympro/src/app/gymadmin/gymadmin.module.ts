@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './profile/profile.component';
 import { GymoffersComponent } from './gymoffers/gymoffers.component';
 import { GymcoustomersComponent } from './gymcoustomers/gymcoustomers.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -17,7 +18,7 @@ import { GymcoustomersComponent } from './gymcoustomers/gymcoustomers.component'
   imports: [
     CommonModule,
     MatIconModule,MatSidenavModule,
-    ,MatToolbarModule,GymadminRoutingModule
+    ,MatToolbarModule,GymadminRoutingModule,HttpClientModule
   ]
 })
 export class GymadminModule { }

@@ -1,3 +1,4 @@
+import { GymcustomerserviceService } from './../Services/gymcustomerservice.service';
 import { Component, OnInit, ChangeDetectorRef, OnDestroy ,ViewChild} from '@angular/core';
 
 import {MatSidenav} from '@angular/material';
@@ -24,17 +25,11 @@ export class GymadminComponent implements OnDestroy {
     ngOnDestroy(): void {
      
     }
+    ngOnInit() {
 
-    toggel()
-    {
-      if(this.shouldShow==false)
-      {
-        this.shouldShow=true;
-      }else{
-        this.shouldShow=false;
-      }
-      console.log(this.shouldShow);
-
+      
     }
+
+   
 
 }

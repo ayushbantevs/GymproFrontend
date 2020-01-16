@@ -11,6 +11,12 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
 
 const routes: Routes = [
+  //landingpage route
+  {
+    path:'',
+   component:LandingPageComponent
+  },
+  //gymadmin page
   {
     path:'gymadmin', 
     component:GymadminComponent,
@@ -30,10 +36,11 @@ const routes: Routes = [
       },
     ]
   },
-{
-  path:'',
- component:LandingPageComponent
-}
+  //UserModule
+
+  //AppAdmin
+  
+
 ];
 
 

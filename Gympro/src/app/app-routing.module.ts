@@ -14,12 +14,14 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
 
 
-// const routes: Routes = [
-//   
-
-
 
 const routes: Routes = [
+  //landingpage route
+  {
+    path:'',
+   component:LandingPageComponent
+  },
+  //gymadmin page
   {
     path:'gymadmin', 
     component:GymadminComponent,
@@ -39,6 +41,7 @@ const routes: Routes = [
       },
     ]
   },
+
 {
   path:'',
 
@@ -46,10 +49,7 @@ const routes: Routes = [
   pathMatch:'full'
 },
   
-  {path:'gymadmin', component:GymadminComponent},
-  {path:'userprofile',component:UserprofileComponent},
-  {path:'', component:LandingPageComponent},
-  
+ 
   {
   path: 'userhome',
         component: NavigationComponent,
@@ -62,6 +62,7 @@ const routes: Routes = [
 
  component:LandingPageComponent
 }
+
 
 ];
 

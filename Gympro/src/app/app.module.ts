@@ -69,6 +69,7 @@ import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/ses
 
 
 import { MatMenuModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -137,6 +138,7 @@ HttpClientModule,
     MatCarouselModule,
     BrowserModule,
     MatCarouselModule,    BrowserModule,
+    HttpClientModule,
 
 
     AppRoutingModule,

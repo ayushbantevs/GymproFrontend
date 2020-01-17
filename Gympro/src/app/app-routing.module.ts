@@ -19,8 +19,8 @@ import { GymoffersComponent } from './gymadmin/gymoffers/gymoffers.component';
 import { ProfileModule } from './gymadmin/profile/profile.module';
 import { ProfileComponent } from './gymadmin/profile/profile.component';
 import { AppComponent } from './app.component';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule, ChildrenOutletContexts } from '@angular/router';
+
+import { ChildrenOutletContexts } from '@angular/router';
 import { GymadminComponent } from './gymadmin/gymadmin.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
@@ -35,7 +35,7 @@ import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.c
 const routes: Routes = [
   //landingpage route
   {
-    path:'',
+  path:'',
    component:LandingPageComponent
   },
   //gymadmin page
@@ -61,7 +61,6 @@ const routes: Routes = [
 
 {
   path:'',
-
   redirectTo:'landingpage',
   pathMatch:'full'
 },
@@ -75,16 +74,9 @@ const routes: Routes = [
           { path: 'gymlist', component: GymlistComponent},
 
         ]
-      }
+      },
 
- component:LandingPageComponent
-}
 
-  
-  
-  
-  
-  
   { path: 'admindashboard', component: AdminDashBoardComponent,
   children:[
         {

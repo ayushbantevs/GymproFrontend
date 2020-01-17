@@ -1,6 +1,8 @@
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { UserData } from '../notifications/notifications.component';
+import { ContactUsMesgComponent } from '../contact-us-mesg/contact-us-mesg.component';
 
 
 
@@ -61,7 +63,7 @@ export class FeedbackComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
 
-  constructor() { }
+  constructor(private dialog:MatDialog) { }
 
   ngOnInit() {
     // this.dataSource.paginator = this.paginator;
@@ -157,4 +159,13 @@ export class FeedbackComponent implements OnInit {
 
   }
 
+  openDialog(Message:string,email:string,Name:string):void{
+    const dialogRef = this.dialog.open(ContactUsMesgComponent, {
+       width: 'auto',
+       height:'auto',  
+       data: {message: Message, email: email,name:Name}
+    });
+
+   
+  }
 }

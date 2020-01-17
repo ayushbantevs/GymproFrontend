@@ -15,4 +15,40 @@ export class LandingPageComponent implements OnInit {
   ngOnInit() {
   }
 
+<<<<<<< Updated upstream
+=======
+  Login():void{
+
+       const dialogRef = this.dialog.open(LoginPageComponent, {
+         height:'auto',
+        width: 'auto',
+      data: {name: '', animal: ''}
+
+    
+    });
+   
+      
+   
+    
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+     
+    });
+
+
+
+
+
+
+      
+  }
+
+
+  funAppadminlogin()
+  {
+    this.route.navigate(['admindashboard']);
+  }
+
+>>>>>>> Stashed changes
 }

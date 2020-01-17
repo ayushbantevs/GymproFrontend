@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <span><button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button> 
+   GymPro </span>
+   <span class="example-fill-remaining-space"> </span>
+<span><button class="abc"  mat-button [matMenuTriggerFor]="menu"> <mat-icon>account_circle</mat-icon>profile</button> 
+       <mat-menu #menu="matMenu"  [class]="myMenu">
+      <button mat-menu-item class="myMenuItem" ><mat-icon>add_a_photo</mat-icon>Add photo</button>
+     <button mat-menu-item class="myMenuItem"> <mat-icon>perm_identity</mat-icon>Name</button>
+     <button mat-menu-item class="myMenuItem"><mat-icon>email</mat-icon>Email</button>
+     <button mat-menu-item class="myMenuItem" ><mat-icon>power_settings_new</mat-icon> signout</button>
+   </mat-menu>
+  </span>
+  </mat-toolbar>
+  
+    <mat-sidenav-container class="example-container" >
+        <mat-sidenav #Matsidenav mode="side" [(opened)]="opened"  >
+            
+                     <div class="row" *ngFor="let navitem of navItems" style=" margin: 3px;" >
+                <div class="col-sm-2" >
+                            <mat-icon aria-hidden="false" aria-label="item.name"  >{{navitem.icon}}</mat-icon>
+                          </div>
+                          <div class="col-sm-10" [routerLink]="navitem.route"  >
+                              {{navitem.name}}
+                            </div>
+                         
+                    </div>
+        </mat-sidenav>     
+        <mat-sidenav-content >
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
+      </mat-sidenav-container>

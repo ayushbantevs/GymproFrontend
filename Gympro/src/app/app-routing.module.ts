@@ -1,3 +1,4 @@
+
 import { AdminInformationComponent } from './admin-dash-board/admin-information/admin-information.component';
 import { LogoutComponent } from './admin-dash-board/logout/logout.component';
 import { NotificationDetailsComponent } from './admin-dash-board/notifications/notification-details/notification-details.component';
@@ -14,9 +15,76 @@ import { AddNewAdminComponent } from './admin-dash-board/add-new-admin/add-new-a
 import { AllGymOwnerAndGymGoersListComponent } from './admin-dash-board/all-gym-owner-and-gym-goers-list/all-gym-owner-and-gym-goers-list.component';
 import { AdvertisePageComponent } from './admin-dash-board/advertise-page/advertise-page.component';
 import { ContactUsComponent } from './admin-dash-board/contact-us/contact-us.component';
+import { GymoffersComponent } from './gymadmin/gymoffers/gymoffers.component';
+import { ProfileModule } from './gymadmin/profile/profile.module';
+import { ProfileComponent } from './gymadmin/profile/profile.component';
+import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule, ChildrenOutletContexts } from '@angular/router';
+import { GymadminComponent } from './gymadmin/gymadmin.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
+
+import { NavigationComponent } from './gymuser/navigation/navigation.component';
+import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
+
 
 
 const routes: Routes = [
+  //landingpage route
+  {
+    path:'',
+   component:LandingPageComponent
+  },
+  //gymadmin page
+  {
+    path:'gymadmin', 
+    component:GymadminComponent,
+    children:[
+      {path:'',pathMatch:'full',redirectTo:'profile'},
+        {
+          path:'profile',
+          component:ProfileComponent
+        },
+      {
+        path:'gymoffers',
+        component:GymoffersComponent
+      },
+      {
+         path:'gymcoustomers',
+        component:GymcoustomersComponent
+      },
+    ]
+  },
+
+{
+  path:'',
+
+  redirectTo:'landingpage',
+  pathMatch:'full'
+},
+  
+ 
+  {
+  path: 'userhome',
+        component: NavigationComponent,
+        children: [
+          { path: 'edituserprofile', component: Edit_profileComponent},
+          { path: 'gymlist', component: GymlistComponent},
+
+        ]
+      }
+
+ component:LandingPageComponent
+}
+
+  
+  
+  
+  
+  
   { path: 'admindashboard', component: AdminDashBoardComponent,
   children:[
         {
@@ -264,7 +332,10 @@ const routes: Routes = [
     path:'',redirectTo:"admindashboard",pathMatch:"full"// component: AdminDashBoardComponent,
 
   }
+
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

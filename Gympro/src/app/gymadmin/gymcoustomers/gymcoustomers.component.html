@@ -1,0 +1,36 @@
+
+<mat-list >
+    <h3 matSubheader>Users</h3>
+    <mat-divider></mat-divider>
+    <mat-list-item *ngFor="let coustomer of data" >
+      
+  <mat-card class=" matcard" *ngIf="coustomer.subs_Status"> 
+      <div class="row">
+      <div class="col-sm-2">
+            <mat-icon mat-list-icon>account_circle</mat-icon> 
+          </div>
+          <div class="col-sm-4">
+            <h4 mat-line>Name:{{coustomer.customer_name}}</h4>
+            <p mat-line>Joining Date:{{dateReturn(coustomer.user_Joining_date)}} </p>
+          </div>
+          <div class="col-sm-5">
+          <h4 mat-line>Subscription Type:{{coustomer.gym_Subscription_Type}}</h4>
+       <p mat-line>Paid Fees: INR {{coustomer.paid_Fees}}</p>
+        </div> 
+        <div col="col-sm-1">
+            <mat-icon mat-list-icon (click)="changeStatus(coustomer.gym_Id,coustomer.user_Id)">clear icon</mat-icon> 
+        </div>
+        <div col="col-sm-1">
+            <mat-icon mat-list-icon>update</mat-icon> 
+        </div>
+        <div col="col-sm-1">
+            <mat-icon mat-list-icon>account_circle</mat-icon> 
+        </div>
+
+    </div>
+    </mat-card>
+ </mat-list-item>
+
+
+</mat-list>
+  

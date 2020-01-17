@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  events: string[] = [];
+  
   title = 'Gympro';
 
   imgpro:any=[{url:'../assets/Images/gym-setup-tips-1.jpg'},

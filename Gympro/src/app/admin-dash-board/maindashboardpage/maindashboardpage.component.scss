@@ -140,8 +140,7 @@
     // grid-gap: 1rem;
     
     margin-left: 0;
-    margin-top: 10px;
-    padding-top:10px ;
+    margin-top: 50px;
   }
 
   .card {
@@ -150,7 +149,7 @@
     background-color: #fafafa;
     height: 100px;
     width: 250px;
-    margin: 10px  ;
+    margin: 0px  ;
     padding: 30px 30px 30px 30px ;
     display: flex;
     flex-direction: row;
@@ -262,11 +261,7 @@
     background-position: -.5em;
   }
 
-  .mat-list:hover{
- 
-    cursor: pointer;
 
-  }
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
@@ -278,7 +273,7 @@
 
     .card:not(.highlight-card) {
       height: 16px;
-      margin:  10px;
+      margin:  50pxpx;
     }
 
     .card.highlight-card span {
@@ -294,14 +289,21 @@
       visibility: hidden;
     }
   }
-  .sidenavbtn{
-    height: 30px;
-    width: 0px;
-    padding: 0px;
-   // font-size: 54px;
-     margin-left:0px ;
-     border-radius: 50px;
+
+
+  @media only screen and (max-width: 600px) {
+    mat-card {
+        margin: 10px;
+        display: inline-flex;
+        flex-flow: row wrap;
+      //  max-width: 100%;
+    }
   }
-  .sidenavbtn:hover{   
-        cursor: pointer;
+  
+  @media only screen and (min-width: 600px) {
+    mat-card {
+        margin: 10px;
+       
+      //  max-width: 100%;
+    }
   }

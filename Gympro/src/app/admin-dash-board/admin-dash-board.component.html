@@ -1,0 +1,355 @@
+
+
+  <!-- 
+      <div class="toolbar" role="banner">
+        
+            
+        <mat-icon class="sidenavbtn" (click)="sidenav.toggle();" >burger_menu</mat-icon>  
+               
+        <div class="start">GYM PRO</div> 
+        
+        
+        <a aria-label="Admin User" title="APP ADMIN">
+          <img mat-card-avatar src="assets\Adminavtar.png" alt="User Avatar" [matMenuTriggerFor]="menu">
+             <mat-menu #menu="matMenu">
+                        <button class="btnprofile" (click)="funadminInfo()" mat-menu-item>
+                          <mat-icon>informations</mat-icon>
+                          <span>Admin Inforamation</span>
+                        </button>
+                        <button class="btnprofile" (click)="logout()" mat-menu-item  >
+                          <mat-icon>settings_power</mat-icon>
+                          <span>Log Out</span>
+                        </button>
+                      </mat-menu>
+        </a>
+      </div> -->
+      <!-- ToolBar End   -->
+      
+
+<!--toobar start-->
+
+      <mat-toolbar class="toolbar">
+      <mat-toolbar-row>
+                <mat-icon class="sidenavbtn" (click)="sidenav.toggle();" >burger_menu</mat-icon>  
+                <span>GYM PRO</span>
+                <span class="example-spacer"></span>
+
+                <a aria-label="Admin User" title="APP ADMIN">
+                                <img mat-card-avatar src="assets\Adminavtar.png" alt="User Avatar" [matMenuTriggerFor]="menu">
+                                   
+                                       <mat-menu #menu="matMenu">
+                                                    <mat-card class="admininfocard">
+                                                        <mat-card-content> 
+                                                                <button class="btnprofile" (click)="funadminInfo()" mat-menu-item>
+                                                                        <mat-icon>informations</mat-icon>
+                                                                        <span>Admin Inforamation</span>
+                                                                </button>
+                                                                <button class="btnprofile" (click)="logout()" mat-menu-item  >
+                                                                        <mat-icon>settings_power</mat-icon>
+                                                                        <span>Log Out</span>
+                                                                </button>
+                                                        </mat-card-content>
+                                                   </mat-card>
+                                        </mat-menu>
+                              </a>
+              </mat-toolbar-row>
+     </mat-toolbar>
+
+     <!--toobar start-->
+
+     
+ 
+      <div class="all_main">
+              
+         <mat-sidenav-container class="example-container">
+            <mat-sidenav #sidenav mode="side" [opened]="true">
+                         <mat-list>
+                                
+                                <mat-list-item routerLink="maindashboard">
+                                        <mat-icon >desktop_windows</mat-icon> <span>Desktop</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                
+                               
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="Advertise">
+                                        <mat-icon >mms</mat-icon>  <span>Add Advertise</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="allgymowners">
+                                        <mat-icon >emoji_people</mat-icon> <span>GYM Owners</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="allgymgoers">
+                                        <mat-icon >emoji_people</mat-icon><span>GYM Users</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="feedback">
+                                        <mat-icon >chat</mat-icon>  <span>feedbak</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="Notifiacations">
+                                        <mat-icon >notification_important</mat-icon> <span>Notifications</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="addadmin" >
+                                                <mat-icon >emoji_people</mat-icon> <span>Add Admin</span>
+                                                <span fxFlex></span> 
+                                </mat-list-item>
+                                        <mat-divider></mat-divider>
+                             <mat-list-item routerLink="ContactUs" >
+                                            <mat-icon >email</mat-icon> <span>Contcat Us</span>
+                                            <span fxFlex></span> 
+                            </mat-list-item>
+                                    <mat-divider></mat-divider>
+                                    
+                                <mat-list-item>
+                                                <mat-icon >new_releases</mat-icon>  <span>Offers</span>
+                                                <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item>
+                                                <mat-icon >poll</mat-icon> <span>statastics</span>
+                                                <span fxFlex></span> 
+                                        </mat-list-item>
+                                        <mat-divider></mat-divider>
+
+                              </mat-list>
+
+            </mat-sidenav>
+          
+            <mat-sidenav-content >
+              
+             <router-outlet></router-outlet>
+              
+
+                 <!-- Dash boar Start-->
+                      
+                      <!-- <app-maindashboardpage *ngIf="showdashboard"> </app-maindashboardpage> -->
+                
+              <!-- Dash boar End-->
+
+                   
+                   <!--   Advertise Div Start-->
+              
+                <!--  Advertise Div End -->      
+
+                 <!--  Add Admin Div Start -->    
+              
+                <!--  Add Admin Div End -->    
+
+
+                <!--  All Gym Owners Div Start -->    
+               
+                <!-- All Gym Owners Div End -->    
+  
+                <!-- All Gym User Div Start -->    
+               
+                 <!-- All Gym User Div End -->  
+
+                   <!-- All Gym owne and Users  Div Start -->  
+               
+                   <!--All Gym owne and Users   Div Start -->  
+
+
+                  <!-- Feedback Div Start -->  
+            
+                  <!-- Feedback Div End -->  
+                 
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+        </div>       
+
+
+
+
+
+
+
+
+
+
+ <!-- <a routerLink="/dashboard">demo</a>
+<p>dashboard works!</p>
+<mat-carousel timings="250ms ease-in"
+[autoplay]="true"
+interval="1000"
+color="accent"
+maxWidth="auto"
+proportion="25"
+slides="5"
+[loop]="true"
+[hideArrows]="false"
+[hideIndicators]="false"
+[useKeyboard]="true"
+[useMouseWheel]="false"
+orientation="ltr">
+
+<mat-carousel-slide #matCarouselSlide
+*ngFor="let slide of imgpro; let i = index"
+[image]="slide.url"
+overlayColor="#00000040"
+[hideOverlay]="false">  
+</mat-carousel-slide> -->
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- <app-dashboard></app-dashboard> -->
+
+
+
+
+
+
+
+      <!-- <a routerLink="/dashboard">dashboard</a> -->
+      
+
+
+      <!-- Toolbar -->
+
+
+
+
+      <!-- <div class="toolbar" role="banner">
+        
+        <span>GYM PRO</span>     
+        <mat-icon class="sidenavbtn" (click)="sidenav.toggle(); showarrow()" *ngIf="showrightArrow">burger_menu</mat-icon> <mat-icon class="sidenavbtn"  (click)="sidenav.toggle(); showarrow()" *ngIf="showleftArrow">burger_menu</mat-icon>    
+                <span></span>
+        
+          <div class="spacer"></div>
+         <a aria-label="Admin User " target="_blank" rel="noopener" href="#" title="APP ADMIN">
+          <img mat-card-avatar src="assets\Adminavtar.png" alt="User Avatar">
+        </a>
+      </div> -->
+      <!-- ToolBar End   -->
+      
+      
+     
+        
+      
+      <!-- <div class="all_main">
+              
+         <mat-sidenav-container class="example-container">
+            <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+                         (closed)="events.push('close!')">
+                         <mat-list>
+                                
+                                <mat-list-item routerLink="maindashboard">
+                                        <mat-icon >desktop_windows</mat-icon> <span>Desktop</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                
+                               
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="Advertise">
+                                        <mat-icon >mms</mat-icon>  <span>Add Advertise</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="allgymowners">
+                                        <mat-icon >emoji_people</mat-icon> <span>GYM Owners</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="allgymgoers">
+                                        <mat-icon >emoji_people</mat-icon><span>GYM Goers</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="feedback">
+                                        <mat-icon >chat</mat-icon>  <span>feedbak</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="notifications">
+                                        <mat-icon >notification_important</mat-icon> <span>Notifications</span>
+                                        <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item routerLink="addadmin" >
+                                                <mat-icon >emoji_people</mat-icon> <span>Add Admin</span>
+                                                <span fxFlex></span> 
+                                        </mat-list-item>
+                                        <mat-divider></mat-divider>
+                                <mat-list-item>
+                                                <mat-icon >new_releases</mat-icon>  <span>Offers</span>
+                                                <span fxFlex></span> 
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item>
+                                                <mat-icon >poll</mat-icon> <span>statastics</span>
+                                                <span fxFlex></span> 
+                                        </mat-list-item>
+                                        <mat-divider></mat-divider>
+
+                              </mat-list>
+
+            </mat-sidenav>
+          
+            <mat-sidenav-content >
+              
+             <router-outlet></router-outlet> -->
+              
+
+
+                 <!-- Dash boar Start-->
+                      
+                      <!-- <app-maindashboardpage *ngIf="showdashboard"> </app-maindashboardpage> -->
+                
+              <!-- Dash boar End-->
+
+                   
+                   <!--   Advertise Div Start-->
+                 <!-- <app-advertise-page *ngIf="showAddverise"></app-advertise-page> -->
+                <!--  Advertise Div End -->      
+
+                 <!--  Add Admin Div Start -->    
+                <!-- <app-add-new-admin *ngIf="showAddadmin"></app-add-new-admin> -->
+                <!--  Add Admin Div End -->    
+
+
+                <!--  All Gym Owners Div Start -->    
+                <!-- <app-all-gym-owners *ngIf="showAllgymOwners"> </app-all-gym-owners> -->
+                <!-- All Gym Owners Div End -->    
+  
+                <!-- All Gym User Div Start -->    
+                <!-- <app-all-users *ngIf="showGymUsers">  </app-all-users> -->
+                 <!-- All Gym User Div End -->  
+
+                   <!-- All Gym owne and Users  Div Start -->  
+                 <!-- <app-all-gym-owner-and-gym-goers-list *ngIf="showGymOwnerAndUsers"> </app-all-gym-owner-and-gym-goers-list> -->
+                   <!--All Gym owne and Users   Div Start -->  
+
+
+                  <!-- Feedback Div Start -->  
+                 <!-- <app-feedback *ngIf="showfeedback"></app-feedback> -->
+                  <!-- Feedback Div End -->  
+                 
+            <!-- </mat-sidenav-content>
+        </mat-sidenav-container>
+        </div>       
+  
+   -->
+      
+     
+
+

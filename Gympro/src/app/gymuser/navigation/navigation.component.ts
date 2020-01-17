@@ -1,3 +1,4 @@
+import { NotificationComponent } from './notification/notification.component';
 import { GymlistComponent } from './gymlist/gymlist/gymlist.component';
 import { Edit_profileComponent } from './edit_profile/edit_profile.component';
 import { Component, OnInit } from '@angular/core';
@@ -25,13 +26,17 @@ export class NavigationComponent implements OnInit {
     });
     }
 
-    gymlist():void{
-      const dialogRef=this.dialog.open(GymlistComponent,{
-        height:'700px',
-        width:'900px',
-        data: {name: '', animal: ''}
-      });
-      }
+    // gymlist():void{
+    //   const dialogRef=this.dialog.open(GymlistComponent,{
+    //     height:'700px',
+    //     width:'900px',
+    //     data: {name: '', animal: ''}
+    //   });
+    //   }
+
+
+    
+    
     }
 
 

@@ -1,3 +1,8 @@
+import { LocationComponent } from './gymuser/navigation/location/location.component';
+import { NotificationComponent } from './gymuser/navigation/notification/notification.component';
+import { ClasslistComponent } from './gymuser/navigation/classlist/classlist.component';
+import { SessionlistComponent } from './gymuser/navigation/sessionlist/sessionlist.component';
+
 import { GymoffersComponent } from './gymadmin/gymoffers/gymoffers.component';
 import { ProfileModule } from './gymadmin/profile/profile.module';
 import { ProfileComponent } from './gymadmin/profile/profile.component';
@@ -12,15 +17,14 @@ import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.c
 
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
+import { MaplistComponent } from './gymuser/navigation/maplist/maplist.component';
+import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
 
 
 // const routes: Routes = [
 //   
-
-
-
 const routes: Routes = [
-  {
+ {
     path:'gymadmin', 
     component:GymadminComponent,
     children:[
@@ -41,7 +45,6 @@ const routes: Routes = [
   },
 {
   path:'',
-
   redirectTo:'landingpage',
   pathMatch:'full'
 },
@@ -50,18 +53,36 @@ const routes: Routes = [
   {path:'userprofile',component:UserprofileComponent},
   {path:'', component:LandingPageComponent},
   
-  {
-  path: 'userhome',
-        component: NavigationComponent,
-        children: [
-          { path: 'edituserprofile', component: Edit_profileComponent},
-          { path: 'gymlist', component: GymlistComponent},
+  
 
-        ]
-      }
+   {
+       path: 'userhome',
+          component: NavigationComponent,
+           children: [  
+            { path: '', component: MaplistComponent},
+            { path: 'sessionlist', component: SessionlistComponent},
+            { path: 'classlist', component: ClasslistComponent},
+            { path: 'editprofile', component: Edit_profileComponent},
+            { path: 'notification', component: NotificationComponent},
+            
+            { path: 'gymonmap',
+             component: GymsonmapComponent,
+             children:[
+              { path: 'location', component: LocationComponent},
+              { path: 'gymlist', component: GymlistComponent},
 
- component:LandingPageComponent
+            ]
+            },
+           
+          ]
+     },
+
+{
+  path:'',
+  redirectTo:'userhome',
+  pathMatch:'full'
 }
+
 
 ];
 

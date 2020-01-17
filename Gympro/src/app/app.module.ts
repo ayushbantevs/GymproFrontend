@@ -1,3 +1,4 @@
+
 import { GymoffersComponent } from './gymadmin/gymoffers/gymoffers.component';
 import { GymadminModule } from './gymadmin/gymadmin.module';
 import { ProfileComponent } from './gymadmin/profile/profile.component';
@@ -10,7 +11,6 @@ import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-
 import { GymadminComponent } from './gymadmin/gymadmin.component';
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -35,7 +35,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
-
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -53,23 +52,21 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { UserprofileComponent } from './userprofile/userprofile.component';
-
 import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
-
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
-import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/sessionlist.component';
-
-
-
-
 import { MatMenuModule } from '@angular/material';
-
+import { MaplistComponent } from './gymuser/navigation/maplist/maplist.component';
+import { SessionlistComponent } from './gymuser/navigation/sessionlist/sessionlist.component';
+import { ClasslistComponent } from './gymuser/navigation/classlist/classlist.component';
+import { NotificationComponent } from './gymuser/navigation/notification/notification.component';
+import { LocationComponent } from './gymuser/navigation/location/location.component';
+import {GoogleMapsModule } from '@angular/google-maps';
+import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
 
 
 
@@ -80,65 +77,44 @@ import { MatMenuModule } from '@angular/material';
     LandingPageComponent,
     GymadminComponent,
     GymlistComponent,
-
     NavigationComponent,
     Edit_profileComponent,
-
-
-
     UserprofileComponent,
-
     UserprofileComponent,
-
     GymoffersComponent,
     GymcoustomersComponent,
     NavigationComponent,
-
     UserprofileComponent,
-
     NavigationComponent,
     Edit_profileComponent,
-
-
     UserprofileComponent,
-
-
-
-
     NavigationComponent,
-
     GymlistComponent,
-
-    SessionlistComponent,
-
-
-
-
     ProfileComponent,
-    UserprofileComponent
-
+    UserprofileComponent,
+    MaplistComponent,
+    SessionlistComponent,
+    ClasslistComponent,
+    NotificationComponent,
+    LocationComponent,
+    GymsonmapComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
     BrowserAnimationsModule,
-
-    
-
     MatCarouselModule,
     MatMenuModule,
-HttpClientModule,
+    HttpClientModule,
     MatCarouselModule,   
-     BrowserModule,
-
+    BrowserModule,
     MatCarouselModule,
     MatMenuModule,
     MatCarouselModule,
     BrowserModule,
-    MatCarouselModule,    BrowserModule,
-
-
+    MatCarouselModule, 
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     A11yModule,
@@ -185,7 +161,10 @@ HttpClientModule,
     ScrollingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    GoogleMapsModule,
+ 
+
   ],
   providers: [],
   bootstrap: [AppComponent]

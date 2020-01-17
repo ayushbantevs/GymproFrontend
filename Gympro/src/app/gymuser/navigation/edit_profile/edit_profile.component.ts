@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   // tslint:disable-next-line: component-selector
   selector: 'app-edit_profile',
@@ -11,7 +12,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 // tslint:disable-next-line: class-name
 export class Edit_profileComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private route: Router) {
 
   }
   profileForm = this.fb.group({
@@ -29,5 +30,9 @@ export class Edit_profileComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.profileForm.value);
+  }
+  onShow() {
+    
+    //this.route.navigate(['/userhome']);
   }
 }

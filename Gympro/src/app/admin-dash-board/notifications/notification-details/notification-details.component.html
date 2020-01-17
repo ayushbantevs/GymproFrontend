@@ -1,0 +1,25 @@
+
+
+<div fxLayout="row">
+    <div   class="listdiv" fxFlex.gt-sm="100%" >
+            <mat-card>
+                    <mat-card-content>
+                        <mat-card-title>Notifications</mat-card-title>
+                        <mat-card-subtitle>All Notifications</mat-card-subtitle>
+                        Name: <h4>{{data.Name}}</h4>
+                         <mat-divider></mat-divider>
+                         User Type:<h4>{{data.Usertype}}</h4>
+                         <mat-divider></mat-divider>
+                         Subcription Id: <h4>{{data.SubId}}</h4>
+                         <mat-divider></mat-divider>
+                         Sud Start Date:<h4>{{data.startdate}}</h4>
+                         <mat-divider></mat-divider>
+                         Sud End Date:<h4>{{data.enddate}}</h4>
+                         <mat-divider></mat-divider>
+                         Contact Number: <h4>{{data.contact}}</h4>
+                         <mat-divider></mat-divider>
+                         <button mat-button>Mark Read </button> <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
+                    </mat-card-content>        
+            </mat-card>
+    </div>
+</div> 

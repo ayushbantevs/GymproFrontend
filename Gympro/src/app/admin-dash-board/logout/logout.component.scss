@@ -1,0 +1,62 @@
+.listdiv{
+    margin:30px 10px 0px 20px;
+
+}
+mat-icon{
+
+    cursor: pointer;
+   color: rgb(214, 41, 18);
+}
+mat-list-item:hover{
+
+    background-color:rgb(241, 233, 233);
+}
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td {
+    width: 10%;
+  }
+  th {
+    width: 10%;
+    color: #000;
+   background-color: rgb(136, 134, 134);
+  }
+  button{
+    margin: 10px;
+    align-items: center;
+   // color: rgb(78, 76, 76);
+    text-align: center;
+    background-color: rgb(82, 80, 80);
+     color: white;   
+  }
+  button:hover{
+  
+  background-color: rgb(24, 22, 22);
+  cursor: pointer;
+  
+  
+  }
+
+  @media only screen and (max-width: 600px) {
+    mat-card {
+        margin: 10px;
+        display: inline-flex;
+        flex-flow: row wrap;
+      //  max-width: 100%;
+    }
+  }
+  
+  @media only screen and (min-width: 600px) {
+    mat-card {
+        margin: 10px;
+       
+      //  max-width: 100%;
+    }
+  }

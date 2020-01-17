@@ -10,6 +10,8 @@ import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_pr
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
+import { GymListComponent } from './gymuser/gymList/gymList.component';
+import { LocateComponent } from './gymuser/locate/locate.component';
 
 
 
@@ -59,6 +61,14 @@ const routes: Routes = [
         {
           path: 'edituserprofile',
           component: Edit_profileComponent
+        },
+        {
+          path: 'gymlist',
+          component: GymListComponent
+        },
+        {
+          path: 'locate',
+          component: LocateComponent
         },
     ]
   },

@@ -64,6 +64,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { editUserModel } from './gymuser/navigation/edit_profile/edituserModel';
 import { Edit_profileService } from './gymuser/navigation/edit_profile/edit_profile.service';
 import {GoogleMapsModule } from '@angular/google-maps';
+import { GymListComponent } from './gymuser/gymList/gymList.component';
+import { LocateComponent } from './gymuser/locate/locate.component';
 
 
 
@@ -82,8 +84,9 @@ import {GoogleMapsModule } from '@angular/google-maps';
     NavigationComponent,
     UserprofileComponent,
     ProfileComponent,
-    UserprofileComponent
-
+    UserprofileComponent,
+    GymListComponent,
+    LocateComponent
   ],
   imports: [
     BrowserModule,

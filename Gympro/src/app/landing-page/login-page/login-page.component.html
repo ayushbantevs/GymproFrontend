@@ -39,12 +39,7 @@
     </mat-card>
     -->
 
-
-
-
-
-
- <mat-card *ngIf="showLogin" mat-dialog-content>
+  <mat-card *ngIf="showLogin" mat-dialog-content>
         <h2>Login</h2>
     <div *ngIf="show">
     <form  *ngIf="show" class="form" [formGroup]="LoginForm">
@@ -53,20 +48,18 @@
                     <mat-error *ngIf="LoginForm.get('email').invalid">email is required</mat-error>
                   </mat-form-field><br>
                   <mat-form-field class="full-width">
-                    <input *ngIf="show" matInput placeholder="Password" type="password" formControlName="Password" required>
+                    <input  *ngIf="show" matInput placeholder="Password" type="password" formControlName="Password" required>
                     <mat-error *ngIf="LoginForm.get('Password').invalid">Password is required</mat-error>
                   </mat-form-field><br>
-                  <button *ngIf="show" (click)="loginClick()">Submit
-                </button>
-               
-                <button *ngIf="show" (click)="RegisterClick()">register
-              </button>
-             
+                 
+                  <button *ngIf="show" (click)="loginClick()">Submit </button>
+
+                <button *ngIf="show" (click)="RegisterClick()">register</button>
+                
                 <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
                 
     </form>
     </div>
-     
     <div *ngIf="show1">
       <button class="regbtn hover1" *ngIf="show1"  (click)="funUserRegClick()">Register As User
       </button>

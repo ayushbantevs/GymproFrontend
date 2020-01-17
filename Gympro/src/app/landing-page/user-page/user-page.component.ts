@@ -2,6 +2,8 @@ import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient,HttpEventType } from '@angular/common/http';
+import { RegistrationService } from '../../Services/registration.service';
+import { User } from '../user';
 
 
 @Component({
@@ -51,7 +53,7 @@ export class UserPageComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private router: Router,
    // private service: RegistrationService,
-    private http: HttpClient) { }
+    private httpservice: RegistrationService) { }
 
     user_register = this.fb.group({
     
@@ -74,12 +76,23 @@ export class UserPageComponent implements OnInit {
 
   
 
-//   onFormSubmit1()
-//   {
-//       // alert("hii");
-   
-//       this.router.navigateByUrl("home/login");
-//  }
+  onFormSubmit()
+  {
+     var user=new User();
+     user.User_Name=this.user_register.controls['user_name'].value;
+     user.User_Mail_Id=this.user_register.controls['user_mailId'].value;
+     user.Password=this.user_register.controls['Password'].value;
+     user.Contact_Number=this.user_register.controls['user_contact_no'].value;
+     user.User_Age=this.user_register.controls['user_age'].value;
+     user.city=this.user_register.controls['city'].value;
+     user.pincode=this.user_register.controls['pincode'].value;
+
+
+    this.httpservice.Adduser(user).subscribe((data)=>{
+    });
+      alert(""); 
+
+  }
 
 
 backtoLogin()

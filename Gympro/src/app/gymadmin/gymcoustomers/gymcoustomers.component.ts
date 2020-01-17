@@ -32,6 +32,7 @@ export class GymcoustomersComponent implements OnInit {
   changeStatus(Gymid:string,UserId:string)
   {
     console.log(Gymid+"---"+UserId);
+    //this.gymcCoustomerService.changeStatus(Gymid,UserId).subscribe();
   }
 
 }

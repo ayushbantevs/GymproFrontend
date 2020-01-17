@@ -19,5 +19,6 @@ export class GymcustomerserviceService {
   {
     return this.httpClient.get("https://localhost:44338/api/gymcoustomer/"+gymId+"/"+userId);
   }
+  
 
 }

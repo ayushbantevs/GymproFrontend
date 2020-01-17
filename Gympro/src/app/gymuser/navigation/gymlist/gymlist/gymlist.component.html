@@ -1,41 +1,50 @@
 
 
-<h1>Gym List</h1>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<h1 style="margin-left: 10px;" class="text-danger">Gym List</h1>
+<div style="margin-left: 30px;">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  
+</div>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> Gym_Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
     </ng-container>
-  
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="progress">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Progress </th>
+      <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+    </ng-container>
+
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Location </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Fees </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    <!-- Color Column -->
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Color </th>
+      <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
     </ng-container>
-  
-    <!-- Symbol Column -->
+
     <ng-container matColumnDef="view">
-      <th mat-header-cell *matHeaderCellDef> View_Gym </th>
-      <td mat-cell *matCellDef="let element"><button mat-raised-button style="background-color: #3b64d4; font-weight: bold;" >View</button></td>
+      <th mat-header-cell *matHeaderCellDef class="tablehead"> View_Gym </th>
+      <td mat-cell *matCellDef="let element"><button mat-raised-button style="background-color: #4a73e2; font-weight: bold;color: white;" >View</button></td>
     </ng-container>
-  
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
   </table>
-  
+
+  <mat-paginator [pageSizeOptions]="[ 5, 10, 25, 50, 100]"></mat-paginator>
+</div>

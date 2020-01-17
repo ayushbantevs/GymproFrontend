@@ -17,16 +17,19 @@
     "@angular/compiler": "~8.2.13",
     "@angular/core": "~8.2.13",
     "@angular/forms": "~8.2.13",
+    "@angular/google-maps": "^9.0.0-rc.0",
     "@angular/material": "^8.2.3",
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",
 
+    "@google/maps": "^1.0.2",
+
+
     "@ngmodule/material-carousel": "^0.5.1",
     "canvasjs": "^1.8.3",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
-
     "@material/form-field": "^4.0.0",
     "@ngmodule/material-carousel": "^0.5.1",
     "angular-material": "^1.1.21",

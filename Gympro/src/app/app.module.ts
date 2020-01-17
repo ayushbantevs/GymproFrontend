@@ -42,7 +42,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSidenavModule, MatDrawer} from '@angular/material/sidenav';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -52,6 +52,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+import {FlexLayoutModule} from '@angular/flex-layout';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 
 import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
@@ -59,6 +60,10 @@ import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.c
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { editUserModel } from './gymuser/navigation/edit_profile/edituserModel';
+import { Edit_profileService } from './gymuser/navigation/edit_profile/edit_profile.service';
+import {GoogleMapsModule } from '@angular/google-maps';
 
 
 
@@ -68,26 +73,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     LandingPageComponent,
     GymadminComponent,
-
     NavigationComponent,
     Edit_profileComponent,
     GymoffersComponent,
     GymcoustomersComponent,
     NavigationComponent,
-
-
-
     UserprofileComponent,
-
     NavigationComponent,
-    Edit_profileComponent,
-
-
     UserprofileComponent,
-
-
-
-
     ProfileComponent,
     UserprofileComponent
 
@@ -99,13 +92,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatCarouselModule,
     MatMenuModule,
-
     MatCarouselModule,
     BrowserModule,
-
-
-    MatCarouselModule,    BrowserModule,
-
+    MatCarouselModule,
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     A11yModule,
@@ -151,9 +141,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PortalModule,
     ScrollingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    GoogleMapsModule,
   ],
-  providers: [],
+  providers: [Edit_profileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

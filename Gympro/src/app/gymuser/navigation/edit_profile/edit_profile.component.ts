@@ -1,6 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Edit_profileService } from './edit_profile.service';
+import { editUserModel } from './edituserModel';
+import { HttpClient } from '@angular/common/http';
+import { MAT_DIALOG_DATA } from '@angular/material';
+
+
+// tslint:disable-next-line: no-empty-interface
+export interface DialogData {
+//   animal: 'panda' | 'unicorn' | 'lion';
+ }
+
+
 @Component({
   // tslint:disable-next-line: component-selector
   selector: 'app-edit_profile',
@@ -10,24 +22,51 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 // tslint:disable-next-line: class-name
 export class Edit_profileComponent implements OnInit {
+  id: string;
+  editUserProfile: editUserModel;
+  constructor(
+    private fb: FormBuilder,
+    private editservice: Edit_profileService,
+    private http: HttpClient,
+    @Inject(MAT_DIALOG_DATA)
+   public data: DialogData) {}
 
-  constructor(private fb: FormBuilder) {
-
-  }
   profileForm = this.fb.group({
     username: ['', [Validators.required]],
     phoneNumber: ['', [Validators.required]],
-    passWord: ['',[Validators.required]],
-    address: ['',[Validators.required]],
-    logitude: ['',[Validators.required]],
-    latitude: ['',[Validators.required]],
+    passWord: ['', [Validators.required]],
+    address: ['', [Validators.required]],
+    logitude: ['', [Validators.required]],
+    latitude: ['', [Validators.required]],
+    city: ['', [Validators.required]],
+    pincode: [''],
   });
 
 
   ngOnInit() {
 
+
   }
   onSubmit() {
-    console.log(this.profileForm.value);
-  }
+    // this.editservice.save(this.profileForm.value).subscribe((data: editUserModel) => {
+    //   console.log(data);
+    // getEmployee(this.id)
+    // {
+    // if (this.id === 0) {
+    //   this.editUserProfile = {
+    //     id: null, username: null, gender: null, contactPreference: null,
+    //     phoneNumber: null, email: '', dateOfBirth: null, department: null,
+    //     isActive: null, photoPath: null
+    //   };
+    //   this.profileForm.reset();
+
+    // } else {
+      this.editservice.getEmployee(this.id).subscribe(
+        (editUser: editUserModel) => { this.editUserProfile = editUser; },
+        (err: any) => console.log(err)
+      );
+    }
+  // }
+
+  // }
 }

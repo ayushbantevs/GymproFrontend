@@ -1,0 +1,50 @@
+
+
+<h1 style="margin-left: 10px;" class="text-danger">Gym List</h1>
+<div style="margin-left: 30px;">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  
+</div>
+
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="progress">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Progress </th>
+      <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Color </th>
+      <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="view">
+      <th mat-header-cell *matHeaderCellDef class="tablehead"> View_Gym </th>
+      <td mat-cell *matCellDef="let element"><button mat-raised-button style="background-color: #4a73e2; font-weight: bold;color: white;" >View</button></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[ 5, 10, 25, 50, 100]"></mat-paginator>
+</div>

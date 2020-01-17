@@ -1,0 +1,48 @@
+<!-- <ng-container *ngFor="let member of members; let i = index;">
+
+    <img [src]="member.person.imagePath"
+                 (click)="fileInput.click()"
+                 class="profile-image pointer img-fluid img-thumbnail">
+                      <div style="text-align:center;"
+                           class="cam-icon cam-pos"
+                           [hidden]="!editing">
+                                <i class="fa fa-camera pointer" (click)="fileInput.click()" aria-hidden="true"></i>
+                      </div>
+                      <input style="display: none"
+                             type="file"
+                             (change)="changeListener($event, i)"
+                             #fileInput>
+
+</ng-container> -->
+
+<!-- 
+
+  
+    <form [formGroup]="myGroup" (ngSubmit)="save(profileForm.value)">
+      <mat-list margin-bottom padding-bottom>
+        <section text-center class="profile-picture" (click)="selectImage()">
+          <span class="profile-picture__icon">
+            <mat-icon name="md-create"></mat-icon>
+          </span>
+          <img *ngIf="image" [src]="image" class="profile-picture__image" alt="Profile Picture">
+          <img *ngIf="!image" [src]="'assets/imgs/user-placeholder.svg'" class="profile-picture__image" alt="Profile Picture">
+        </section>
+  
+        
+          <mat-label>First name</mat-label>
+          <input type="text" formControlName="firstName">
+       
+          <mat-label>Last name</mat-label>
+          <input type="text" formControlName="lastName">
+       
+          <mat-label>Email</mat-label>
+          <input type="text" formControlName="email">
+       
+          <mat-label>Password</mat-label>
+          <input type="text" formControlName="password">
+       <button mat-button block type="submit">Save</button>
+      </mat-list>
+    </form>
+   -->
+
+

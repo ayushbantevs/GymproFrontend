@@ -1,3 +1,4 @@
+import { GymcustomerserviceService } from './../Services/gymcustomerservice.service';
 import { Component, OnInit, ChangeDetectorRef, OnDestroy ,ViewChild} from '@angular/core';
 
 import {MatSidenav} from '@angular/material';
@@ -14,7 +15,7 @@ export class GymadminComponent implements OnDestroy {
 
 
     tooBarItems:any=[{name:'sideBarButton',icon:'list' }];
-    navItems:any=[{name:'Profile',icon:'face',route:"profile" },{name:'Gym Coustomers',icon:'list',route:"gymcoustomers" },{name:'Offers',icon:'list',route:"gymoffers" }];
+    // navItems:any=[{name:'Profile',icon:'face',route:"profile" },{name:'Gym Coustomers',icon:'list',route:"gymcoustomers" },{name:'Offers',icon:'list',route:"gymoffers" }];
 
     shouldShow=false;
     constructor() {
@@ -24,17 +25,11 @@ export class GymadminComponent implements OnDestroy {
     ngOnDestroy(): void {
      
     }
+    ngOnInit() {
 
-    toggel()
-    {
-      if(this.shouldShow==false)
-      {
-        this.shouldShow=true;
-      }else{
-        this.shouldShow=false;
-      }
-      console.log(this.shouldShow);
-
+      
     }
+
+   
 
 }

@@ -1,44 +1,59 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <button mat-icon-button>
-        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-      </button>
-      <h1>SimpleCRM</h1>
-      <span class="menu-spacer"></span>
-      <!-- <div>
-        <a mat-button [routerLink]="'/accounts'"> Accounts </a>
-        <a mat-button [routerLink]="'/create-account'"> Create Account </a>
-        <a mat-button [routerLink]="'/contacts'"> Contacts </a>
-        <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
-        <a mat-button [routerLink]="'/activities'"> Activities </a>
-        <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
-  
-      </div> -->
-    </mat-toolbar-row>
-  
-    <mat-toolbar-row>
-        <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
-      </mat-toolbar-row>
-  </mat-toolbar>
 
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav>
-      <mat-nav-list>
+
+<div class="row"> 
+    <div class="col-lg-12 col-md-12 col-sm-12" >
+      <mat-card  style="background-color:#7fcd91">
+        <button mat-icon-button class="menu" style="margin-left: 15px;">
+          <mat-icon (click)="right.toggle()">menu</mat-icon>
+        </button>
+            <img mat-list-avatar src="../assets/Images/GYM_LOGO.PNG" alt="" class="image" style="margin-left: 30px;"> 
+              <button mat-button style="margin-left: 10px; color: rgb(0, 0, 0); font-size: 30px;" id="Home">Welcome User..</button>
+                    <a><button mat-button style="margin-left: 20px;color: rgb(0, 0, 0);" [routerLink]="['/userhome']" >Home</button></a>
+    
+                    <button class="abc"  mat-button  style="color: rgb(24, 74, 212); margin-left: 44%;"> 
+                      <mat-icon class="abcd" aria-placeholder="end">notifications_active</mat-icon>
+                  </button> 
+                  <button class="abc"  mat-button  style="color: rgb(24, 74, 212);"> 
+                    <mat-icon class="abcd" aria-placeholder="end"> help</mat-icon>
+                </button> 
+               <button class="abc"  mat-button [matMenuTriggerFor]="menu" style="color: rgb(253, 0, 0);"> 
+                    <mat-icon class="abcd" aria-placeholder="end">account_circle</mat-icon>
+                </button> 
+               
+              <mat-menu #menu="matMenu"  [class]="myMenu">
+                <img src="../assets/Images/GYM_LOGO.PNG" class="img" style="border-radius: 50px; height: 50px; width: 50px;margin-left: 40px;margin-top: 10px;">
+                <p style="text-align: center;">User-Name</p>
+                 <button mat-menu-item class="myMenuItem"  (click)="Editprofile()"><mat-icon>account_circle</mat-icon>Edit_Profile</button>
+                <button mat-menu-item class="myMenuItem" > <mat-icon>exit_to_app</mat-icon>signout</button>
+              </mat-menu>
+           </mat-card>
+  </div>
+</div>
+ 
+ 
+  <div>
+   
+      <mat-sidenav-container class="main" >
+          <mat-sidenav #right mode="side" [opened]="trues"  style="width: 200px;background-color: #000000; ">
+            <mat-nav-list>
+              <a class=" side heading"  mat-list-item [routerLink]="'/create-account'"> Gyms_Pro </a>
+              <a class="side"  mat-list-item [routerLink]="'gymonmap'">Gym List </a>
+              <a class="side"  mat-list-item [routerLink]="'sessionlist'"> Session List</a>
+              <a class="side"  mat-list-item [routerLink]="'classlist'"> Classes</a>
+              <a class="side"  mat-list-item [routerLink]="'notification'"> Offers</a>
+              <p *ngIf="showFiller" style="text-align:start; margin-left: 18px;margin-top: 10px; color: white;font-weight: bold;">Lorem</p>
+              <button (click)="showFiller = !showFiller" mat-raised-button style="color:rgb(96, 133, 243); background-color: black;">
+                 More..
+              </button>
+            </mat-nav-list>
+        </mat-sidenav>
+         <mat-sidenav-content class="content" style="background-color: #edf7fa;">
+            <div style="height: 88vh;"> 
+              <router-outlet></router-outlet> 
+           <!-- <app-maplist></app-maplist> -->
+             </div> 
+          </mat-sidenav-content>
+      </mat-sidenav-container>
+  </div>
   
-        <a mat-list-item [routerLink]="'/accounts'"> Gyms </a>
-        <a mat-list-item [routerLink]="'/create-account'"> Create Account </a>
-        <a mat-list-item [routerLink]="'/contacts'"> Contacts </a>
-        <a mat-list-item [routerLink]="'/create-contact'"> Create Contact </a>
-        <a mat-list-item [routerLink]="'/activities'"> Activities </a>
-        <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>
-        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
   
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <div style="height: 88vh;">
-  
-        <!-- <router-outlet></router-outlet> -->
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>

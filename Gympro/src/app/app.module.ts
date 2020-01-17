@@ -1,3 +1,5 @@
+import { LandingPageModule } from './landing-page/landing-page.module';
+import { LoginPageComponent } from './landing-page/login-page/login-page.component';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -105,7 +107,7 @@ import { SessionlistComponent } from './gymuser/navigation/sessionlist/sessionli
 import { ClasslistComponent } from './gymuser/navigation/classlist/classlist.component';
 import { NotificationComponent } from './gymuser/navigation/notification/notification.component';
 import { LocationComponent } from './gymuser/navigation/location/location.component';
-//import {GoogleMapsModule } from '@angular/google-maps';
+import {GoogleMapsModule } from '@angular/google-maps';
 import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
 
 
@@ -164,13 +166,13 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     GymsonmapComponent,
 
     UserprofileComponent
-
+   
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    MatIconModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatCarouselModule,
@@ -189,15 +191,18 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     MatMenuModule,
     MatToolbarModule,
     HttpClientModule,
- 
+    GoogleMapsModule,
+    LandingPageModule,
+    MatButtonModule,
   ],
   providers: [
     EventEmmiterService,
     DatePipe,
-   // GoogleMapsModule,
+   
     RouterModule
 
   ],
+  entryComponents:[],
 
   bootstrap: [AppComponent],
 

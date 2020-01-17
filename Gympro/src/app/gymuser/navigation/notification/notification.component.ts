@@ -6,27 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notification.component.scss']
 })
 export class NotificationComponent implements OnInit {
+  public imagesUrl;
 
   constructor() { }
 
   ngOnInit() {
+    this.imagesUrl = ['gettyimages-515238274-2048x2048.jpg', 'gym-setup-tips-1.jpg', 'gina-lin-1167578-unsplash-800x510.jpg'];
   }
 
 
 
-  changeListener($event, index: number) : void {
-    this.readThis($event.target, index);
-                  }
 
-
-readThis(inputValue: any, index: number): void {
-    var file:File = inputValue.files[1];
-    var myReader:FileReader = new FileReader();
-
-    // myReader.onloadend = (e) => {
-    //     this.currentUserData.familyMembers[index].person.imagePath = myReader.result;
-    // }
-    myReader.readAsDataURL(file);
-
-}
 }

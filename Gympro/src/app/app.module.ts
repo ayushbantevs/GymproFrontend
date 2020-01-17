@@ -67,6 +67,7 @@ import { NotificationComponent } from './gymuser/navigation/notification/notific
 import { LocationComponent } from './gymuser/navigation/location/location.component';
 import {GoogleMapsModule } from '@angular/google-maps';
 import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
+import { SliderModule } from 'angular-image-slider';
 
 
 
@@ -163,6 +164,7 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     ReactiveFormsModule,
     RouterModule,
     GoogleMapsModule,
+    SliderModule
  
 
   ],

@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { RouterModule } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
@@ -42,6 +43,7 @@ import { NotificationDetailsComponent } from './admin-dash-board/notifications/n
 import {MatMenuModule} from '@angular/material/menu';
 import { LogoutComponent } from './admin-dash-board/logout/logout.component';
 import { AdminInformationComponent } from './admin-dash-board/admin-information/admin-information.component';
+import { DatePipe } from '@angular/common';
 
 
  
@@ -87,13 +89,13 @@ import { AdminInformationComponent } from './admin-dash-board/admin-information/
     MatTooltipModule,
     MatDialogModule,
     MatMenuModule,
-    MatToolbarModule
-   
-  
-  
+    MatToolbarModule,
+    HttpClientModule,
+ 
   ],
   providers: [
     EventEmmiterService,
+    DatePipe
  
   ],
 

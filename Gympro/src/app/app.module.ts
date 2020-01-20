@@ -135,9 +135,6 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     NotificationDetailsComponent,
     LogoutComponent,
     AdminInformationComponent,
-   
-   
-
     LandingPageComponent,
 
     GymadminComponent,
@@ -156,7 +153,7 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     NavigationComponent,
     GymlistComponent,
     ProfileComponent,
-
+    
     UserprofileComponent,
     MaplistComponent,
     SessionlistComponent,
@@ -194,6 +191,9 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     GoogleMapsModule,
     LandingPageModule,
     MatButtonModule,
+    MatExpansionModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [
     EventEmmiterService,

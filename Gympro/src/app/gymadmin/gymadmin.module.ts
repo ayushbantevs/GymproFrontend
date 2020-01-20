@@ -18,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     MatIconModule,MatSidenavModule,
-    ,MatToolbarModule,GymadminRoutingModule,HttpClientModule
+    ,MatToolbarModule,GymadminRoutingModule,HttpClientModule,
+    MatIconModule
   ]
 })
 export class GymadminModule { }

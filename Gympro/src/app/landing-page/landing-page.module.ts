@@ -25,8 +25,6 @@ import { MaterialFileInputModule  } from 'ngx-material-file-input';
 
 @NgModule({
   declarations: [
-
-      
       LoginPageComponent,
       GymPageComponent,
       UserPageComponent

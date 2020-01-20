@@ -1,3 +1,5 @@
+import { LandingPageModule } from './landing-page/landing-page.module';
+import { LoginPageComponent } from './landing-page/login-page/login-page.component';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -5,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { EventEmmiterService } from './event-emmiter.service';
+
+
 
 
 import { GymoffersComponent } from './gymadmin/gymoffers/gymoffers.component';
@@ -163,15 +167,21 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     LocationComponent,
     GymsonmapComponent,
 
+
     UserprofileComponent,
-    LocationComponent
+    LocationComponent,
+
+
+    UserprofileComponent,
+   
+   
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    MatIconModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatCarouselModule,
@@ -191,14 +201,18 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     MatToolbarModule,
     HttpClientModule,
     GoogleMapsModule,
+   
     //LocationComponent,
     //GoogleMap
- 
+
+    LandingPageModule,
+    MatButtonModule,
+
   ],
   providers: [
     EventEmmiterService,
     DatePipe,
-   // GoogleMapsModule,
+   
     RouterModule
 
   ],

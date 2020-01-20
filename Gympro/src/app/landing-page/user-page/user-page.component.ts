@@ -1,9 +1,11 @@
+import { User } from './../user';
 import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient,HttpEventType } from '@angular/common/http';
 import { RegistrationService } from '../../Services/registration.service';
-import { User } from '../user';
+//import{ ImageData } from './user-page.component';
+//import { User } from '../user';
 
 
 @Component({
@@ -13,11 +15,14 @@ import { User } from '../user';
 })
 export class UserPageComponent implements OnInit {
 
-  //myimg:string;
+  
+  
+  myimg:string;
   file:boolean=true;
   public imagePath;
   imgURL: any;
   public message: string;
+  value:string;
  
   preview(files) {
     if (files.length === 0)
@@ -52,26 +57,31 @@ export class UserPageComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private router: Router,
-   // private service: RegistrationService,
-    private httpservice: RegistrationService) { }
+     private httpservice: RegistrationService,
+     private httpclient:HttpClient) { }
 
-    user_register = this.fb.group({
+      user_register = this.fb.group({
     
       user_id: ['', [Validators.required]],
       user_name: ['', [Validators.required]],
       user_mailId: ['', [Validators.required]],
       Password: ['', [Validators.required]],
       user_contact_no: ['', [Validators.required]],
-      
+      Gender:['',[Validators.required]],
+      Contact_Number:['',[Validators.required]],
+      date:['',[Validators.required]],
       user_age: ['', [Validators.required]],
-      //user_address: ['', [Validators.required]],
       city: ['', [Validators.required]],
-      pincode: ['', [Validators.required]]
+      pincode: ['', [Validators.required]],
+       Ragistration_date: ['', [Validators.required]],
+      User_Location_Logitude: ['', [Validators.required]],
+      User_Location_Latitude: ['', [Validators.required]],
+
+
      
     });
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 
   
@@ -79,10 +89,17 @@ export class UserPageComponent implements OnInit {
   onFormSubmit()
   {
      var user=new User();
+
+     user.User_Id=this.user_register.controls['user_id'].value;
      user.User_Name=this.user_register.controls['user_name'].value;
      user.User_Mail_Id=this.user_register.controls['user_mailId'].value;
      user.Password=this.user_register.controls['Password'].value;
+     user.Gender=this.user_register.controls['Gender'].value;
+     user.DateOfBIrth=this.user_register.controls['date'].value;
      user.Contact_Number=this.user_register.controls['user_contact_no'].value;
+      user.Ragistration_date=this.user_register.controls['Ragistration_date'].value;
+      user.User_Location_Logitude=this.user_register.controls['User_Location_Logitude'].value;
+     user.User_Location_Latitude=this.user_register.controls['User_Location_Latitude'].value;
      user.User_Age=this.user_register.controls['user_age'].value;
      user.city=this.user_register.controls['city'].value;
      user.pincode=this.user_register.controls['pincode'].value;
@@ -90,7 +107,7 @@ export class UserPageComponent implements OnInit {
 
     this.httpservice.Adduser(user).subscribe((data)=>{
     });
-      alert(""); 
+     // alert(""); 
 
   }
 
@@ -103,12 +120,12 @@ backtoLogin()
  myfun()
   {
     console.log("image added");
-    //var imgg =document.getElementsByName("myimg1") ;
+    
   }
-  click()
-  {
-     this.file=true;
-  }
+  // click()
+  // {
+  //    this.file=true;
+  // }
 
   
 }

@@ -58,7 +58,8 @@ const routes: Routes = [
   //landingpage route
   {
     path:'',
-   component:LandingPageComponent
+   component:LandingPageComponent,
+   
   },
   //gymadmin page
   {

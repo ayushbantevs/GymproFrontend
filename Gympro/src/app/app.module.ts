@@ -105,7 +105,7 @@ import { SessionlistComponent } from './gymuser/navigation/sessionlist/sessionli
 import { ClasslistComponent } from './gymuser/navigation/classlist/classlist.component';
 import { NotificationComponent } from './gymuser/navigation/notification/notification.component';
 import { LocationComponent } from './gymuser/navigation/location/location.component';
-//import {GoogleMapsModule } from '@angular/google-maps';
+import {GoogleMapsModule } from '@angular/google-maps';
 import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
 
 
@@ -163,7 +163,8 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     LocationComponent,
     GymsonmapComponent,
 
-    UserprofileComponent
+    UserprofileComponent,
+    LocationComponent
 
 
   ],
@@ -189,6 +190,9 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     MatMenuModule,
     MatToolbarModule,
     HttpClientModule,
+    GoogleMapsModule,
+    //LocationComponent,
+    //GoogleMap
  
   ],
   providers: [
@@ -198,6 +202,7 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     RouterModule
 
   ],
+  entryComponents:[],
 
   bootstrap: [AppComponent],
 

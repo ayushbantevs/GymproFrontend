@@ -1,6 +1,5 @@
 import { GymcustomerserviceService } from './../../Services/gymcustomerservice.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-gymcoustomers',
   templateUrl: './gymcoustomers.component.html',
@@ -8,31 +7,77 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GymcoustomersComponent implements OnInit {
 
-  data:any;
+  data:any=[];
+  Totallength:number=0;
   constructor(private gymcCoustomerService:GymcustomerserviceService) { }
-
+  gymId:any="G101";
   ngOnInit() {
-    this.gymcCoustomerService.getAllCustomers("G101").subscribe((data=>{
-      console.log(data);
+    this.gymcCoustomerService.getAllCustomers(this.gymId).subscribe((data=>{
       this.data=JSON.parse (JSON.stringify(data));
+      this.Calculatelength();
     }));
 
   }
 
 
+  Calculatelength()
+  {
+    var i=0;
+    this.data.forEach(element => {
+      i++;
+      
+    });
+    this.Totallength=i;
+  }
+
    dateReturn(dateObj:string)
   {
-   // console.log(dateObj.substring(1,10));
        var convertedDate=new Date(dateObj.substring(1,10));
-      // console.log(convertedDate);
       return convertedDate.toDateString();
     
   }
 
-  changeStatus(Gymid:string,UserId:string)
+  changeStatus(Gymid:string,UserId:string,status:number)
   {
-    console.log(Gymid+"---"+UserId);
-    //this.gymcCoustomerService.changeStatus(Gymid,UserId).subscribe();
+    if(status==0)
+    {
+      status=1;
+    }else
+    {
+      status=0;
+    }
+   // console.log(this.Hasmap[UserId]);
+   this.gymcCoustomerService.changeStatus(Gymid,UserId,status).subscribe(data=>
+    {
+       if(data==1)
+       {
+        for(var i=0;i<this.Totallength;i++)
+        {
+          if(this.data[i].userId==UserId)
+          {
+            this.data[i].subs_Status=status;
+    
+          }
+        }
+       }
+    });
+
+   
+
+    
+   
+
   }
+
+
+  // createHashMap()
+  // {
+  //     this.data.forEach(element => {
+  //       this.Hasmap[element.userId]=element;
+        
+  //     });
+  //     console.log("hashMap Created");
+
+  // }
 
 }

@@ -15,9 +15,9 @@ export class GymcustomerserviceService {
   }
 
   
-  changeStatus(gymId,userId)
+  changeStatus(gymId,userId,status)
   {
-    return this.httpClient.get("https://localhost:44338/api/gymcoustomer/"+gymId+"/"+userId);
+    return this.httpClient.get("https://localhost:44338/api/gymcoustomer/"+gymId+"/"+userId+"/"+status);
   }
   
 

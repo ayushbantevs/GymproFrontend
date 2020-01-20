@@ -100,7 +100,7 @@ import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_pr
 
 
 import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
-import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/sessionlist.component';
+//import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/sessionlist.component';
 
 
 
@@ -165,7 +165,7 @@ import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/ses
 
     GymlistComponent,
 
-    SessionlistComponent,
+   // SessionlistComponent,
 
 
 

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
   imgpro:any=[{url:'../assets/Images/gym-setup-tips-1.jpg'},
   {url:'../assets/Images/pexels-photo-1954524.jpeg'},
   {url:'../assets/Images/gina-lin-1167578-unsplash-800x510.jpg'}];
@@ -15,31 +16,25 @@ export class LandingPageComponent implements OnInit {
   ngOnInit() {
   }
 
-<<<<<<< Updated upstream
-=======
+
   Login():void{
 
-       const dialogRef = this.dialog.open(LoginPageComponent, {
-         height:'auto',
-        width: 'auto',
-      data: {name: '', animal: ''}
+      //  const dialogRef = this.dialog.open(LoginPageComponent, {
+      //    height:'auto',
+      //   width: 'auto',
+      // data: {name: '', animal: ''}
 
     
-    });
+  //  });
    
       
-   
+  
     
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed');
      
-    });
-
-
-
-
-
+    // });
 
       
   }
@@ -50,5 +45,4 @@ export class LandingPageComponent implements OnInit {
     this.route.navigate(['admindashboard']);
   }
 
->>>>>>> Stashed changes
 }

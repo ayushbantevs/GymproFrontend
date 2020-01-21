@@ -50,6 +50,7 @@ export class GymoffersComponent implements OnInit {
   onExpanded()
   {
     this.expandedValue=!this.expandedValue;
+   
 
   }
   onCollapsed()

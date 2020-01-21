@@ -65,21 +65,7 @@ const routes: Routes = [
 
     path:'gymadmin', 
     component:GymadminComponent,
-    children:[
-      {path:'',pathMatch:'full',redirectTo:'profile'},
-        {
-          path:'profile',
-          component:ProfileComponent
-        },
-      {
-        path:'gymoffers',
-        component:GymoffersComponent
-      },
-      {
-         path:'gymcoustomers',
-        component:GymcoustomersComponent
-      },
-    ]
+    loadChildren:() => import('./gymadmin/gymadminm.module').then(m=>m.gymadminmModule),
   },
 
 {

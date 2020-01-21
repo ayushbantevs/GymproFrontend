@@ -10,9 +10,9 @@ import { EventEmmiterService } from './event-emmiter.service';
 
 
 import { GymoffersComponent } from './gymadmin/gymoffers/gymoffers.component';
-import { GymadminModule } from './gymadmin/gymadmin.module';
+
 import { ProfileComponent } from './gymadmin/profile/profile.component';
-import { GymadminRoutingModule } from './gymadmin/gymadmin-routing.module';
+
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -52,7 +52,7 @@ import { NotificationDetailsComponent } from './admin-dash-board/notifications/n
 import {MatMenuModule} from '@angular/material/menu';
 import { LogoutComponent } from './admin-dash-board/logout/logout.component';
 import { AdminInformationComponent } from './admin-dash-board/admin-information/admin-information.component';
-import { DatePipe } from '@angular/common';
+import { DatePipe, CommonModule } from '@angular/common';
 
 
 
@@ -109,6 +109,7 @@ import { NotificationComponent } from './gymuser/navigation/notification/notific
 import { LocationComponent } from './gymuser/navigation/location/location.component';
 import {GoogleMapsModule } from '@angular/google-maps';
 import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
+import { gymadminmModule } from './gymadmin/gymadminm.module';
 
 
 
@@ -137,14 +138,14 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     AdminInformationComponent,
     LandingPageComponent,
 
-    GymadminComponent,
+   // GymadminComponent,
     GymlistComponent,
     NavigationComponent,
     Edit_profileComponent,
     UserprofileComponent,
     UserprofileComponent,
-   GymoffersComponent,
-    GymcoustomersComponent,
+ //  GymoffersComponent,
+   // GymcoustomersComponent,
     NavigationComponent,
     UserprofileComponent,
     NavigationComponent,
@@ -152,7 +153,7 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     UserprofileComponent,
     NavigationComponent,
     GymlistComponent,
-    ProfileComponent,
+    //ProfileComponent,
     
     UserprofileComponent,
     MaplistComponent,
@@ -167,6 +168,7 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
 
   ],
   imports: [
+ 
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
@@ -175,7 +177,6 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     MatCarouselModule,
     MatSidenavModule,
     MatCheckboxModule,
-    MatIconModule,
     MatListModule, 
     SharedModule,
     MatGridListModule,
@@ -191,9 +192,10 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     GoogleMapsModule,
     LandingPageModule,
     MatButtonModule,
-    MatExpansionModule,
+   
     MatInputModule,
     FormsModule,
+    gymadminmModule,
   ],
   providers: [
     EventEmmiterService,

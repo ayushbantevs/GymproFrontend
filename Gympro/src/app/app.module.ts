@@ -143,7 +143,7 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     Edit_profileComponent,
     UserprofileComponent,
     UserprofileComponent,
-    GymoffersComponent,
+   GymoffersComponent,
     GymcoustomersComponent,
     NavigationComponent,
     UserprofileComponent,
@@ -193,7 +193,7 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     MatButtonModule,
     MatExpansionModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     EventEmmiterService,

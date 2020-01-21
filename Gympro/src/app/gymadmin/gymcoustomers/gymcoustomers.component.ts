@@ -10,13 +10,14 @@ export class GymcoustomersComponent implements OnInit {
   data:any=[];
   Totallength:number=0;
   constructor(private gymcCoustomerService:GymcustomerserviceService) { }
-  gymId:any="G101";
+  gymId:any="102";
   ngOnInit() {
     this.gymcCoustomerService.getAllCustomers(this.gymId).subscribe((data=>{
       this.data=JSON.parse (JSON.stringify(data));
       this.Calculatelength();
     }));
-
+    var json2={UserName:"c",Email:"a",PartnerId:"b"};
+    this.gymcCoustomerService.postMethodtemp(json2).subscribe(data=>console.log(data));
   }
 
 

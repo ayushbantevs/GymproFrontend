@@ -1,0 +1,78 @@
+<!-- <mat-card class *ngIf="showLogin">
+    <mat-card-header>
+      
+      <mat-card-title style="color:yellowgreen">Login</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    
+       <mat-card-content> 
+          <form  *ngIf="show" class="form" [formGroup]="LoginForm">
+              <div *ngIf="show">  
+
+                  <mat-form-field  class="full-width">
+                      <input  *ngIf="show" matInput placeholder="Email" formControlName="email" required>
+                      <mat-error *ngIf="hasError('email','required')">email is required</mat-error>
+                    </mat-form-field><br>
+
+                    <mat-form-field class="full-width">
+                        <input *ngIf="show" matInput placeholder="Password" type="password" formControlName="Password" >
+                        <mat-error *ngIf="hasError('password','required')">Password is required</mat-error>
+                      </mat-form-field><br>
+              </div> 
+          </form>
+          </mat-card-content>
+      <mat-card-actions>
+        <button mat-button *ngIf="show" (click)="loginClick()">Login </button>
+        <button mat-button *ngIf="show" (click)="RegisterClick()">Register</button>
+        <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
+        <div *ngIf="show1">
+            <button class="regbtn hover1" *ngIf="show1"  (click)="funUserRegClick()">Register As User
+            </button>
+               
+            <button  class="regbtn hover1" *ngIf="show1" (click)="funGymUserRegClick()">Register As Gym Owner
+            </button>
+
+            </div>
+            <app-gym-page *ngIf="showRegister" (otp)="GymLogin($event)"></app-gym-page> 
+            <app-user-page *ngIf="showuser" (otp)="UserLogin($event)"></app-user-page> 
+      </mat-card-actions>
+    </mat-card>
+    -->
+
+  <mat-card *ngIf="showLogin" mat-dialog-content>
+        <h2>Login</h2>
+    <div *ngIf="show">
+    <form  *ngIf="show" class="form" [formGroup]="LoginForm">
+            <mat-form-field  class="full-width">
+                    <input  *ngIf="show" matInput placeholder="Email" formControlName="email" required>
+                    <mat-error *ngIf="LoginForm.get('email').invalid">email is required</mat-error>
+                  </mat-form-field><br>
+                  <mat-form-field class="full-width">
+                    <input  *ngIf="show" matInput placeholder="Password" type="password" formControlName="Password" required>
+                    <mat-error *ngIf="LoginForm.get('Password').invalid">Password is required</mat-error>
+                  </mat-form-field><br>
+                 
+                  <button *ngIf="show" (click)="loginClick()">Submit </button>
+
+                  <button *ngIf="show" (click)="RegisterClick()">register</button>
+                
+                  <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
+                
+    </form>
+    </div>
+    <div *ngIf="show1">
+      <button class="regbtn hover1" *ngIf="show1"  (click)="funUserRegClick()">Register As User
+      </button>
+         
+      <button  class="regbtn hover1" *ngIf="show1" (click)="funGymUserRegClick()">Register As Gym Owner
+      </button> 
+          
+          
+      </div>
+    </mat-card>
+     <app-gym-page *ngIf="showRegister" (otp)="GymLogin($event)"></app-gym-page> 
+     <app-user-page *ngIf="showuser" (otp)="UserLogin($event)"></app-user-page> 
+     
+  
+
+    

@@ -1,6 +1,6 @@
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { MatTableDataSource, MatPaginator, MatSort, } from '@angular/material';
 import { UserData } from '../notifications/notifications.component';
 import { ContactUsMesgComponent } from '../contact-us-mesg/contact-us-mesg.component';
 
@@ -165,6 +165,7 @@ export class FeedbackComponent implements OnInit {
        height:'auto',  
        data: {message: Message, email: email,name:Name}
     });
+
 
    
   }

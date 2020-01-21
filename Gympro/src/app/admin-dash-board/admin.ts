@@ -9,5 +9,4 @@ Admin_Type:string;
 Status:string;
 confermpwd:string;
 Admin_Create_date:string;
-
 }

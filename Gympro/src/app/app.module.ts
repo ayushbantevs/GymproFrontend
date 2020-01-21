@@ -1,3 +1,7 @@
+import { AuthGuard } from './guards/auth.guard';
+import { WebStorageService } from 'angular-webstorage-service/src/web-storage.service';
+import { LandingPageModule } from './landing-page/landing-page.module';
+import { LoginPageComponent } from './landing-page/login-page/login-page.component';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -5,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { EventEmmiterService } from './event-emmiter.service';
+
 
 import { GymoffersComponent } from './gymadmin/gymoffers/gymoffers.component';
 import { GymadminModule } from './gymadmin/gymadmin.module';
@@ -54,12 +59,11 @@ import { DatePipe } from '@angular/common';
 
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
-
 import { GymadminComponent } from './gymadmin/gymadmin.component';
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {PortalModule} from '@angular/cdk/portal';
-import {ScrollingModule} from '@angular/cdk/scrolling';
+//import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkStepperModule} from '@angular/cdk/stepper';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
@@ -89,23 +93,30 @@ import {MatSortModule} from '@angular/material/sort';
 
 import {MatTabsModule} from '@angular/material/tabs';
 
+
+
+
 import {MatTreeModule} from '@angular/material/tree';
 import { UserprofileComponent } from './userprofile/userprofile.component';
-
 import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.component';
-
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
 
 
 
 import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
-//import { SessionlistComponent } from './gymuser/navigation/lists/sessionlist/sessionlist.component';
+
+import { MaplistComponent } from './gymuser/navigation/maplist/maplist.component';
+import { SessionlistComponent } from './gymuser/navigation/sessionlist/sessionlist.component';
+import { ClasslistComponent } from './gymuser/navigation/classlist/classlist.component';
+import { NotificationComponent } from './gymuser/navigation/notification/notification.component';
+import { LocationComponent } from './gymuser/navigation/location/location.component';
+import {GoogleMapsModule } from '@angular/google-maps';
+import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
+import { AppAdminLoginComponent } from './admin-dash-board/app-admin-login/app-admin-login.component';
 
 
-
-
-
+import { StorageServiceModule} from 'angular-webstorage-service';
 
 
 
@@ -134,51 +145,45 @@ import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.c
    
 
     LandingPageComponent,
+
     GymadminComponent,
     GymlistComponent,
-
     NavigationComponent,
     Edit_profileComponent,
-
-
-
     UserprofileComponent,
-
     UserprofileComponent,
-
     GymoffersComponent,
     GymcoustomersComponent,
     NavigationComponent,
-
     UserprofileComponent,
-
     NavigationComponent,
     Edit_profileComponent,
+    UserprofileComponent,
+    NavigationComponent,
+    GymlistComponent,
+    ProfileComponent,
+
+
+    UserprofileComponent,
+    MaplistComponent,
+    SessionlistComponent,
+    ClasslistComponent,
+    NotificationComponent,
+    LocationComponent,
+    GymsonmapComponent,
 
 
     UserprofileComponent,
 
 
-
-
-    NavigationComponent,
-
-    GymlistComponent,
-
-   // SessionlistComponent,
-
-
-
-
-    ProfileComponent,
-    UserprofileComponent
-
+    AppAdminLoginComponent
+   
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    MatIconModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatCarouselModule,
@@ -197,14 +202,20 @@ import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.c
     MatMenuModule,
     MatToolbarModule,
     HttpClientModule,
- 
+    GoogleMapsModule,
+    LandingPageModule,
+    MatButtonModule,
+    StorageServiceModule,
   ],
   providers: [
     EventEmmiterService,
-    DatePipe
- 
-  
+
+    DatePipe,
+   
+    RouterModule,
+    AuthGuard
   ],
+  entryComponents:[],
 
   bootstrap: [AppComponent],
 

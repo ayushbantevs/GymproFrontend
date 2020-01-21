@@ -1,3 +1,9 @@
+import { AdminServiceService } from './../Services/admin-service.service';
+import { User } from './../landing-page/user';
+import { WebStorageService } from 'angular-webstorage-service/src/web-storage.service';
+
+import { Router, ActivatedRoute } from '@angular/router';
+import { AppAdminLoginComponent } from './app-admin-login/app-admin-login.component';
 import { AdminInformationComponent } from './admin-information/admin-information.component';
 import { LogoutComponent } from './logout/logout.component';
 import { MatDialogModule, MatDialog } from '@angular/material';
@@ -7,6 +13,9 @@ import { Component, OnInit } from '@angular/core';
 import * as CanvasJS from './canvasjs.min';
 import { ContactUsMesgComponent } from './contact-us-mesg/contact-us-mesg.component';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { Key } from 'protractor';
+import { Admin } from './admin';
+import { StorageServiceModule } from 'angular-webstorage-service/src/storage-service.module';
 //import { eventNames } from 'cluster';
 
 
@@ -17,7 +26,6 @@ export interface AdminData {
   Admin_Id: string;
 }
 
-
 @Component({
   selector: 'app-admin-dash-board',
   templateUrl: './admin-dash-board.component.html',
@@ -25,7 +33,8 @@ export interface AdminData {
 })
 export class AdminDashBoardComponent implements OnInit {
 
-  constructor(private EventEmmiterService:EventEmmiterService,private dialog:MatDialog) {    } 
+  constructor( private EventEmmiterService:EventEmmiterService,private dialog:MatDialog, private route:Router, private router: ActivatedRoute,private Adminservise:AdminServiceService) {    } 
+  AdminName:string="Admin Name"
 
   Name:string;
   Admin_type:string;
@@ -46,152 +55,64 @@ export class AdminDashBoardComponent implements OnInit {
   showGymOwnerAndUsers:boolean=false;
   showfeedback:boolean=false;
 
-
+  //GymUser:any=[];
    AllUsers:number=899;
 
-  
-
-
+ // sub:any;
+   
 
   ngOnInit() {
 
+
    
-      this.EventEmmiterService.subsVar = this.EventEmmiterService.    
-      invokeFirstComponentFunction.subscribe((name:string) => {    
-        this.funshowalllist();    
-      });    
+
+    this.AdminName = localStorage.getItem('token');  
+  
+  //  this.sub = this.router.queryParams
+  //  .subscribe(params => {
+  //    // Defaults to 0 if no query param provided.
+  //    this.AdminName = params['Name'];
+  //    });
+
+    // if(this.AdminName=="Admin Name" || this.AdminName==undefined  )
+    //   {
+
+    //     this.route.navigate(['']);
+    //     const dialogRef = this.dialog.open(AppAdminLoginComponent, {
+    //       width: 'auto',
+    //       height:'auto',  
+    //       data: {message: "", email: "",name:""}
+    //     });
 
     
-
+    //   }
       
-      this.EventEmmiterService.subsVar = this.EventEmmiterService.    
-      Gym_Owners.subscribe((name:string) => {    
-        this.funshowAllGymOwner();    
-      });    
-
-    
-
-      this.EventEmmiterService.subsVar = this.EventEmmiterService.    
-      Gym_Goers.subscribe((name:string) => {    
-        this.funshowAllGymOwner();    
-      });    
-
-    
-
-
-   
   }
 
   logout()
   {
-    const dialogRef = this.dialog.open(LogoutComponent, {
-      width: 'auto',
-      height:'auto',  
-      data: {}
-   });
+
+ 
+     // console.log('logout');  
+      this.Adminservise.logout();  
+      this.route.navigate(['']);  
+    
+  //   const dialogRef = this.dialog.open(LogoutComponent, {
+  //     width: 'auto',
+  //     height:'auto',  
+  //     data: {}
+  //  });
   }
 
   funadminInfo()
   {
-    this.Name="Amar",this.Admin_Id="ADM1223",this.Admin_type="Support";
+    //this.Name="Amar",this.Admin_Id="ADM1223",this.Admin_type="Support";
     const dialogRef = this.dialog.open(AdminInformationComponent, {
       width: 'auto',
       height:'auto',  
       data: {Name:this.Name,Admin_type:this.Admin_type,Admin_id:this.Admin_Id,email:this.Email }
    });
 
-  }
-
-  showarrow()
-  {
-      if(this.showrightArrow==true)
-      {
-      this.showrightArrow=false;
-      this.showleftArrow=true;
-      }
-
-     else if(this.showleftArrow==true )
-     {
-      this.showrightArrow=true;
-      this.showleftArrow=false;
-     }
-  }
-
-  showdashbord()
-  {
-    this.showdashboard=true;
-    this.showAddverise=false;
-    this.showAddadmin=false;
-    this.showAllgymOwners=false;
-    this.showGymUsers=false;
-    this.showGymOwnerAndUsers=false;
-    this.showfeedback=false;
-    
-  
-    
-  }
-  showAddverisefun()
-  {
-    this.showAddverise=true;
-    this.showdashboard=false;
-    this.showAddadmin=false;
-    this.showAllgymOwners=false;
-    this.showGymUsers=false;
-    this.showGymOwnerAndUsers=false;
-    this.showfeedback=false;
-  }
-  addadminfun()
-  {
-    this.showAddadmin=true;
-    this.showdashboard=false;
-    this.showAddverise=false;
-    this.showAllgymOwners=false;
-    this.showGymUsers=false;
-    this.showGymOwnerAndUsers=false;
-    this.showfeedback=false;
-  }
-  funshowAllGymOwner(){
-    this.showAllgymOwners=true;
-    this.showdashboard=false;
-    this.showAddverise=false;
-    this.showAddadmin=false;
-    this.showGymUsers=false;
-    this.showGymOwnerAndUsers=false;
-    this.showfeedback=false;
-  }
-  funshowgymUsers(){
-    this.showdashboard=false;
-    this.showAddverise=false;
-    this.showAddadmin=false;
-    this.showAllgymOwners=false;
-    this.showGymUsers=true;
-    this.showGymOwnerAndUsers=false;
-    this.showfeedback=false;
-
-  }
-
-  funshowalllist()
-  {
-    this.showGymOwnerAndUsers=true;
-    this.showdashboard=false;
-    this.showAddverise=false;
-    this.showAddadmin=false;
-    this.showAllgymOwners=false;
-    this.showGymUsers=false;
-    this.showfeedback=false;
-   
-    //alert("done...!");
-
-  }
-  funshowFeedBack(){
-
-    this.showfeedback=true;
-    this.showGymOwnerAndUsers=false;
-    this.showdashboard=false;
-    this.showAddverise=false;
-    this.showAddadmin=false;
-    this.showAllgymOwners=false;
-    this.showGymUsers=false;
   }
   
 }

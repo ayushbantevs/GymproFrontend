@@ -1,3 +1,20 @@
+import { AuthGuard } from './guards/auth.guard';
+import { AppAdminLoginComponent } from './admin-dash-board/app-admin-login/app-admin-login.component';
+
+
+import { GymPageComponent } from './landing-page/gym-page/gym-page.component';
+import { LoginPageComponent } from './landing-page/login-page/login-page.component';
+import { UserPageComponent } from './landing-page/user-page/user-page.component';
+
+//import { UserRegisterComponent } from './user-register/user-register.component';
+
+//import { RegisterComponent } from './register/register.component';
+
+import { LocationComponent } from './gymuser/navigation/location/location.component';
+import { NotificationComponent } from './gymuser/navigation/notification/notification.component';
+import { ClasslistComponent } from './gymuser/navigation/classlist/classlist.component';
+import { SessionlistComponent } from './gymuser/navigation/sessionlist/sessionlist.component';
+
 
 import { AdminInformationComponent } from './admin-dash-board/admin-information/admin-information.component';
 import { LogoutComponent } from './admin-dash-board/logout/logout.component';
@@ -8,19 +25,20 @@ import { FeedbackComponent } from './admin-dash-board/feedback/feedback.componen
 import { AllGymOwnersComponent } from './admin-dash-board/all-gym-owners/all-gym-owners.component';
 import { MaindashboardpageComponent } from './admin-dash-board/maindashboardpage/maindashboardpage.component';
 import { AdminDashBoardComponent } from './admin-dash-board/admin-dash-board.component';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+
 import { AllUsersComponent } from './admin-dash-board/all-users/all-users.component';
 import { AddNewAdminComponent } from './admin-dash-board/add-new-admin/add-new-admin.component';
 import { AllGymOwnerAndGymGoersListComponent } from './admin-dash-board/all-gym-owner-and-gym-goers-list/all-gym-owner-and-gym-goers-list.component';
 import { AdvertisePageComponent } from './admin-dash-board/advertise-page/advertise-page.component';
 import { ContactUsComponent } from './admin-dash-board/contact-us/contact-us.component';
+
+
 import { GymoffersComponent } from './gymadmin/gymoffers/gymoffers.component';
 import { ProfileModule } from './gymadmin/profile/profile.module';
 import { ProfileComponent } from './gymadmin/profile/profile.component';
 import { AppComponent } from './app.component';
 
-import { ChildrenOutletContexts } from '@angular/router';
+import { ChildrenOutletContexts, Routes, RouterModule } from '@angular/router';
 import { GymadminComponent } from './gymadmin/gymadmin.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { Edit_profileComponent } from './gymuser/navigation/edit_profile/edit_profile.component';
@@ -29,6 +47,9 @@ import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.c
 
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
+import { MaplistComponent } from './gymuser/navigation/maplist/maplist.component';
+import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
+import { NgModule } from '@angular/core';
 
 
 
@@ -40,6 +61,7 @@ const routes: Routes = [
   },
   //gymadmin page
   {
+
     path:'gymadmin', 
     component:GymadminComponent,
     children:[
@@ -65,20 +87,43 @@ const routes: Routes = [
   pathMatch:'full'
 },
   
- 
-  {
-  path: 'userhome',
-        component: NavigationComponent,
-        children: [
-          { path: 'edituserprofile', component: Edit_profileComponent},
-          { path: 'gymlist', component: GymlistComponent},
 
-        ]
+  // {path:'gymadmin', component:GymadminComponent},
+  // {path:'userprofile',component:UserprofileComponent},
+  // {path:'', component:LandingPageComponent},
+  
+  
+
+ 
+      {
+            path: 'userhome',
+           component: NavigationComponent,
+           children: [  
+            { path: '', component: MaplistComponent},
+            { path: 'sessionlist', component: SessionlistComponent},
+            { path: 'classlist', component: ClasslistComponent},
+            { path: 'editprofile', component: Edit_profileComponent},
+            { path: 'notification', component: NotificationComponent},
+            
+            { path: 'gymonmap',
+             component: GymsonmapComponent,
+             children:[
+              { path: 'location', component: LocationComponent},
+              { path: 'gymlist', component: GymlistComponent},
+                 ]
+            },  
+          ]
       },
 
+  {
+    path:'',
+    redirectTo:'userhome',
+    pathMatch:'full'
+  },
 
-  { path: 'admindashboard', component: AdminDashBoardComponent,
-  children:[
+  {
+    path: 'admindashboard', component: AdminDashBoardComponent, canActivate : [AuthGuard] ,
+    children:[  
         {
           path: 'allgymgoers',
           component: AllUsersComponent,
@@ -304,6 +349,11 @@ const routes: Routes = [
           data: { title: 'AdminInfo' },
         },
         {
+          path:'',
+          component: AppAdminLoginComponent,
+          data:{ title:'AppAdminLogin'},
+        },
+        {
           path: '**',
           component: AdminDashBoardComponent,
           data: { title: 'not found' },
@@ -325,12 +375,13 @@ const routes: Routes = [
 
   }
 
+
 ];
 
-
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [ RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+
+}

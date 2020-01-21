@@ -9,11 +9,36 @@ export class AdminServiceService {
 
   constructor(private httpClient:HttpClient) { }
 
+  logout() :void {    
+    localStorage.setItem('isLoggedIn','false');    
+    localStorage.removeItem('token');    
+    }    
+
  
   AddAdmin(Admin:Admin)
   {   
     var admindata = JSON.stringify(Admin);
    // alert(queryString);
-    return this.httpClient.post("https://localhost:44338/api/AppAdmin",'',{params:{AdminData:admindata} });
+    return this.httpClient.post("https://localhost:44338/api/AppAdmin/"+admindata,"");
   }
+
+  AppAdminLogin(loginemail:string,loginPassword:string)
+  {   
+    return this.httpClient.post("https://localhost:44338/api/AppAdmin/"+loginemail+"/"+loginPassword,"");
+  }
+
+  getAllgymUsers(allUsers:string)
+  { 
+    
+     return this.httpClient.get("https://localhost:44338/api/AppAdmin/"+allUsers);
+    
+  }
+
+  getAllgymOwners(allGymOwners:string)
+  { 
+    
+     return this.httpClient.get("https://localhost:44338/api/AppAdmin/"+allGymOwners+"/"+allGymOwners);
+    
+  }
+
 }

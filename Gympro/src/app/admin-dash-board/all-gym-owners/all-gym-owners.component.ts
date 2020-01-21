@@ -1,3 +1,4 @@
+import { AdminServiceService } from './../../Services/admin-service.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
@@ -26,19 +27,19 @@ export class AllGymOwnersComponent implements OnInit {
 
 
   
-  constructor() {
+  constructor(private httpservice:AdminServiceService) {
 
-     this.GymOwners=[{Gym_Id:"1223",Gym_Name:"Be Fit ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
-                     {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
-                     {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
-                     {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
-                     {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
-                     {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
-                     {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
-                     {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},  
-                    ];
+    //  this.GymOwners=[{Gym_Id:"1223",Gym_Name:"Be Fit ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
+    //                  {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
+    //                  {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
+    //                  {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
+    //                  {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
+    //                  {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
+    //                  {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},
+    //                  {Gym_Id:"12",Gym_Name:"Body Zone ",Gym_OwnerName:"AMAR",Gym_Address:"PUNE", PhoneNumber:"95520652**", Gym_Email_Id:"amar@gmail.com"},  
+    //                 ];
   
-    this.dataSource = new MatTableDataSource(this.GymOwners);
+    // this.dataSource = new MatTableDataSource(this.GymOwners);
 
    }
 
@@ -49,9 +50,16 @@ export class AllGymOwnersComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   ngOnInit() {
-   // alert("hii");
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.httpservice.getAllgymOwners("Amar").subscribe(data=>{ 
+
+       var result = JSON.parse(JSON.stringify(data))
+     
+       console.log(result);
+       this.GymOwners=result;
+       this.dataSource = new MatTableDataSource(this.GymOwners);
+       this.dataSource.paginator = this.paginator;
+       this.dataSource.sort = this.sort;
+      });
   }
 
   applyFilter(filterValue: string) {

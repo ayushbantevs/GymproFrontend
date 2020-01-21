@@ -1,0 +1,22 @@
+
+ <mat-card  mat-dialog-content>
+    <h2>Login</h2>
+<div>
+<form   class="form" [formGroup]="LoginForm">
+        <mat-form-field  class="full-width">
+                <input  matInput placeholder="Email" formControlName="email" required>
+                <mat-error *ngIf="LoginForm.get('email').invalid">email is required</mat-error>
+              </mat-form-field><br>
+              <mat-form-field class="full-width">
+                <input  matInput placeholder="Password" type="password" formControlName="Password" required>
+                <mat-error *ngIf="LoginForm.get('Password').invalid">Password is required</mat-error>
+              </mat-form-field><br>
+             
+              <button  (click)="loginClick()" [mat-dialog-close]>Submit </button>
+
+            <button  (click)="RegisterClick()">Forget Password</button>
+            
+            <button  [mat-dialog-close] cdkFocusInitial>Cancel</button>
+            
+</form>
+</div>

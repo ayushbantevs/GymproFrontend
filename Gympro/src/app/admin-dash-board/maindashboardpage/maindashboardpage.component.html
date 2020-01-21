@@ -3,16 +3,18 @@
   <mat-card-content>
 
         <div class="card-container"  >
-          <a class="card" (click)="funShowallList()">  
+          <!-- <a class="card" (click)="funShowallList()">  
             <span>All Users</span>
             <div></div>
-            <span>899</span>
-          </a>
+            <span></span>
+          </a> -->
             <a class="card"   (click)="funShowGymOwnerList()">
-               <span>GYM Users</span>
+              <h1>{{ownercount}}</h1>
+               <span>GYM Owners</span>
             </a>
              <a class="card"(click)="funShowGymGoerList()" >
-             <span>GYM Goers</span>
+               <h1>{{usercount}}</h1>
+             <span>GYM Users</span>
              </a>
        </div>
      

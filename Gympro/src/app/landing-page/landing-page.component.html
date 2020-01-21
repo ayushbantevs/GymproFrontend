@@ -1,25 +1,20 @@
 
-<<<<<<< Updated upstream
-=======
+
+
+
   <!---gh-->
   
-
-
-
   <router-outlet></router-outlet>
-
 
   <div class="row" style="margin-left: 8px;margin-top: 20px;">
      <div class="col-12">
 
 
->>>>>>> Stashed changes
-
     <ul class="ul1">
       <li style=" float: left;" class="li1"><a class="active a1" href="#Home">Home</a></li>
       <li style=" float: left;" class="li1"><a href="#AC_Page" class="a1">About us</a></li>
       <li style=" float: left;" class="li1"><a href="#AC_Page" class="a1">Contact us</a></li>
-      <li  style=" float: left;" class="li1" ><a href="#about" class="a1">Login</a></li>
+      <li  style=" float: left;" class="li1" ><a class="a1" (click)="Login()">Login</a></li>
     </ul>
 
   <!-- </div>
@@ -37,8 +32,9 @@
     <div class="col-12">
   <mat-carousel timings="250ms ease-in"
 
+
              [autoplay]="true"
-             interval="1000"
+             interval ="1000"
              color="accent"
              maxWidth="auto"
              proportion="25"
@@ -56,7 +52,10 @@
              [image]="slide.url"
              overlayColor="#00000040"
              [hideOverlay]="false">
+            
              </mat-carousel-slide> 
+             
+ 
              </mat-carousel>
 
    
@@ -172,7 +171,9 @@
                   <h3 class="footer-heading mb-4">Navigations</h3>
                   <ul class="list-unstyled">
                     <li><a href="#"></a></li>
-                    <li ><a  href="admindashboard">Admin Login</a></li>
+
+                    <li class="AppAdminlogin" (click)="funAppAdminLogin()">Admin Login</li>
+
                     <li><a href="#">TimeTable</a></li>
                     <li><a href="#">Fintness Analtics Lab</a></li>
                     <li><a href="#">News</a></li>
@@ -230,9 +231,8 @@
       </div>
     </div>
   </div>
-<<<<<<< Updated upstream
+
   
-=======
+
   
 </footer>
->>>>>>> Stashed changes

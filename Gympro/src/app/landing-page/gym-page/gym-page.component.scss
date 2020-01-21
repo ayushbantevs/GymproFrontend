@@ -1,0 +1,146 @@
+
+// .registrationForm{
+//     width: auto;
+//     padding: 9%;
+//     height: auto;
+//     margin-left: 5%;
+//     //border: 2px solid black;
+//    // padding-right: 0%;
+//     //background-color: gainsboro;
+//     font-size: 13px;
+//     //padding-top: 0%;
+// }
+
+// .full-width {
+//     margin-left: auto;
+//     padding: 2%;
+   
+// }
+
+// .button {
+//     margin: 5%;
+//     background-color:goldenrod;
+//     font-size: 15px;
+//     margin-left: 80px;
+
+// }
+
+
+// .button1 {
+  
+//     font-size: 15px;
+//     background-color: rgb(0, 255, 64);
+//     margin-left: 40px;
+  
+//     font-style: unset;
+    
+// }
+// h2{
+//    //@debug margin-top: 10%;
+//     text-align: center;
+//     color:green;
+
+// }
+// /* .registrationForm-container {
+//     display: flex;
+//     flex-direction: column;
+//   }
+  
+//   .registrationForm-container > * {
+//     width: 100%;
+//   } */
+
+
+// //   @media screen and (max-width: 767px) {
+
+// //     .registrationForm > *:not(.circle-link) ,
+// //     .terminal {
+// //     width: 100%;
+// //     }
+    
+// //     .card:not(.highlight-card) {
+// //     height: 16px;
+// //     margin: 50pxpx;
+// //     }
+    
+// //     .card.highlight-card span {
+// //     margin-left: 0px;
+// //     }
+    
+    
+// //     }
+
+
+
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 5px;
+    
+    }
+    
+    .example-container > * {
+    width: 100%;
+    }
+    
+    
+    .user_register {
+    width: 500px;
+    height: 800px;
+    //color:yellowgreen;
+   // margin-left: 50px;
+  //  margin-top: 50px;
+    }
+    
+    .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+    }
+    
+    
+    .example-container {
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .example-container > * {
+    width: 100%;
+    }
+    
+    button{
+    margin: 10px;
+    align-items: center;
+    // color: rgb(78, 76, 76);
+    text-align: center;
+    background-color: rgb(82, 80, 80);
+    color: white;
+    }
+    button:hover{
+    
+    background-color: rgb(24, 22, 22);
+    cursor: pointer;
+    
+    
+    }
+    @media only screen and (max-width: 600px) {
+        mat-card {
+       // margin: 10px;
+      // width: 
+        // max-width: 100%;
+        width:500px;
+        display: inline-flex;
+        flex-flow: row wrap;
+        }
+        }
+        
+        @media only screen and (min-width: 600px) {
+        mat-card {
+            width:500px;
+       // margin: 10px;
+        
+        // max-width: 100%;
+        }
+        }
+    

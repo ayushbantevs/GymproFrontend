@@ -1,3 +1,4 @@
+import { AdminServiceService } from './../../Services/admin-service.service';
 import { RouterModule, Router } from '@angular/router';
 import { EventEmmiterService } from './../../event-emmiter.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ export class MaindashboardpageComponent implements OnInit {
  
  
 
-  constructor( private EventEmmiterService:EventEmmiterService ,private router: Router ) { }
+  constructor(private Adminservise:AdminServiceService, private EventEmmiterService:EventEmmiterService ,private router: Router ) { }
 
   imgpro:any=[{url:'../assets/GYM_LOGO.PNG'},{url:'../assets/GYM_LOGO.PNG'},{url:'../assets/GYM_LOGO.PNG'}];
 
@@ -19,9 +20,47 @@ export class MaindashboardpageComponent implements OnInit {
   opened: boolean=false;
   showrightArrow:boolean=true;
   showleftArrow:boolean=false;
-  
+  GymUser:any=[];
+  gymOwners:any=[];
+  usercount:number;
+  ownercount:number;
 
   ngOnInit() {
+
+
+
+    this.Adminservise.getAllgymUsers("Amar").subscribe(data=>{ 
+
+      console.log(data)
+         var result = JSON.parse(JSON.stringify(data))
+        
+         console.log(result);
+         this.GymUser=result;
+         this.usercount=this.GymUser.length;
+        console.log(  this.GymUser.length)
+        });
+
+        this.Adminservise.getAllgymOwners("Amar").subscribe(data=>{ 
+
+          console.log(data)
+             var result = JSON.parse(JSON.stringify(data))
+            
+             console.log(result);
+             this.gymOwners=result;
+             this.ownercount=this.gymOwners.length;
+           // console.log(  this.GymUser.length)
+            });
+    
+
+
+
+
+
+
+
+
+
+
     let dataPoints = [
 			{ y: 71  ,label: "Jan"},
 			{  y: 55 ,label: "Feb"},

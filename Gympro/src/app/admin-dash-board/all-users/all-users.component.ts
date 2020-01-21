@@ -1,5 +1,6 @@
+import { AdminServiceService } from './../../Services/admin-service.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { MatTableDataSource, MatPaginator, MatSort, MatTooltipModule } from '@angular/material';
 
 
 export interface UserData {
@@ -26,33 +27,43 @@ export class AllUsersComponent implements OnInit {
 
 
   displayedColumns: string[] = ['SRNO','User_Id','User_Name','User_email', 'User_contact','action'];
-  GymUser:any=[];
+  GymUser:any;
+
 
   dataSource: MatTableDataSource<UserData>;
 
   
-  constructor() {
+  constructor(private httpservice:AdminServiceService) {
+   
 
-   this.GymUser=[
-      {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
-      {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
-      {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
-      {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
-      {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
-      {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
-      ];
-
-
-      this.dataSource = new MatTableDataSource(this.GymUser);
+     //  this.GymUser=[
+  //     {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
+  //     {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
+  //     {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
+  //     {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
+  //     {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
+  //     {User_Id:"1",User_Name:"Ayush" ,User_Mail_Id:"ayush@gmail.com",Contact_Number:"8956528****"},
+  //     ];
+    
    }
 
    @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
    @ViewChild(MatSort, {static: true}) sort: MatSort;
  
    ngOnInit() {
-  
-     this.dataSource.paginator = this.paginator;
-     this.dataSource.sort = this.sort;
+   this.httpservice.getAllgymUsers("Amar").subscribe(data=>{ 
+
+     // console.log(data)
+      var result = JSON.parse(JSON.stringify(data))
+    
+      console.log(result);
+      this.GymUser=result;
+      this.dataSource = new MatTableDataSource(this.GymUser);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+     });
+
+    
    }
  
    applyFilter(filterValue: string) {

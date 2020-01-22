@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+//import{LoginPageComponent} from './../login-page/login-page.component';
 
 @Component({
   selector: 'app-login-page',

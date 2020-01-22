@@ -1,3 +1,4 @@
+
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { LoginPageComponent } from './landing-page/login-page/login-page.component';
 
@@ -111,7 +112,7 @@ import { NotificationComponent } from './gymuser/navigation/notification/notific
 import { LocationComponent } from './gymuser/navigation/location/location.component';
 import {GoogleMapsModule } from '@angular/google-maps';
 import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
-
+import { FileInput } from 'ngx-material-file-input';
 
 
 
@@ -137,11 +138,8 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     NotificationDetailsComponent,
     LogoutComponent,
     AdminInformationComponent,
-   
-   
 
     LandingPageComponent,
-
     GymadminComponent,
     GymlistComponent,
     NavigationComponent,
@@ -158,7 +156,6 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     NavigationComponent,
     GymlistComponent,
     ProfileComponent,
-
     UserprofileComponent,
     MaplistComponent,
     SessionlistComponent,
@@ -166,17 +163,12 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     NotificationComponent,
     LocationComponent,
     GymsonmapComponent,
-
-
     UserprofileComponent,
     LocationComponent,
-
-
     UserprofileComponent,
    
-   
-
-
+    //LoginPageComponent,
+    UserprofileComponent,
   ],
   imports: [
     BrowserModule,
@@ -187,6 +179,7 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     MatCarouselModule,
     MatSidenavModule,
     MatCheckboxModule,
+     GoogleMapsModule,
     MatIconModule,
     MatListModule, 
     SharedModule,
@@ -200,21 +193,24 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
     MatMenuModule,
     MatToolbarModule,
     HttpClientModule,
-    GoogleMapsModule,
-   
-    //LocationComponent,
-    //GoogleMap
+  
 
+    GoogleMapsModule,
     LandingPageModule,
     MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule
+
 
   ],
+ 
   providers: [
     EventEmmiterService,
     DatePipe,
-   
-    RouterModule
+  
 
+   // GoogleMapsModule,
+    RouterModule,
   ],
   entryComponents:[],
 

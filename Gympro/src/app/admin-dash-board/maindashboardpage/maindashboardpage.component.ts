@@ -1,8 +1,11 @@
+
 import { AdminServiceService } from './../../Services/admin-service.service';
 import { RouterModule, Router } from '@angular/router';
 import { EventEmmiterService } from './../../event-emmiter.service';
 import { Component, OnInit } from '@angular/core';
 import * as CanvasJS from './canvasjs.min';
+import { Observable } from 'rxjs';
+import { interval } from 'rxjs';
 @Component({
   selector: 'app-maindashboardpage',
   templateUrl: './maindashboardpage.component.html',
@@ -27,39 +30,34 @@ export class MaindashboardpageComponent implements OnInit {
 
   ngOnInit() {
 
+  
+    interval(1000).subscribe(x => 
+      {
+      this.Adminservise.getAllgymUsers("Amar").subscribe(data=>{ 
 
+       // console.log(data)
+           var result = JSON.parse(JSON.stringify(data))
+          
+          // console.log(result);
+           this.GymUser=result;
+           this.usercount=this.GymUser.length;
+          //console.log(  this.GymUser.length)
+          });
+  
+          this.Adminservise.getAllgymOwners("Amar").subscribe(data=>{ 
+  
+           // console.log(data)
+               var result = JSON.parse(JSON.stringify(data))
+              
+              // console.log(result);
+               this.gymOwners=result;
+               this.ownercount=this.gymOwners.length;
+             // console.log(  this.GymUser.length)
+              });
 
-    this.Adminservise.getAllgymUsers("Amar").subscribe(data=>{ 
-
-      console.log(data)
-         var result = JSON.parse(JSON.stringify(data))
-        
-         console.log(result);
-         this.GymUser=result;
-         this.usercount=this.GymUser.length;
-        console.log(  this.GymUser.length)
-        });
-
-        this.Adminservise.getAllgymOwners("Amar").subscribe(data=>{ 
-
-          console.log(data)
-             var result = JSON.parse(JSON.stringify(data))
-            
-             console.log(result);
-             this.gymOwners=result;
-             this.ownercount=this.gymOwners.length;
-           // console.log(  this.GymUser.length)
-            });
+             } );
     
-
-
-
-
-
-
-
-
-
+  
 
     let dataPoints = [
 			{ y: 71  ,label: "Jan"},

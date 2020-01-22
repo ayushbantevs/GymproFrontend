@@ -94,24 +94,32 @@ export class AdminDashBoardComponent implements OnInit {
 
  
      // console.log('logout');  
-      this.Adminservise.logout();  
-      this.route.navigate(['']);  
+     // this.Adminservise.logout();  
+     
     
-  //   const dialogRef = this.dialog.open(LogoutComponent, {
-  //     width: 'auto',
-  //     height:'auto',  
-  //     data: {}
-  //  });
+    const dialogRef = this.dialog.open(LogoutComponent, {
+      width: 'auto',
+      height:'auto',  
+      data: {}
+   });
   }
 
   funadminInfo()
   {
+   
+    this.Adminservise.getAdminInformation( this.AdminName).subscribe((data)=>{
+
+      var result = JSON.parse(JSON.stringify(data))
+      console.log(result);
+      const dialogRef = this.dialog.open(AdminInformationComponent, {
+        width: 'auto',
+        height:'auto',  
+        data: {Name:result[0].Admin_Name,Admin_type:result[0].Admin_Type,Admin_id:result[0].Admin_Id,email:result[0].Admin_Email }
+     });
+
+    });
     //this.Name="Amar",this.Admin_Id="ADM1223",this.Admin_type="Support";
-    const dialogRef = this.dialog.open(AdminInformationComponent, {
-      width: 'auto',
-      height:'auto',  
-      data: {Name:this.Name,Admin_type:this.Admin_type,Admin_id:this.Admin_Id,email:this.Email }
-   });
+   
 
   }
   

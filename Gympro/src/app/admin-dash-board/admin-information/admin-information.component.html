@@ -2,19 +2,16 @@
                 <mat-card>
                         <mat-card-content>
                             <mat-card-title>Admin Information</mat-card-title>
-                            Admin Id:<h4>{{data.Admin_id}}</h4>
+                           <p>Admin Id: <strong>{{data.Admin_id}} </strong></p> 
+                             
                             <mat-divider></mat-divider>
-                             Name: <h4>{{data.Name}}</h4>
+                            <p> Name: <strong>{{data.Name}}</strong></p>
                              <mat-divider></mat-divider>
-                             Admin Type:<h4>{{data.Admin_type}}</h4>
+                             <p>Admin Type:<strong>{{data.Admin_type}}</strong></p>
                              <mat-divider></mat-divider>
-                             Admin Email: <h4>{{data.Email}}</h4>
+                             <p>Admin Email: <strong>{{data.email}}</strong></p>
                              <mat-divider></mat-divider>
                              <button mat-button>Remove Admin</button> <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
                         </mat-card-content>        
                 </mat-card>
-
-
-                
-
 

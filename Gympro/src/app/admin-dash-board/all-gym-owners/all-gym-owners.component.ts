@@ -1,6 +1,7 @@
 import { AdminServiceService } from './../../Services/admin-service.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { interval } from 'rxjs';
 
 
 export interface UserData {
@@ -50,16 +51,21 @@ export class AllGymOwnersComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   ngOnInit() {
+
+    interval(1000).subscribe(x => 
+      {
     this.httpservice.getAllgymOwners("Amar").subscribe(data=>{ 
 
        var result = JSON.parse(JSON.stringify(data))
      
-       console.log(result);
+       //console.log(result);
        this.GymOwners=result;
        this.dataSource = new MatTableDataSource(this.GymOwners);
        this.dataSource.paginator = this.paginator;
        this.dataSource.sort = this.sort;
       });
+
+    });
   }
 
   applyFilter(filterValue: string) {

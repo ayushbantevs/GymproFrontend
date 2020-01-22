@@ -46,10 +46,33 @@ export class AddNewAdminComponent implements OnInit {
   }
    
   
+  Cancel()
+  {
+      // this.name.clearValidators();
+      // this.email.clearValidators()
+      // this.contact_no.clearValidators()
+      // this.password.clearValidators()
+      // this.conferm_password.clearValidators()
+      // this.Main_Admin_password.clearValidators()
+      // this.AdminGender.clearValidators()
+      // this.Main_Admin_Id.clearValidators()
+      // this.AdminType.clearValidators()
+
+      this.name.setValue(null);
+      this.email.setValue(null);
+      this.contact_no.setValue(null);
+      this.password.setValue(null);
+      this.conferm_password.setValue(null);
+      this.Main_Admin_password.setValue(null);
+      this.AdminGender.setValue(null);
+      this.Main_Admin_Id.setValue(null);
+      this.AdminType.setValue(null);
+  }
+
   AddAdmin()
   {
     this.newdate=new Date();
-    this.currentDate = this.datePipe.transform(this.newdate, 'yyyy-MM-dd');
+    this.currentDate = this.datePipe.transform(this.newdate, 'yyyy-MM-dd hh:mm:ss');
 
     var a =new Admin();
     a.Admin_Name=this.name.value;

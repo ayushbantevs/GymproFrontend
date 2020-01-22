@@ -13,8 +13,8 @@ export class GymoffersComponent implements OnInit {
   Offers:offers[]=[];
   startDate: any;
   endDate: any;
-   ofprice= new FormControl('0');
-   expandedValue:boolean=false;
+  ofprice= new FormControl('0');
+  expandedValue:boolean=false;
   constructor() { }
 
   ngOnInit() {

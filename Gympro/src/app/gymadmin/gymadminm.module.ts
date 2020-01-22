@@ -1,3 +1,4 @@
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
@@ -41,7 +42,8 @@ import { RouterModule } from '@angular/router';
     MatDividerModule,
     ReactiveFormsModule,
    MatListModule,
-   MatButtonModule
+   MatButtonModule,
+   MatCarouselModule
   ],
 providers: [
     DatePipe,

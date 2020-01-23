@@ -66,6 +66,10 @@ import { Edit_profileService } from './gymuser/navigation/edit_profile/edit_prof
 import {GoogleMapsModule } from '@angular/google-maps';
 import { GymListComponent } from './gymuser/gymList/gymList.component';
 import { LocateComponent } from './gymuser/locate/locate.component';
+import { NavigationService } from './gymuser/navigation/navigation.service';
+import { LoginPageComponent } from './landing-page/login-page/login-page.component';
+
+
 
 
 
@@ -86,7 +90,8 @@ import { LocateComponent } from './gymuser/locate/locate.component';
     ProfileComponent,
     UserprofileComponent,
     GymListComponent,
-    LocateComponent
+    LocateComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -149,8 +154,9 @@ import { LocateComponent } from './gymuser/locate/locate.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     GoogleMapsModule,
+    MatRadioModule
   ],
-  providers: [Edit_profileService],
+  providers: [Edit_profileService, NavigationService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,13 +1,11 @@
 // tslint:disable-next-line: class-name
 export class editUserModel {
-    id: string;
-    username: string;
-    phoneNumber: string;
-    passWord: string;
-    address: string;
-    logitude: string;
-    latitude: string;
+    userId: string;
+    userName: string;
+    userEmail: string;
+    usercontact: string;
+    userPassword: string;
     city: string;
-    pincode: number;
+    pinCode: number;
 
 }

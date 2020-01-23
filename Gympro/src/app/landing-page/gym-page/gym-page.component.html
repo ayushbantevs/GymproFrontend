@@ -1,0 +1,89 @@
+
+<mat-card class="example-card">
+    <mat-card-header>
+      
+      <mat-card-title style="color:yellowgreen">Registration As a gym Owner</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    
+       <mat-card-content> 
+          <form [formGroup]="Gym_register" mat-dialog-content>
+          <div class="example-container">  
+
+                <mat-form-field class="full-width">
+                <input matInput placeholder="Gym Name" formControlName="gym_Name"required>
+                <mat-error *ngIf="Gym_register.get('gym_Name').invalid">Gym Name is required</mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field>
+                <input  matInput placeholder="Enter Gym Owner Name" formControlName="gym_owner_Name"required>
+                <mat-error *ngIf="Gym_register.get('gym_owner_Name').invalid">Gym Owner is required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                <input  matInput placeholder="Enter gym Address" formControlName="gym_address"required>
+                <mat-error *ngIf="Gym_register.get('gym_address').invalid">Gym Address is required</mat-error>
+                 </mat-form-field>
+
+                 <mat-form-field>
+                 <input matInput placeholder="Enter email id" formControlName="email_id"required>
+                <mat-error *ngIf="Gym_register.get('email_id').invalid">Email is required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                 <input type="password" matInput placeholder="Enter password" formControlName="password"required>
+                <mat-error *ngIf="Gym_register.get('password').invalid">password is required</mat-error>
+                </mat-form-field>
+                
+                <mat-form-field>
+                <input  matInput placeholder="Enter Phone Number" formControlName="phone_number"required>
+                <mat-error *ngIf="Gym_register.get('phone_number').invalid">Phone number is required</mat-error>
+                </mat-form-field>
+                        
+                
+                        
+                 <mat-form-field>
+                <input  matInput placeholder="Enter gym pincode" formControlName="pincode"required>
+                <mat-error *ngIf="Gym_register.get('pincode').invalid">Pincode is required</mat-error>
+                </mat-form-field>
+               
+                 <mat-form-field>
+                <input  matInput placeholder="Enter gym Website" formControlName="website"required>
+                <mat-error *ngIf="Gym_register.get('website').invalid">Gym Website is required</mat-error>
+                </mat-form-field>
+        
+                 <mat-form-field>
+                 <input matInput [matDatepicker]="picker" placeholder="Choose Registration date"  formControlName="dateOfBirth">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field> 
+
+                  
+                
+                 <mat-form-field>
+                 <input  matInput placeholder="Enter gym certificate Number" formControlName="certificate_no"required>
+                 <mat-error *ngIf="Gym_register.get('certificate_no').invalid">Gym Certificate is required</mat-error>
+                </mat-form-field>
+                
+                                
+                 <mat-form-field>
+                 <input matInput placeholder="Enter gym Website" formControlName="service_tax"required>
+                 <mat-error *ngIf="Gym_register.get('service_tax').invalid">Gym service tax is required</mat-error>
+                 </mat-form-field>
+                                
+                <mat-form-field>
+                 <input  matInput placeholder="Enter GST Number" formControlName="Gst_no"required>
+                <mat-error *ngIf="Gym_register.get('Gst_no').invalid">GST number is required</mat-error>
+                 </mat-form-field>
+                   
+            </div> 
+          </form>
+          </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="onFormSubmit()">Submit </button>
+        <button mat-button (click)="backtoLogin()">Back to Login</button>
+      </mat-card-actions>
+    </mat-card>
+
+

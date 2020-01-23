@@ -1,0 +1,146 @@
+// /* 
+//  ::-webkit-input-placeholder { 
+//   color: r;
+// }
+
+// :-ms-input-placeholder {
+//   color: red;
+// }
+
+// ::placeholder {
+//   color: red;
+// }  */
+
+// input[type=text], select {
+//     width: 100%;
+//     padding: 12px 20px;
+//     margin: 8px 0;
+//     display: inline-block;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     box-sizing: border-box;
+//   }
+  
+//   input[type=submit]:hover {
+//     background-color: #45a049;
+//   }
+
+  // .mat-card{
+  //   background-color:  gray;
+  //  // margin: 0;
+  //   width: auto;
+  //   height: auto;
+  //  // margin: 20px;
+  //   //margin-left: 30%; 
+  //   text-align: center;
+
+  // }
+ // .form{
+//     padding-left:30px;
+//     margin: 5px;
+//   }
+//   button{
+//     padding: 5px;
+//     margin: 5px;
+//     color: #45a049;
+//   }
+//   .regbtn{
+//     padding: 5px;
+//     margin-top: 20px;
+//     background-color:navajowhite;
+    
+//   }
+
+//   .hover1:hover{
+//     background-color: #45a049;
+//     cursor: pointer;
+//     color: white;
+//   }
+
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 5px;
+  
+  }
+  
+  .show > * {
+  width: 100%;
+  }
+  
+  
+  .user_register {
+  width: 500px;
+  height: 800px;
+  //color:yellowgreen;
+ // margin-left: 50px;
+//  margin-top: 50px;
+  }
+  
+  .example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+  }
+  
+  
+  .show {
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .show > * {
+  width: 100%;
+  }
+  
+  button{
+  margin: 10px;
+  align-items: center;
+  // color: rgb(78, 76, 76);
+  text-align: center;
+ // background-color:orchid;
+  //color:white;
+  color: bold;
+  }
+  button:hover{
+  
+  background-color: yellowgreen;
+  cursor: pointer;
+  
+  
+  }
+  .h2{
+    text-align: center;
+    color:green;
+  }
+  // body, html {
+  //   height: 100%;
+  // }
+  // .bg {
+  //   /* The image used */
+  //   background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+  
+  //   /* Half height */
+  //   height: 50%;
+  
+  //   /* Center and scale the image nicely */
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  // }

@@ -1,0 +1,82 @@
+  
+  <mat-card  *ngIf="showLogin" mat-dialog-content>
+      <h2>Login</h2>
+    <div *ngIf="show">
+      <form  *ngIf="show" class="form" [formGroup]="LoginForm">
+          <mat-form-field  class="full-width">
+        <input  *ngIf="show" matInput placeholder="Email" formControlName="email" required>
+        <mat-error *ngIf="LoginForm.get('email').invalid">email is required</mat-error>
+      </mat-form-field><br>
+      <mat-form-field class="full-width">
+        <input  *ngIf="show" matInput placeholder="Password" type="password" formControlName="Password" required>
+        <mat-error *ngIf="LoginForm.get('Password').invalid">Password is required</mat-error>
+      </mat-form-field><br>
+               
+      <button *ngIf="show" (click)="loginClick()">Login</button>
+
+      <button *ngIf="show" (click)="RegisterClick()">register</button>
+      
+      <button *ngIf="show" (click)="forgetPassword()">Forget Password</button>
+  </form>
+  </div>
+  <div *ngIf="show1">
+    <button class="regbtn hover1" *ngIf="show1"  (click)="funUserRegClick()">Register As User
+    </button>
+       
+    <button  class="regbtn hover1" *ngIf="show1" (click)="funGymUserRegClick()">Register As Gym Owner
+    </button> 
+
+   </div>
+</mat-card>
+   
+     <!-- <app-gym-page *ngIf="showRegister" (otp)="GymLogin($event)"></app-gym-page> 
+     <app-user-page *ngIf="showuser" (otp)="UserLogin($event)"></app-user-page>  -->
+     
+     <script>
+      //Make the DIV element draggagle:
+      dragElement(document.getElementById("mydiv"));
+      
+      function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+          /* if present, the header is where you move the DIV from:*/
+          document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+          /* otherwise, move the DIV from anywhere inside the DIV:*/
+          elmnt.onmousedown = dragMouseDown;
+        }
+      
+        function dragMouseDown(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // get the mouse cursor position at startup:
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          document.onmouseup = closeDragElement;
+          // call a function whenever the cursor moves:
+          document.onmousemove = elementDrag;
+        }
+      
+        function elementDrag(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // calculate the new cursor position:
+          pos1 = pos3 - e.clientX;
+          pos2 = pos4 - e.clientY;
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          // set the element's new position:
+          elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+          elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+      
+        function closeDragElement() {
+          /* stop moving when mouse button is released:*/
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+      }
+      </script>
+      
+
+    

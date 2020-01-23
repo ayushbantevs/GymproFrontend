@@ -1,8 +1,8 @@
-import { NO_ERRORS_SCHEMA } from "@angular/core";
-import { GymListComponent } from "./gymList.component";
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { GymListComponent } from './gymList.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-describe("GymListComponent", () => {
+describe('GymListComponent', () => {
 
   let fixture: ComponentFixture<GymListComponent>;
   let component: GymListComponent;
@@ -19,8 +19,8 @@ describe("GymListComponent", () => {
 
   });
 
-  it("should be able to create component instance", () => {
+  it('should be able to create component instance', () => {
     expect(component).toBeDefined();
   });
-  
+
 });

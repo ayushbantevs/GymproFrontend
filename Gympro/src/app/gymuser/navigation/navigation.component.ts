@@ -3,6 +3,9 @@ import { Edit_profileComponent } from './edit_profile/edit_profile.component';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
+import { editUserModel } from './edit_profile/edituserModel';
+import { FormBuilder } from '@angular/forms';
+import { NavigationService } from './navigation.service';
 
 
 @Component({
@@ -13,7 +16,8 @@ import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
 export class NavigationComponent implements OnInit {
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
   @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow;
-
+  @ViewChild('sidenav', { static: false }) sidenav: any;
+  opened: any = false;
   zoom = 12;
   center: google.maps.LatLngLiteral;
   options: google.maps.MapOptions = {
@@ -30,8 +34,9 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     private route: Router,
-    private dialog: MatDialog
-    ) {}
+    private dialog: MatDialog,
+    private navservice: NavigationService
+  ) { }
   ngOnInit() {
     navigator.geolocation.getCurrentPosition(position => {
       this.center = {
@@ -46,10 +51,10 @@ export class NavigationComponent implements OnInit {
     const dialogRef = this.dialog.open(Edit_profileComponent, {
       height: '600px',
       width: '1000px',
-      panelClass: 'custom-dialog-container'
-      // data: {
-      //   animal: 'panda'
-      // }
+      panelClass: 'custom-dialog-container',
+      data: {
+        userId: 'U5'
+      }
     });
   }
 
@@ -90,6 +95,10 @@ export class NavigationComponent implements OnInit {
   openInfo(marker: MapMarker, content) {
     this.infoContent = content;
     this.info.open(marker);
+  }
+  toggle_sidenav(sidenav: any) {
+    console.log(sidenav);
+    sidenav.close();
   }
 }
   // Editprofile():void{

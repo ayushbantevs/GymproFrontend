@@ -12,6 +12,7 @@ import { GymcoustomersComponent } from './gymadmin/gymcoustomers/gymcoustomers.c
 import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { GymListComponent } from './gymuser/gymList/gymList.component';
 import { LocateComponent } from './gymuser/locate/locate.component';
+import { LoginPageComponent } from './landing-page/login-page/login-page.component';
 
 
 
@@ -28,22 +29,22 @@ import { LocateComponent } from './gymuser/locate/locate.component';
 
 const routes: Routes = [
   {
-    path:'gymadmin', 
-    component:GymadminComponent,
-    children:[
-      {path:'',pathMatch:'full',redirectTo:'profile'},
+    path: 'apphome',
+    component: LandingPageComponent,
+    children: [
+     // {path: '', pathMatch: 'full', redirectTo: 'apphome'},
         {
-          path:'profile',
-          component:ProfileComponent
+          path: 'login',
+          component: LoginPageComponent
         },
-      {
-        path:'gymoffers',
-        component:GymoffersComponent
-      },
-      {
-         path:'gymcoustomers',
-        component:GymcoustomersComponent
-      },
+      // {
+      //   path: 'gymoffers',
+      //   component: GymoffersComponent
+      // },
+      // {
+      //    path: 'gymcoustomers',
+      //   component: GymcoustomersComponent
+      // },
     ]
   },
 
@@ -72,7 +73,8 @@ const routes: Routes = [
         },
     ]
   },
-  {path: '', pathMatch: 'full', redirectTo: 'userhome'},
+
+  {path: '', pathMatch: 'full', redirectTo: 'APPhome'},
 
 
   // {path: '', redirectTo: 'landingpage', pathMatch: 'full'},

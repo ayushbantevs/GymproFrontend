@@ -15,6 +15,7 @@ export class LocateComponent implements OnInit {
 
   zoom = 12;
   center: google.maps.LatLngLiteral;
+  get: google.maps.Point;
   options: google.maps.MapOptions = {
     zoomControl: false,
     scrollwheel: false,
@@ -34,9 +35,18 @@ export class LocateComponent implements OnInit {
   ngOnInit() {
     navigator.geolocation.getCurrentPosition(position => {
       this.center = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
+        // lat: position.coords.latitude,
+        // lng: position.coords.longitude,
+        lat: 18.573655,
+        lng: 73.766645,
+        // 18.575486,73.763963,m
       };
+      // this.get ={
+      //   x: 18.573655,
+      //   y: 73.766645,
+      //   equals: ()
+
+      // };
     });
   }
   zoomIn() {
@@ -58,15 +68,20 @@ export class LocateComponent implements OnInit {
   addMarker() {
     this.markers.push({
       position: {
-        lat: this.center.lat + ((Math.random() - 0.5) * 2) / 10,
-        lng: this.center.lng + ((Math.random() - 0.5) * 2) / 10,
+        // lat: this.center.lat + ((Math.random() - 0.5) * 2) / 10,
+        // lng: this.center.lng + ((Math.random() - 0.5) * 2) / 10,
+        lat : this.center.lat,
+        lng : this.center.lng,
       },
       label: {
         color: 'red',
-        text: 'Marker label ' + (this.markers.length + 1),
+        // text: 'Marker label ' + (this.markers.length + 1),
+         text: 'Marker label ' + (this.markers),
       },
-      title: 'Marker title ' + (this.markers.length + 1),
-      info: 'Marker info ' + (this.markers.length + 1),
+      // title: 'Marker title ' + (this.markers.length + 1),
+      // info: 'Marker info ' + (this.markers.length + 1),
+      title: 'Marker title ' + (this.markers),
+      info: 'Marker info ' + (this.markers),
       options: {
         animation: google.maps.Animation.BOUNCE,
       },

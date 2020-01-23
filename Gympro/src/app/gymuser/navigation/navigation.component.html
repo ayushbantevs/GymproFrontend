@@ -1,8 +1,8 @@
 
 
 <div class="row"> 
-    <div class="col-lg-12 col-md-12 col-sm-12" >
-      <mat-card  style="background-color:#7fcd91">
+    <div class="col-lg-12 col-md-12 col-sm-12"  >
+      <mat-card style=" background-color: #50d890;">
         <button mat-icon-button class="menu" style="margin-left: 15px;">
           <mat-icon (click)="right.toggle()">menu</mat-icon>
         </button>
@@ -10,7 +10,7 @@
               <button mat-button style="margin-left: 10px; color: rgb(0, 0, 0); font-size: 30px;" id="Home">Welcome User..</button>
                     <a><button mat-button style="margin-left: 20px;color: rgb(0, 0, 0);" [routerLink]="['/userhome']" >Home</button></a>
     
-                    <button class="abc"  mat-button  style="color: rgb(24, 74, 212); margin-left: 44%;"> 
+                    <button class="abc"  mat-button  style="color: rgb(24, 74, 212); margin-left: 40%;"> 
                       <mat-icon class="abcd" aria-placeholder="end">notifications_active</mat-icon>
                   </button> 
                   <button class="abc"  mat-button  style="color: rgb(24, 74, 212);"> 
@@ -24,7 +24,7 @@
                 <img src="../assets/Images/GYM_LOGO.PNG" class="img" style="border-radius: 50px; height: 50px; width: 50px;margin-left: 40px;margin-top: 10px;">
                 <p style="text-align: center;">User-Name</p>
                  <button mat-menu-item class="myMenuItem"  (click)="Editprofile()"><mat-icon>account_circle</mat-icon>Edit_Profile</button>
-                <button mat-menu-item class="myMenuItem" > <mat-icon>exit_to_app</mat-icon>signout</button>
+                <button mat-menu-item class="myMenuItem" (click)="logout()"><mat-icon>exit_to_app</mat-icon>signout</button>
               </mat-menu>
            </mat-card>
   </div>
@@ -32,23 +32,22 @@
  
  
   <div>
-   
       <mat-sidenav-container class="main" >
-          <mat-sidenav #right mode="side" [opened]="trues"  style="width: 200px;background-color: #000000; ">
+          <mat-sidenav #right mode="side" [opened]="trues"  style="width: 200px; background-color: #ffffff;border:1px solid #000000;">
             <mat-nav-list>
               <a class=" side heading"  mat-list-item [routerLink]="'/create-account'"> Gyms_Pro </a>
               <a class="side"  mat-list-item [routerLink]="'gymonmap'">Gym List </a>
               <a class="side"  mat-list-item [routerLink]="'sessionlist'"> Session List</a>
               <a class="side"  mat-list-item [routerLink]="'classlist'"> Classes</a>
               <a class="side"  mat-list-item [routerLink]="'notification'"> Offers</a>
-              <p *ngIf="showFiller" style="text-align:start; margin-left: 18px;margin-top: 10px; color: white;font-weight: bold;">Lorem</p>
-              <button (click)="showFiller = !showFiller" mat-raised-button style="color:rgb(96, 133, 243); background-color: black;">
+              <a *ngIf="showFiller" class="side" mat-list-item [routerLink]="'userfeedback'">Feed_Back</a><br>
+              <button (click)="showFiller = !showFiller" mat-raised-button style="color:rgb(96, 133, 243);margin-left: 10px;outline: none;">
                  More..
               </button>
             </mat-nav-list>
         </mat-sidenav>
-         <mat-sidenav-content class="content" style="background-color: #edf7fa;">
-            <div style="height: 88vh;"> 
+         <mat-sidenav-content class="content" style="background-color: #d4edee;">
+            <div style="height: 86vh;"> 
               <router-outlet></router-outlet> 
            <!-- <app-maplist></app-maplist> -->
              </div> 

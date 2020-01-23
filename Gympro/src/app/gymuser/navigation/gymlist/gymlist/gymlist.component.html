@@ -1,9 +1,8 @@
-
-
-<h1 style="margin-left: 10px;" class="text-danger">Gym List</h1>
+  <div>
+    <h1 style="margin-left: 10px;margin-top: 10px; color: rgb(236, 141, 16);font-size: 26px;">Gym List</h1>
 <div style="margin-left: 30px;">
   <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" style="color: rgb(0, 0, 0);">
   </mat-form-field>
   
 </div>
@@ -14,31 +13,46 @@
 
     <!-- ID Column -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> ID </th>
-      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Gym ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.GymId}} </td>
     </ng-container>
 
     <!-- Progress Column -->
     <ng-container matColumnDef="progress">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Progress </th>
-      <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Gym Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.Gym_Name}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Name </th>
-      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Owner Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.Gym_Owner_Name}} </td>
     </ng-container>
 
     <!-- Color Column -->
     <ng-container matColumnDef="color">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Color </th>
-      <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Address </th>
+      <td mat-cell *matCellDef="let row"> {{row.Gym_Address}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mfee">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Monthly Fee </th>
+      <td mat-cell *matCellDef="let row"> {{row.Monthly_Fees_Amount}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="qfee">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Quarterly Fee </th>
+      <td mat-cell *matCellDef="let row"> {{row.Quarterly_Fees_Amount}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="yfee">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Yearly Fee </th>
+      <td mat-cell *matCellDef="let row"> {{row.Yearly_Fees_Amount}} </td>
     </ng-container>
 
     <ng-container matColumnDef="view">
       <th mat-header-cell *matHeaderCellDef class="tablehead"> View_Gym </th>
-      <td mat-cell *matCellDef="let element"><button mat-raised-button style="background-color: #4a73e2; font-weight: bold;color: white;" >View</button></td>
+      <td mat-cell *matCellDef="let element"><button mat-raised-button style="background-color: #4a73e2; font-weight: bold;color: white;" routerLink="/gymadmin" >View</button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -47,4 +61,44 @@
   </table>
 
   <mat-paginator [pageSizeOptions]="[ 5, 10, 25, 50, 100]"></mat-paginator>
+
 </div>
+
+
+
+
+
+
+ <!-- <button (click)="getlist()">Get</button>  -->
+
+<!-- <table>
+  <thead> 
+    <tr>
+      <th>Gym Id</th>
+      <th>Gym Name</th>
+      <th>Owner Name</th>
+      <th>Address</th>
+      <th>Monthly Fee</th>
+      <th>Quarterly Fee</th>
+      <th>Yearly Fee</th>
+      <th>View Gym</th>
+    </tr>
+  </thead>
+  <tbody *ngFor='let item of row'>
+    <tr class="gymdata">
+      <td>{{item.gymId}}</td>
+      <td>{{item.gym_Name}}</td>
+      <td>{{item.gym_Owner_Name}}</td>
+      <td>{{item.gym_Address}}</td>
+      <td>{{item.monthly_Fees_Amount}}</td>
+      <td>{{item.quarterly_Fees_Amount}}</td>
+      <td>{{item.yearly_Fees_Amount}}</td>
+      <td><button class="btn btn-primary btnview"  (click)="remove_update()">View</button></td>
+    </tr>
+  </tbody>
+</table> -->
+  <!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[2,5, 10, 25, 100]">
+</mat-paginator> -->
+</div> 

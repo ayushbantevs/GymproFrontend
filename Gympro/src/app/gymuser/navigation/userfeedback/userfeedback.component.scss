@@ -1,0 +1,44 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+   width:100%;
+    margin-top: 30px;
+  }
+  
+//   .example-container > * {
+//     width: 100%;
+   
+//   }
+mat-form-field:hover{
+  outline-color: lightness($color: #ffffff);
+}
+  mat-form-field{
+   
+      outline-color: lightness($color: #ffffff);
+      border-radius: 30px;
+     // margin-top: 10px;
+      text-emphasis: after 10px;
+      color: white;
+      font-size: 14px;
+      width:auto;
+      height:50px;
+      margin-top: 20px;
+  }
+  .mat-card{
+     margin-top: 30px;
+     width:500px;
+     height:auto;
+   //  background-color: rgb(117, 117, 117);
+  }
+  .col-lg-12{
+   // margin-left: 10px;
+    width:auto;
+  }
+  .abc{
+    margin-top: 40px;
+  }
+  
+  .star{
+    outline: none;
+  }
+  

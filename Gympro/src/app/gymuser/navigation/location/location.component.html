@@ -1,5 +1,5 @@
 
-<h1 style="margin-left: 10px;" class="text-danger">Near by Gyms</h1>
+<h1  style="margin-left: 10px;margin-top: 10px; color: rgb(236, 141, 16);font-size: 26px;">Near by Gyms</h1>
   
     <!-- <img src="assets\Images\google_maps.jpg" alt="map"> -->
     <div>
@@ -23,8 +23,12 @@
     <map-info-window>{{ infoContent }}</map-info-window>
     </google-map>
     
-    <button (click)="zoomIn()">Zoom in</button>
-    <button (click)="zoomOut()">Zoom out</button>
+    <button (click)="zoomIn()">
+        <mat-icon>zoom_in</mat-icon>
+    </button>
+    <button (click)="zoomOut()">
+        <mat-icon>zoom_out</mat-icon>
+    </button>
     <button (click)="logCenter()">Log center</button>
     <button (click)="addMarker()">Add marker</button>
 

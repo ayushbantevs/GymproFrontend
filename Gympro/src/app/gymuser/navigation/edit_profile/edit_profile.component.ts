@@ -22,6 +22,7 @@ export interface DialogData {
 
 // tslint:disable-next-line: class-name
 export class Edit_profileComponent implements OnInit {
+  hide = true;
   file:boolean=true;
   public imagePath;
   imgURL: any;

@@ -1,3 +1,4 @@
+import { UserlogoutComponent } from './userlogout/userlogout.component';
 import { NotificationComponent } from './notification/notification.component';
 import { GymlistComponent } from './gymlist/gymlist/gymlist.component';
 import { Edit_profileComponent } from './edit_profile/edit_profile.component';
@@ -26,6 +27,13 @@ export class NavigationComponent implements OnInit {
     });
     }
 
+    logout():void{
+      const dialogRef = this.dialog.open(UserlogoutComponent, {
+        height:'auto',
+        width: 'auto',
+        //data: {name: '', animal: ''}
+        });
+    }
     // gymlist():void{
     //   const dialogRef=this.dialog.open(GymlistComponent,{
     //     height:'700px',

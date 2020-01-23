@@ -1,23 +1,26 @@
+import { GymuserService } from './../../../gymuser.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { Router } from '@angular/router';
+import { Gymlist } from './gymlist';
 
-export interface UserData  {
-  id: string;
-  name: string;
-  progress: string;
-  color: string;
+// export interface UserData  {
+//   id: string;
+//   name: string;
+//   progress: string;
+//   color: string;
 
 
  
-}
-const COLORS: string[] = [
-  'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
-  'aqua', 'blue', 'navy', 'black', 'gray'
-];
-const NAMES: string[] = [
-  'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
-  'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
-];
+// }
+// const COLORS: string[] = [
+//   'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
+//   'aqua', 'blue', 'navy', 'black', 'gray'
+// ];
+// const NAMES: string[] = [
+//   'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
+//   'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
+// ];
 
 
 @Component({
@@ -26,27 +29,32 @@ const NAMES: string[] = [
   styleUrls: ['./gymlist.component.scss']
 })
 export class GymlistComponent implements OnInit {
- 
+  //row: Object;
+  gymlist:any;
 
-  displayedColumns: string[] = ['id', 'name', 'progress', 'color','view'];
-  dataSource: MatTableDataSource<UserData>;
+  displayedColumns: string[] = ['id', 'name', 'progress', 'color','mfee','qfee','yfee','view'];
+  dataSource: MatTableDataSource<Gymlist>;
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  constructor() { 
-    const users = Array.from({length: 50}, (_, k) => createNewUser(k + 1));
-
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
-  }
-
+  constructor(
+    private apiservice:GymuserService,
+    private router : Router
+    ) { 
   
-
-  ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
+  ngOnInit() {
+    this.apiservice.getdata().subscribe(data=>{
+      console.log(data);
 
+     var tabltedt= JSON.parse(JSON.stringify(data));
+      this.gymlist=tabltedt;
+      this.dataSource = new MatTableDataSource(this.gymlist);
+        this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+   
+  }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -54,16 +62,9 @@ export class GymlistComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+ 
+  remove_update(){
+    this.router.navigate(['/gymadmin']);
+  }
 
-}
-function createNewUser(id: number): UserData {
-  const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-  };
 }

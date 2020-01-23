@@ -63,7 +63,7 @@ p{
 }
 
 .icon{
-    color: rgb(3, 3, 3);
+   // color: rgb(3, 3, 3);
     justify-content: center;
     margin-left: 40%;
     transition: 1s;
@@ -72,7 +72,7 @@ p{
 
 
 .side{
-    color: #ffffff;
+    color: #000000;
     font-weight: bold;
 } 
 .heading{
@@ -81,7 +81,19 @@ p{
     font-size: 30px;;
   
 }
-
+.example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+  //  background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
 
 // .content{
 //     margin: 5%;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//import { StarRatingColor } from '../userfeedback/userfeedback.component';
+//import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-notification',
@@ -6,13 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notification.component.scss']
 })
 export class NotificationComponent implements OnInit {
-  public imagesUrl;
+  //public imagesUrl;
+
+  // rating:number = 3;
+  // starCount:number = 5;
+  // starColor:StarRatingColor = StarRatingColor.accent;
+  // starColorP:StarRatingColor = StarRatingColor.primary;
+  // starColorW:StarRatingColor = StarRatingColor.warn;
+
 
   constructor() { }
 
   ngOnInit() {
-    this.imagesUrl = ['gettyimages-515238274-2048x2048.jpg', 'gym-setup-tips-1.jpg', 'gina-lin-1167578-unsplash-800x510.jpg'];
   }
+  // onRatingChanged(rating){
+  //   console.log(this.rating);
+  //   this.rating = this.rating;
+  // }
 
 
 

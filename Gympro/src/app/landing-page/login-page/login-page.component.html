@@ -44,19 +44,19 @@
     <div *ngIf="show">
     <form  *ngIf="show" class="form" [formGroup]="LoginForm">
             <mat-form-field  class="full-width">
-                    <input  *ngIf="show" matInput placeholder="Email" formControlName="email" required>
-                    <mat-error *ngIf="LoginForm.get('email').invalid">email is required</mat-error>
-                  </mat-form-field><br>
-                  <mat-form-field class="full-width">
-                    <input  *ngIf="show" matInput placeholder="Password" type="password" formControlName="Password" required>
-                    <mat-error *ngIf="LoginForm.get('Password').invalid">Password is required</mat-error>
-                  </mat-form-field><br>
-                 
-                  <button *ngIf="show" (click)="loginClick()">Submit </button>
+                <input  *ngIf="show" matInput placeholder="Enter User Name" formControlName="user_name" required>
+                <mat-error *ngIf="LoginForm.get('user_name').invalid">User Name is required</mat-error>
+            </mat-form-field><br>
 
-                <button *ngIf="show" (click)="RegisterClick()">register</button>
-                
-                <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
+            <mat-form-field class="full-width">
+               <input  *ngIf="show" matInput placeholder="Password" type="password" formControlName="Password" required>
+                <mat-error *ngIf="LoginForm.get('Password').invalid">Password is required</mat-error>
+            </mat-form-field><br>
+                 
+            <button *ngIf="show" (click)="loginClick()">Submit </button>
+
+            <button *ngIf="show" (click)="RegisterClick()">register</button>
+            <button *ngIf="show" (click)="forgetPassword()">Forget Password</button>
                 
     </form>
     </div>
@@ -72,7 +72,8 @@
     </mat-card>
      <app-gym-page *ngIf="showRegister" (otp)="GymLogin($event)"></app-gym-page> 
      <app-user-page *ngIf="showuser" (otp)="UserLogin($event)"></app-user-page> 
-     
+     <app-forget-password *ngIf="showForgotPassword" (otp)="Forgot($event)"></app-forget-password>
+    
   
 
     

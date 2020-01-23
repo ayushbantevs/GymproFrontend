@@ -2,6 +2,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { Component, OnInit,Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import {MatDialog,MatDialogClose} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -31,13 +32,7 @@ export class LandingPageComponent implements OnInit {
     
     });
    
-      
-   
-    
-   
-    
-
-    dialogRef.afterClosed().subscribe(result => {
+ dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
      
     });

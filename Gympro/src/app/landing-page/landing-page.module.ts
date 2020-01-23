@@ -22,12 +22,19 @@ import { MatDialogModule,  MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/d
 
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MaterialFileInputModule  } from 'ngx-material-file-input';
+import { LandingPageComponent } from './landing-page.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
       LoginPageComponent,
       GymPageComponent,
-      UserPageComponent
+      UserPageComponent,
+    ForgetPasswordComponent,
+    // LandingPageComponent
+
+      
+
   
   ],
   imports: [
@@ -47,16 +54,17 @@ import { MaterialFileInputModule  } from 'ngx-material-file-input';
     MatNativeDateModule,
     HttpClientModule,
     MatDialogModule,
-    MaterialFileInputModule
+    MaterialFileInputModule,
+    
+    
      
      
 
     
   ],
+  entryComponents: [LoginPageComponent],
   exports:[ ],
-  entryComponents: [
-    LoginPageComponent
-  ],
+
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}} ],
   bootstrap: [AppComponent]
 })

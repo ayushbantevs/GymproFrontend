@@ -9,13 +9,13 @@
     
        <mat-card-content> 
           <form [formGroup]="user_register" mat-dialog-content>
-          <div class="example-container">  
+          <div class="example-container"> 
+            <div>
+                <img mat-image [src]="imgURL">
+                <input *ngIf="file" #file type="file" accept='image/*' (change)="preview(file.files)"/>
+            </div>
 
-              <mat-form-field class="full-width">
-                  <img mat-image [src]="imgURL">
-                  <input matInput placeholder="User profile">
-                  <input *ngIf="file"  #file type="file" accept='image/*' (change)="preview(file.files)"/> 
-                </mat-form-field>
+            
     
                 <mat-form-field class="full-width">
                 <input matInput placeholder="User Name" formControlName="user_name" required>
@@ -32,45 +32,87 @@
                 <mat-form-field class="full-width">
                   <input matInput placeholder="Enter password" type="password" formControlName="Password" required>
                   <mat-error *ngIf="user_register.get('Password').invalid">Password is required</mat-error>
+                  <!-- <mat-error *ngIf="user_register.get('maxLength').invalid">Max lenght 8 is required</mat-error> -->
                 </mat-form-field>
                 
-                <mat-radio-group  aria-label="Select an option" class="full-width1">
+                <mat-radio-group  aria-label="Select an option" formControlName="Gender"class="full-width1">
                    <mat-radio-button value="1">Male</mat-radio-button>
                    <mat-radio-button value="2">Female</mat-radio-button>
                     <mat-radio-button value="3">Other</mat-radio-button>
                 </mat-radio-group> 
-            
-                <mat-form-field class="full-width">
-                  <input matInput placeholder="Enter Mobile number" type="password" formControlName="user_contact_no" required>
+                <!-- <mat-form-field>
+                  <mat-label>Select Gender</mat-label>
+                  <mat-select [formControl]="AdminGender" required>
+                  <mat-option>--</mat-option>
+                  <mat-option [value]="Male">Male</mat-option>
+                  <mat-option [value]="Female">Female</mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="AdminGender.hasError('required')">Please choose Gender</mat-error>
+                  </mat-form-field>
+             -->
+                <!-- <mat-form-field class="full-width">
+                  <input matInput placeholder="Enter Mobile number" type="number" formControlName="user_contact_no" pattern="[0-9]+">
                   <mat-error *ngIf="user_register.get('user_contact_no').invalid">Contact number is required</mat-error>
+                </mat-form-field> -->
+             
+                <mat-form-field>
+                    <mat-label>10-digit Mobile Number</mat-label>
+                    <input matInput formControlName="user_contact_no" maxlength="10" (keypress)=_keyPress($event)>
+                    <mat-error *ngIf="user_register.get('user_contact_no').invalid">Please fill out this field.</mat-error> 
+                    <mat-error *ngIf="user_register.get('user_contact_no').invalid">It is not a valid mobile number</mat-error>
                 </mat-form-field>
+              
+            
               
                 <mat-form-field>
-                    <input matInput [matDatepicker]="picker" placeholder="Choose Date Of Birth">
+                    <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Choose Date Of Birth">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                     <mat-datepicker #picker></mat-datepicker>
+                    <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
               
-                <mat-form-field class="full-width">
+                <!-- <mat-form-field class="full-width">
                     <input matInput placeholder="Enter user age"  formControlName="user_age" required>
                     <mat-error *ngIf="user_register.get('user_age').invalid">Age is required</mat-error>
+                </mat-form-field> -->
+
+                <mat-form-field>
+                  <mat-label> Enter Age Number</mat-label>
+                  <input matInput formControlName="user_age" maxlength="3" (keypress)=_keyPress($event)>
+                  <mat-error *ngIf="user_register.get('user_age').invalid">Please fill out this field.</mat-error> 
+                  <mat-error *ngIf="user_register.get('user_age').invalid">It is not a valid Age number</mat-error>
                 </mat-form-field>
             
-                  <mat-form-field class="full-width">
+                   <!-- <mat-form-field class="full-width">
                     <input matInput placeholder="Enter city"  formControlName="city" required>
                     <mat-error *ngIf="user_register.get('city').invalid">City is required</mat-error>
+                  </mat-form-field>  -->
+
+                  <mat-form-field>
+                    <mat-label> Enter City Name</mat-label>
+                    <input matInput formControlName="city" (keypress)=_keyPress1($event)>
+                    <mat-error *ngIf="user_register.get('city').invalid">Please fill out this field.</mat-error> 
+                    <mat-error *ngIf="user_register.get('city').invalid">It is not a valid city </mat-error>
                   </mat-form-field>
+              
             
-                  <mat-form-field class="full-width">
-                    <input matInput placeholder="Enter pincode"  formControlName="pincode" required>
+                  <!-- <mat-form-field class="full-width">
+                    <input type="number" matInput placeholder="Enter pincode"  formControlName="pincode" required>
                     <mat-error *ngIf="user_register.get('pincode').invalid"> pincode is required</mat-error>
-                  </mat-form-field>
+                  </mat-form-field> -->
+
+                  <mat-form-field>
+                    <mat-label> Enter Pincode Number</mat-label>
+                    <input matInput formControlName="pincode" maxlength="6" (keypress)=_keyPress($event)>
+                    <mat-error *ngIf="user_register.get('pincode').invalid">Please fill out this field.</mat-error> 
+                    <mat-error *ngIf="user_register.get('pincode').invalid">It is not a valid pincode number</mat-error>
+                </mat-form-field>
 
             </div>
           </form>
           </mat-card-content>
       <mat-card-actions>
-        <button mat-button (click)="onFormSubmit()">Submit </button>
+      <button mat-button (click)="onFormSubmit()">Submit </button>
+    
         <button mat-button (click)="backtoLogin()">Back to Login</button>
       </mat-card-actions>
     </mat-card>

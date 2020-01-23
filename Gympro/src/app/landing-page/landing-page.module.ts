@@ -30,8 +30,8 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
       LoginPageComponent,
       GymPageComponent,
       UserPageComponent,
-      ForgetPasswordComponent,
-     // LandingPageComponent
+    ForgetPasswordComponent,
+    // LandingPageComponent
 
       
 

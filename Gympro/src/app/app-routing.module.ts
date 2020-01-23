@@ -1,3 +1,4 @@
+import { ForgetPasswordComponent } from './landing-page/forget-password/forget-password.component';
 
 
 import { GymPageComponent } from './landing-page/gym-page/gym-page.component';
@@ -47,6 +48,7 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
 import { MaplistComponent } from './gymuser/navigation/maplist/maplist.component';
 import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
+//import{ForgetPasswordComponent} from './ForgetPasswordComponent';
 
 
 

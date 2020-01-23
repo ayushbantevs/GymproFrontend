@@ -1,5 +1,7 @@
+import { ForgetPasswordComponent } from './landing-page/forget-password/forget-password.component';
 
 import { LandingPageModule } from './landing-page/landing-page.module';
+
 import { LoginPageComponent } from './landing-page/login-page/login-page.component';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -138,7 +140,7 @@ import { FileInput } from 'ngx-material-file-input';
     NotificationDetailsComponent,
     LogoutComponent,
     AdminInformationComponent,
-
+   // ForgetPasswordComponent,
     LandingPageComponent,
     GymadminComponent,
     GymlistComponent,
@@ -199,7 +201,8 @@ import { FileInput } from 'ngx-material-file-input';
     LandingPageModule,
     MatButtonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    
 
 
   ],

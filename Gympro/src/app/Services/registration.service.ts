@@ -25,4 +25,10 @@ export class RegistrationService {
          alert(GymOwnerData);
          return this.httpClient.post("https://localhost:44338/api/UserRegistration/addGymOwner",gymowner);
       }
+
+      AddLogin(user_name:string,password:string)
+      {
+        alert(user_name+""+password);
+        return this.httpClient.post("https://localhost:44338/api/UserRegistration/"+user_name+"/"+password,'');
+      }
 }

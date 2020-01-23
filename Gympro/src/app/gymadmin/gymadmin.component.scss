@@ -13,21 +13,24 @@
 .abc {
   display: flex;
   align-content: flex-end;
+  outline:none;
 }
 .myMenuItem {
   display: flex;
-  color : red;
+  color : white;
   font-size: 15px;
   height: 50px;
   align-content: center ;
   align-items: center ;
   align-self: center ;
+  outline:none;
   }
   .myMenu {
     color : red;
     padding: 5px ;
     margin : 2px;
-    height: auto;
+    height: 500px;
+  
     }
     .example-fill-remaining-space {
       /* This fills the remaining space, by using flexbox. 

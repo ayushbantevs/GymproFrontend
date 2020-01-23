@@ -5,7 +5,7 @@ export class Profile {
     Gym_Owner_Name :string ;
     Gym_Address  : string ; 
     Gym_Pincode:string;
-    PhoneNumber:string;        
+    Gym_Number:string;        
     Gym_Website :string;
     Gym_MailId:string;
     Registration_Date:string;    
@@ -17,6 +17,4 @@ export class Profile {
     Service_Tax_Number :  string;     
     GST_Number:string;      
     Status :string
-    
-    
     }

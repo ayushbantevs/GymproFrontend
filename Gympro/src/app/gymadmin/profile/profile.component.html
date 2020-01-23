@@ -28,44 +28,47 @@
 </div>
 <div class="row">
 <div class="col-sm-10"><h1 style="padding-left: 40px;">Profile</h1></div>
-<div class="col-sm-2" style="padding-top: 10px; padding-left: 80px;" ><button  mat-flat-button color="primary" (click)="update()" >Edit</button><button style="margin-left:2px;" mat-flat-button color="primary" (click)="Save(form.value)">Save</button></div>
-
-
+<div class="col-sm-2" style="padding-top: 10px; padding-left: 80px;" ><button  mat-flat-button color="primary" (click)="Edit()" >{{name}}</button><button style="margin-left:2px;" mat-flat-button color="primary" (click)="Save(form.value)">Save</button></div>
 </div>
 
-
+<mat-divider></mat-divider>
 
     <form [formGroup]="form" >
 <div class="row" style="padding: 50px;">
         <div class="col-sm-6">
             <div class="row">
                 <div class="col-sm-4"><mat-form-field >
-                    <input  formControlName="Gym_Name" matInput placeholder="Username"  >
+                  <input  formControlName="Gym_Name" matInput placeholder="Gym Name"  >
                   </mat-form-field>
                 </div>
                 <div class="col-sm-4"><mat-form-field > 
-                    <input formControlName="Gym_Owner_Name"  matInput placeholder="Ownername" >
+                    <input formControlName="Gym_Owner_Name"  matInput placeholder="Owner name" >
                   </mat-form-field> 
                 </div>
                 <div class="col-sm-4"><mat-form-field>
                     <input  formControlName="Gym_Website"  matInput placeholder="WebsiteUrl">
                   </mat-form-field>
                 </div>  
-        </div>
-        </div>
+               </div>
+         </div>
         <div class="col-sm-6">
 
             <div class="row">
                 <div class="col-sm-4">
                     <mat-form-field> 
-                    <input   formControlName="Gym_MailId"  matInput  placeholder="Gym_Email_Id" >
+                    <input   formControlName="Gym_MailId"  matInput  placeholder="Email_Id" >
                   </mat-form-field>
                 </div>
                 <div class="col-sm-4">
                     <mat-form-field>
-                        <input formControlName="Gym_Certification_Number" matInput   placeholder="Gym_Certificate_Number" >
+                        <input formControlName="Gym_Address" matInput   placeholder="Gym Address" >
                       </mat-form-field>
                 </div>
+                <div class="col-sm-4">
+                  <mat-form-field>
+                      <input formControlName="Gym_Number" matInput   placeholder="Gym Number" >
+                    </mat-form-field>
+              </div>
                 
             </div>
         </div>
@@ -77,11 +80,12 @@
 </form>
       
 
-<div class="row" style=" padding-right:20px; float:right">
-    <input type="file" (change)="upload($event.target.files)" />
-    Upload Percent: {{percentDone}}% <br />
-    
-    <ng-container *ngIf="uploadSuccess">
-        Upload Successful
-      </ng-container> 
-</div>
+<form [formGroup]="DisabledForm" >
+  <div class="row" style="padding: 50px;">
+    <div class="col-sm-2"> <mat-form-field><input   formControlName="Gym_Registration_Date"  matInput   placeholder="Registration Date" readonly ></mat-form-field> </div>
+    <div class="col-sm-2"> <mat-form-field><input   formControlName="Gym_Certification_Number"  matInput   placeholder="Gym Certification Number" readonly ></mat-form-field></div>
+    <div class="col-sm-2"> <mat-form-field><input   formControlName="Company_Registration_Date"  matInput   placeholder="Company Registration Date"  readonly></mat-form-field></div>
+    <div class="col-sm-2"><mat-form-field><input   formControlName="Service_Tax_Number"  matInput   placeholder="Service Tax Number" readonly></mat-form-field> </div>
+    <div class="col-sm-2"><mat-form-field><input    formControlName="GST_Number"  matInput   placeholder="GST Number" readonly> </mat-form-field></div>
+  </div>
+</form>

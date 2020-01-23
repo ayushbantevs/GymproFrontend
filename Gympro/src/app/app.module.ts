@@ -1,3 +1,4 @@
+
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { LoginPageComponent } from './landing-page/login-page/login-page.component';
 
@@ -200,7 +201,6 @@ import { gymadminmModule } from './gymadmin/gymadminm.module';
   providers: [
     EventEmmiterService,
     DatePipe,
-   
     RouterModule
 
   ],

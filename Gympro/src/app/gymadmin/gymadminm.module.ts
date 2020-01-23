@@ -1,3 +1,6 @@
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+
+import { MatMenuModule } from '@angular/material/menu';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
@@ -19,11 +22,12 @@ import { GymcoustomersComponent } from './gymcoustomers/gymcoustomers.component'
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule, MatDatepickerModule, MatFormFieldModule, MatGridListModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { SankbartemmplateComponent } from './sankbartemmplate/sankbartemmplate.component';
 
 
 
 @NgModule({
-  declarations: [GymadminComponent,ProfileComponent, GymoffersComponent, GymcoustomersComponent],
+  declarations: [GymadminComponent,ProfileComponent, GymoffersComponent, GymcoustomersComponent, SankbartemmplateComponent],
   imports: [
     CommonModule,
      MatIconModule,
@@ -43,14 +47,16 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
    MatListModule,
    MatButtonModule,
-   MatCarouselModule
+   MatMenuModule,
+   MatCarouselModule,
+   MatSnackBarModule
   ],
 providers: [
     DatePipe,
-   
-    RouterModule
-
+    RouterModule,
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
   ],
-  exports:[]
+  exports:[],
+  entryComponents:[SankbartemmplateComponent]
 })
 export class gymadminmModule { }

@@ -3,27 +3,33 @@
       <mat-icon>menu</mat-icon>
     </button> 
    GymPro </span>
-   <!-- <span class="example-fill-remaining-space"> </span>
-<span><button class="abc"  mat-button [matMenuTriggerFor]="menu"> <mat-icon>account_circle</mat-icon>profile</button> 
-       <mat-menu #menu="matMenu"  [class]="myMenu">
-      <button mat-menu-item class="myMenuItem" ><mat-icon>add_a_photo</mat-icon>Add photo</button>
+   <span class="example-fill-remaining-space"> </span>
+<span><button class="abc"  mat-button [matMenuTriggerFor]="menu" > <mat-icon>account_circle</mat-icon>Profile</button> 
+       <mat-menu #menu="matMenu"  [class]="myMenu" xPosition="before">
+        <div mat-menu-item style="align-items: center; width: 200px; height: 200px; padding-top: 20px;">
+
+          <div  style=" height:150px; text-align: center; border-radius: 100%; text-transform: uppercase; color: rgb(255, 255, 255); background-color:#212121; font: 20px / 60px Helvetica, Arial, sans-serif; padding-top: 45px;">{{data.gym_Name}}</div>  
+        </div>
+     
+        <!-- <mat-card>Simple card</mat-card> -->
+      <!-- <button mat-menu-item class="myMenuItem" ><mat-icon>add_a_photo</mat-icon>Add photo</button>
      <button mat-menu-item class="myMenuItem"> <mat-icon>perm_identity</mat-icon>Name</button>
-     <button mat-menu-item class="myMenuItem"><mat-icon>email</mat-icon>Email</button>
-     <button mat-menu-item class="myMenuItem" ><mat-icon>power_settings_new</mat-icon> signout</button>
+     <button mat-menu-item class="myMenuItem"><mat-icon>email</mat-icon>Email</button>-->
+     <button mat-menu-item class="myMenuItem" ><mat-icon>power_settings_new</mat-icon> signout</button> 
    </mat-menu>
-  </span> -->
+  </span>
   </mat-toolbar>
   
     <mat-sidenav-container class="example-container" >
         <mat-sidenav #Matsidenav mode="side" [(opened)]="opened"  >
             
-                     <div class="row" *ngFor="let navitem of navItems" style=" margin: 3px;" >
-                <div class="col-sm-2" >
+                     <div class="row" *ngFor="let navitem of navItems" style=" margin: 3px; border: none; outline:none; cursor: pointer; font-size: 15px;" [routerLink]="navitem.route"  >
+                          <div class="col-sm-2" >
                             <mat-icon aria-hidden="false" aria-label="item.name"  >{{navitem.icon}}</mat-icon>
-                          </div>
-                          <div class="col-sm-10" [routerLink]="navitem.route"  >
+                           </div>
+                          <div class="col-sm-10"  >
                               {{navitem.name}}
-                            </div>
+                           </div>
                          
                     </div>
         </mat-sidenav>     

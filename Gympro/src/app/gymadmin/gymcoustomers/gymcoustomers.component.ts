@@ -16,6 +16,7 @@ export class GymcoustomersComponent implements OnInit {
     this.gymcCoustomerService.getAllCustomers(this.gymId).subscribe((data=>{
       this.data=JSON.parse (JSON.stringify(data));
       this.Calculatelength();
+      
     }));
    
    
@@ -30,6 +31,7 @@ export class GymcoustomersComponent implements OnInit {
       
     });
     this.Totallength=i;
+    console.log(i);
   }
 
    dateReturn(dateObj:string)

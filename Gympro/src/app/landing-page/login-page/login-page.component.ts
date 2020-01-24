@@ -43,15 +43,14 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit() {
 
+    this.show1=this.data.show1;
+    this.show=this.data.show;
+
     this.validatingForm = new FormGroup({
       signupFormModalName: new FormControl('', Validators.required),
        signupFormModalEmail: new FormControl('', Validators.email),
       signupFormModalPassword: new FormControl('', Validators.required),
   });
-
-  // localStorage.setItem('dataSource', this.DataSource.length);
-  // console.log(localStorage.getItem('dataSource'));
-
 
   }
   onNoClick():void {
@@ -67,28 +66,50 @@ export class LoginPageComponent implements OnInit {
      }
      else
      {
-
-       
           let str =this.LoginForm.controls["user_name"].value;
           let x = str.split("-");
-          console.log(x[0]);
+        //  console.log(x[0]);
           if(x[0]=="USER")
           {
-            this.httpservice.AddLogin(this.LoginForm.controls["user_name"].value,this.LoginForm.controls["Password"].value).subscribe(data=>{
-              console.log(data);
+                this.httpservice.AddLogin(this.LoginForm.controls["user_name"].value,
+                this.LoginForm.controls["Password"].value).subscribe(data=>{
+                //console.log(data);
+              if(data==1)
+              {
+                  localStorage.setItem('isLoggedIn',"true");
+                  localStorage.setItem('token',this.LoginForm.controls["user_name"].value);
+                  this.route.navigate(['/userhome']); 
+                  this.dialogRef.close();
+              }
            })
           }
-          if(x[0]="GYM")
+
+          if(x[0]=="GYM")
           {
-             console.log("GYm");
+                this.httpservice.AddGymOwnerLogin(this.LoginForm.controls["user_name"].value,
+                this.LoginForm.controls["Password"].value).subscribe(data=>
+                {
+                  // console.log(data);
+                    if(data==1)
+                    {
+                        localStorage.setItem('isLoggedIn',"true");
+                        localStorage.setItem('token',this.LoginForm.controls["user_name"].value);
+                        this.route.navigate(['/gymadmin']);
+                        this.dialogRef.close();
+                    }
+                });
+              
           }
+
          if(x[0]!="USER" || x[0]!="GYM")
-           {
-                console.log("amar");
-           }
-          
+         {
+              
+         }
+        
+           
        
      }
+
 
      this.show=true;
   }

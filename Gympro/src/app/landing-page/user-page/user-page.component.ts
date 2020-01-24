@@ -147,11 +147,5 @@ backtoLogin()
     console.log("image added");
     
   }
-  // click()
-  // {
-  //    this.file=true;
-  // }
-
-  
 }
 

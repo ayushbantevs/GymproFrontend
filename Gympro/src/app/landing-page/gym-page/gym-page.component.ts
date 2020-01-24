@@ -87,7 +87,7 @@ export class GymPageComponent implements OnInit {
       gymowner.Gym_Certification_Number=this.Gym_register.controls['certificate_no'].value;
       //gymowner.Gym_Location_longitude=this.Gym_register.controls['Gym_Location_longitude'].value;
      // gymowner.Gym_Location_latitude=this.Gym_register.controls['Gym_Location_latitude'].value;
-      this.mydate = this.datePipe.transform(this.myDate, 'MM-dd-yyyy hh:mm:ss');
+      this.mydate = this.datePipe.transform(this.myDate, 'dd-mm-yyyy hh:mm:ss');
 
      gymowner.Company_Registration_Date=this.mydate;
       gymowner.Service_Tax_Number=this.Gym_register.controls['service_tax'].value;

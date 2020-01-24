@@ -35,21 +35,33 @@
                   <!-- <mat-error *ngIf="user_register.get('maxLength').invalid">Max lenght 8 is required</mat-error> -->
                 </mat-form-field>
                 
-                <mat-radio-group  aria-label="Select an option" formControlName="Gender"class="full-width1">
+                <!-- <mat-radio-group  aria-label="Select an option" formControlName="Gender"class="full-width1">
                    <mat-radio-button value="1">Male</mat-radio-button>
                    <mat-radio-button value="2">Female</mat-radio-button>
                     <mat-radio-button value="3">Other</mat-radio-button>
-                </mat-radio-group> 
-                <!-- <mat-form-field>
+                </mat-radio-group>  -->
+                 <!-- <mat-form-field>
                   <mat-label>Select Gender</mat-label>
-                  <mat-select [formControl]="AdminGender" required>
+                  <mat-select [formControl]="Gender" required>
                   <mat-option>--</mat-option>
                   <mat-option [value]="Male">Male</mat-option>
                   <mat-option [value]="Female">Female</mat-option>
                   </mat-select>
-                  <mat-error *ngIf="AdminGender.hasError('required')">Please choose Gender</mat-error>
-                  </mat-form-field>
-             -->
+                  <mat-error *ngIf="Gender.hasError('required')">Please choose Gender</mat-error>
+                  </mat-form-field> -->
+
+                  <mat-form-field>
+                      <mat-label>Select Gender</mat-label>
+                      <mat-select>
+                        <mat-option value="Male">Male</mat-option>
+                        
+                        <mat-option value="female">Female</mat-option>
+                        <mat-option value="other">Other</mat-option>
+                        
+                      </mat-select>
+                      <mat-error *ngIf="user_register.get('Gender').invalid">Gender is required</mat-error>
+                    </mat-form-field>
+            
                 <!-- <mat-form-field class="full-width">
                   <input matInput placeholder="Enter Mobile number" type="number" formControlName="user_contact_no" pattern="[0-9]+">
                   <mat-error *ngIf="user_register.get('user_contact_no').invalid">Contact number is required</mat-error>
@@ -121,19 +133,6 @@
 
 
 
-    <!-- <form class="form" [formGroup]="user_register" mat-dialog-content>
-         <mat-card> 
-           
-          <mat-card-content>
-            
-         
-              <div>
-                  <button class="button"(click)="onFormSubmit()">Submit</button> 
-                  <button class="button"(click)="">Back To Login </button> 
-              </div>
-         </mat-card-content>
-        
-        </mat-card>
-         </form> -->
+    
       
        

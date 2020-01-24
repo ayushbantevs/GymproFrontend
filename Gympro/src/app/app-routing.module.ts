@@ -48,6 +48,8 @@ import { NavigationComponent } from './gymuser/navigation/navigation.component';
 import { GymlistComponent } from './gymuser/navigation/gymlist/gymlist/gymlist.component';
 import { MaplistComponent } from './gymuser/navigation/maplist/maplist.component';
 import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
+//import { AuthGuard } from 'src/app/landing-page/guards/auth.guard';
+import { AuthGuard } from './landing-page/guards/auth.guard';
 //import{ForgetPasswordComponent} from './ForgetPasswordComponent';
 
 
@@ -67,7 +69,7 @@ const routes: Routes = [
   {
 
     path:'gymadmin', 
-    component:GymadminComponent,
+    component:GymadminComponent,canActivate : [AuthGuard],
     children:[
       {path:'',pathMatch:'full',redirectTo:'profile'},
         {
@@ -107,7 +109,7 @@ const routes: Routes = [
   //         { path: 'gymlist', component: GymlistComponent},
           // {
             path: 'userhome',
-          component: NavigationComponent,
+          component: NavigationComponent,canActivate : [AuthGuard],
            children: [  
             { path: '', component: MaplistComponent},
             { path: 'sessionlist', component: SessionlistComponent},

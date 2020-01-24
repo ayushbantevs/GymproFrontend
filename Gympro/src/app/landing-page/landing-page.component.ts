@@ -27,23 +27,33 @@ export class LandingPageComponent implements OnInit {
        const dialogRef = this.dialog.open(LoginPageComponent, {
          height:'auto',
         width: 'auto',
-      data: {name: '', animal: ''}
+      data: {show1:false,show:true}
 
     
     });
    
  dialogRef.afterClosed().subscribe(result => {
+   
       console.log('The dialog was closed');
      
-    });
-
-
-
-
-
-
-      
+    });  
   }
+
+  Registerclick():void{
+
+    const dialogRef = this.dialog.open(LoginPageComponent, {
+      height:'auto',
+     width: 'auto',
+   data: {show1:true, show:false}
+
+ 
+ });
+
+dialogRef.afterClosed().subscribe(result => {
+   console.log('The dialog was closed');
+  
+ });  
+}
 
 
 }

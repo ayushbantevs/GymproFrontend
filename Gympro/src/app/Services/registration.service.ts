@@ -14,21 +14,27 @@ export class RegistrationService {
 
       Adduser(user:User)
       {
-        
-        alert(user);
-        return this.httpClient.post("https://localhost:44338/api/UserRegistration/addUser",user);
+        // var gym =JSON.stringify(user);
+        // alert(gym);
+        return this.httpClient.post("https://localhost:44338/api/UserRegistration/AddGymUser",user);
       }
 
       Addgymowner(gymowner:Gymowner)
       {
-         var GymOwnerData=JSON.stringify(gymowner);
-         alert(GymOwnerData);
+        //  var GymOwnerData=JSON.stringify(gymowner);
+        //  alert(GymOwnerData);
          return this.httpClient.post("https://localhost:44338/api/UserRegistration/addGymOwner",gymowner);
       }
 
       AddLogin(user_name:string,password:string)
       {
         alert(user_name+""+password);
-        return this.httpClient.post("https://localhost:44338/api/UserRegistration/"+user_name+"/"+password,'');
+        return this.httpClient.post("https://localhost:44338/api/UserRegistration/UserLogin/",{username:user_name,passWord:password});
       }
+      AddGymOwnerLogin(user_name:string,password:string)
+      {
+        alert(user_name+""+password);
+        return this.httpClient.post("https://localhost:44338/api/UserRegistration/OwnerLogin/",{username:user_name,passWord:password});
+      }
+      
 }

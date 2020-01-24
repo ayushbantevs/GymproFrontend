@@ -24,6 +24,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { MaterialFileInputModule  } from 'ngx-material-file-input';
 import { LandingPageComponent } from './landing-page.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import {MatSelectModule} from '@angular/material/select';
+import { AuthGuard } from './guards/auth.guard'; 
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
       GymPageComponent,
       UserPageComponent,
     ForgetPasswordComponent,
+    //AuthGuard
     // LandingPageComponent
 
       
@@ -48,6 +51,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     //MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     //MatRippleModule,
     MatRadioModule,
     MatDatepickerModule,
@@ -55,6 +59,8 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     HttpClientModule,
     MatDialogModule,
     MaterialFileInputModule,
+   
+    
     
     
      

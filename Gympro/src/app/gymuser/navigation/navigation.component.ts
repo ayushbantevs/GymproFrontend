@@ -1,3 +1,5 @@
+import { LoginPageComponent } from './../../landing-page/login-page/login-page.component';
+import { LandingPageComponent } from './../../landing-page/landing-page.component';
 import { NotificationComponent } from './notification/notification.component';
 import { GymlistComponent } from './gymlist/gymlist/gymlist.component';
 import { Edit_profileComponent } from './edit_profile/edit_profile.component';
@@ -18,8 +20,9 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
-   Editprofile():void{
-    const dialogRef = this.dialog.open(Edit_profileComponent, {
+  landingpage():void{
+    this.route.navigate(['']);
+    const dialogRef = this.dialog.open(LandingPageComponent, {
     height:'auto',
     width: 'auto',
     data: {name: '', animal: ''}

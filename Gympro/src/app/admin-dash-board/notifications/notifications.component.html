@@ -8,8 +8,10 @@
                         <mat-form-field>
                             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
                           </mat-form-field>
+                          <div class="scrollit">
                           <table mat-table [dataSource]="dataSource" matSort>
-
+                                
+                              
                                
                                 <ng-container   matColumnDef="Name">
                                   <th mat-header-cell *matHeaderCellDef mat-sort-header> USER ID </th>
@@ -43,7 +45,7 @@
                               </table>
                             
                               <mat-paginator [pageSizeOptions]="[10, 20, 100]"></mat-paginator>
-                        
+                        </div>
                     </mat-card-content>        
             </mat-card>
 

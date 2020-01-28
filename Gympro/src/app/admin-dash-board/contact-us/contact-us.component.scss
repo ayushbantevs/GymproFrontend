@@ -125,6 +125,17 @@ cursor: pointer;
 
 }
 
+.newicon{
+  color: rgb(34, 106, 214);
+  font-size: 40px;
+  border-radius: 50px;
+
+}
+.scrollit {
+  overflow:scroll;
+  height: 700px;
+}
+
 @media only screen and (max-width: 600px) {
   mat-card {
       margin: 10px;

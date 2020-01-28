@@ -81,7 +81,7 @@ export class FeedbackComponent implements OnInit {
 
   funshowFeedback(optionselected:string)
   {
-
+   
          if(optionselected=="Gym_Owner")
          {
           this.GymUser=[{Name:"Amar",Message:"",Contact:"9552065205",email:"amar@gamil.com",date:"01/01/2020"},

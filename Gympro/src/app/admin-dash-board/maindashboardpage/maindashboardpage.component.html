@@ -20,14 +20,189 @@
      
      
      
-       <!-- Next Steps -->
-       <h2>Next Steps</h2>
-       <p>What do you want to do next with your app?</p>
-
+    
+      
+  <!--- row of owner graph and OWNER TABLE DATA MONTHWISE strat -->
+     <div class="card-container"  >
+          <!-- OWNER GRAPH START-->
         <mat-card class="graph_card" >
              <mat-card-content class="graph_card_content">
-                    <div id="chartContainer" style="height: 370px; width: 100%; "></div>
+                    <div id="GYM_OWNER_Chart" style="height: 370px; width: 100%; "></div>
              </mat-card-content>
         </mat-card> 
-      </mat-card-content>
+        <!-- OWNER GRAPH END -->
+
+
+       <!-- OWNER TABLE DATA MONTHWISE START -->
+        <mat-card class="TABLE_MONTHWISE_GYM_OWNER">
+          <mat-card-content>
+              <mat-card-title style="color: black; ">MonthWise GYM-OWNER</mat-card-title>
+                          
+              <mat-label style="color: black;">Select Month</mat-label>
+              <select #month (change)="fun_show_MonthWise_GymOwner(month.value)" >
+                  <option label="--select Month --"></option>
+                  <option value="JAN">JAN</option>
+                  <option value="FEB">FEB</option>
+                  <option value="MAR">MAR</option>
+                  <option value="APR">APR</option>
+                  <option value="MAY">MAY</option>
+                  <option value="JUN">JUN</option>
+                  <option value="JUL">JUL</option>
+                  <option value="AUG">AUG</option>
+                  <option value="SEP">SEP</option>
+                  <option value="OCT">OCT</option>
+                  <option value="NOV">NOV</option>
+                  <option value="DES">DES</option>         
+              </select>
+
+              <mat-divider></mat-divider>
+              <mat-form-field>
+                  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                </mat-form-field>
+                <div class="scrollit">
+                    <table mat-table [dataSource]="dataSource" matSort >
+		  
+                        <ng-container   matColumnDef="SRNO">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> SR.NO </th>
+                            <td  mat-cell *matCellDef="let row; let i=index"> {{i+1}} </td>
+                            </ng-container>
+     
+                        <ng-container   matColumnDef="Gym_Id">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> GYM ID </th>
+                          <td  mat-cell *matCellDef="let row"> {{row.Gym_Id}} </td>
+                        </ng-container>
+                      
+                         
+                        <ng-container matColumnDef="Gym_Name">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> GYM NAME </th>
+                          <td mat-cell *matCellDef="let row"> {{row.Gym_Name}} </td>
+                        </ng-container>
+        
+                        <ng-container matColumnDef="Gym_OwnerName">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>GYM OWNER NAME </th>
+                            <td mat-cell *matCellDef="let row"> {{row.Gym_Owner_Name}} </td>
+                            </ng-container>
+                            
+                        <ng-container matColumnDef="Gym_Address">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> GYM ADDRESS </th>
+                          <td mat-cell *matCellDef="let row" > {{row.Gym_Address}} </td>
+                        </ng-container>
+        
+                        <ng-container matColumnDef="PhoneNumber">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> CONTACT NUMBER </th>
+                            <td mat-cell *matCellDef="let row" > {{row.PhoneNumber}} </td>
+                        </ng-container>
+        
+                        <ng-container matColumnDef="Gym_Email_Id">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> EMAIL  </th>
+                            <td mat-cell *matCellDef="let row" > {{row.Gym_MailId}} </td>
+                        </ng-container>
+                        
+                        <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> ACTION </th>
+                            <td mat-cell *matCellDef="let row" > <button class="btn_ViewDetails" (click)="funViewGymDetails(row.Gym_Id,row.Gym_Name)" >View Details</button></td>
+                        </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                        </tr>
+                        </table>
+                      
+                        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+                </div>
+                  
+            
+          </mat-card-content>
+        </mat-card>
+         <!-- OWNER TABLE DATA MONTHWISE END -->
+
+      </div>
+ <!--- row of owner graph and OWNER TABLE DATA MONTHWISE end -->
+
+  <!--- row of USER graph and USER TABLE DATA MONTHWISE strat -->
+    <div class="card-container"  >
+         <!--   USER GRAPH START-->
+          <mat-card class="graph_card" >
+            <mat-card-content class="graph_card_content">
+                  <div id="USER_CHART" style="height: 370px; width: 100%; "></div>
+            </mat-card-content>
+          </mat-card> 
+           <!--   USER GRAPH END-->
+           
+           <!--  USER MONTHWISE DATA TABLE START-->
+           <mat-card class="TABLE_MONTHWISE_GYM_OWNER">
+              <mat-card-content>
+                  <mat-card-title style="color: black;">Month Wise Users</mat-card-title>
+                              
+                  <mat-label style="color: black;">Select Month</mat-label>
+                  <select #optionselected (change) ="fun_show_MonthWise_Users(optionselected.value)" >
+                      <option label="--select Month --"></option>
+                      <option value="JAN">JAN</option>
+                      <option value="FEB">FEB</option>
+                      <option value="MAR">MAR</option>
+                      <option value="APR">APR</option>
+                      <option value="MAY">MAY</option>
+                      <option value="JUN">JUN</option>
+                      <option value="JUL">JUL</option>
+                      <option value="AUG">AUG</option>
+                      <option value="SEP">SEP</option>
+                      <option value="OCT">OCT</option>
+                      <option value="NOV">NOV</option>
+                      <option value="DES">DES</option>     
+                  </select>
+                  <mat-divider></mat-divider>
+                  <mat-form-field>
+                      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                    </mat-form-field>
+                    <div class="scrollit">
+                        <table mat-table [dataSource]="dataSource1" matSort >
+		  
+                            <ng-container   matColumnDef="SRNO">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> SR.NO </th>
+                                <td  mat-cell *matCellDef="let row; let i=index"> {{i+1}} </td>
+                                </ng-container>
+         
+                            <ng-container   matColumnDef="User_Id">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> USER ID </th>
+                              <td  mat-cell *matCellDef="let row"> {{row.User_Id}} </td>
+                            </ng-container>
+                          
+                             
+                            <ng-container matColumnDef="User_Name">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> USER NAME </th>
+                              <td mat-cell *matCellDef="let row"> {{row.User_Name}} </td>
+                            </ng-container>
+            
+                            <ng-container matColumnDef="User_email">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>EMAIL </th>
+                                <td mat-cell *matCellDef="let row"> {{row.User_Mail_Id}} </td>
+                                </ng-container>
+                                
+                            <ng-container matColumnDef="User_contact">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> CONTACT NUMBER </th>
+                              <td mat-cell *matCellDef="let row" > {{row.User_contact}} </td>
+                            </ng-container>
+        
+                            
+                            <ng-container matColumnDef="action">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> ACTION </th>
+                                <td mat-cell *matCellDef="let row" > <button class="btn_ViewDetails" (click)="funViewUserDetails(row.User_Id,row.User_Name)" >View Details</button></td>
+                            </ng-container>
+                          
+                            <tr mat-header-row *matHeaderRowDef="displayedColumnsforUser"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumnsforUser;"> </tr>
+                            </table>
+                            <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+                    </div>
+                      
+                       
+              </mat-card-content>
+            </mat-card>
+            
+             <!--  USER MONTHWISE DATA TABLE END-->
+
+
+      </div>
+      <!--- row of owner graph and OWNER TABLE DATA MONTHWISE end -->
+    </mat-card-content>
 </mat-card>

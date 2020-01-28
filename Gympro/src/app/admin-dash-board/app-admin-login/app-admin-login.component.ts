@@ -1,11 +1,11 @@
 import { MatDialogClose } from '@angular/material/dialog';
 
-import { element } from 'protractor';
+import { element, Key } from 'protractor';
 import { AdminServiceService } from './../../Services/admin-service.service';
 import { HttpClient } from '@angular/common/http';
 import { LandingPageComponent } from './../../landing-page/landing-page.component';
 import { Component, OnInit, Inject, ComponentRef } from '@angular/core';
-import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormControl, EmailValidator } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Router } from '@angular/router';
 import { LoginPageComponent } from 'src/app/landing-page/login-page/login-page.component';
@@ -47,32 +47,31 @@ export class AppAdminLoginComponent implements OnInit {
  }
  loginClick()
  {
-   if(this.LoginForm.controls["email"].value=="" || this.LoginForm.controls["Password"].value=="" )
-   {
-     this.validatingForm.markAsTouched();
-   }
-   else
-   {
-    this.httpservice.AppAdminLogin(this.LoginForm.controls["email"].value,this.LoginForm.controls["Password"].value).subscribe((data)=>{   
-      
-      if(data==1)
+  
+     if(this.LoginForm.controls["email"].value!="" || this.LoginForm.controls["Password"].value!="")
       {
-        
-        localStorage.setItem('isLoggedIn', "true");  
-        localStorage.setItem('token', this.LoginForm.controls["email"].value); 
-        this.route.navigate(['admindashboard']);
-        MatDialogClose;
-      //this.route.navigate(['admindashboard'],{ queryParams: { Name: this.LoginForm.controls["email"].value } });
-     // this.storage.set(this.admin,this.LoginForm.controls["email"].value);
+          this.LoginForm.controls["email"].value
+
+            this.httpservice.AppAdminLogin(this.LoginForm.controls["email"].value,this.LoginForm.controls["Password"].value).subscribe((data)=>{   
+              
+              if(data==1)
+              {
+                localStorage.setItem('isLoggedIn', "true");  
+                localStorage.setItem('token', this.LoginForm.controls["email"].value); 
+                  // localStorage.setItem('isLoggedIn',"true");
+                 this.route.navigate(['admindashboard']);
+              }
+            else{
+
+              }
+            
+            });
+      }
+      else{
+
+      this.validatingForm.markAllAsTouched();
       }
 
-      else
-      {
-        this.validatingForm.markAsTouched();
-      }
-
-    });
-   }
  }
-
+ 
 }

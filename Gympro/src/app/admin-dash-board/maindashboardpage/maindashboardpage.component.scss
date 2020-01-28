@@ -261,8 +261,21 @@
     background-position: -.5em;
   }
 
+  .TABLE_MONTHWISE_GYM_OWNER{
+      width: 1000px;
+      margin-left: 100px;
+      background-color: #fafafa;
+      
+  }
 
-
+  table {
+    width: 100%;
+   
+  }
+  .scrollit {
+    overflow:scroll;
+    height:300px;
+}
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
 

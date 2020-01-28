@@ -15,6 +15,7 @@ export class LogoutComponent implements OnInit {
 
   logoutYes()
   {
+    localStorage.clear();
     this.router.navigate(['']);
   }
 

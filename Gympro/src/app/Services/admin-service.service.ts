@@ -24,6 +24,7 @@ export class AdminServiceService {
 
   AppAdminLogin(loginemail:string,loginPassword:string)
   {   
+    //alert(loginemail+""+loginPassword);
     return this.httpClient.post("https://localhost:44338/api/AppAdmin/"+loginemail+"/"+loginPassword,"");
   }
 
@@ -60,5 +61,9 @@ export class AdminServiceService {
     return this.httpClient.get("https://localhost:44338/api/AppAdmin/getNotifications");
   }
   
+ markReadMessage(msg_id:string)
+  {
+    return this.httpClient.put("https://localhost:44338/api/AppAdmin/markMessegeRead/"+msg_id,'');
+  }
 
 }

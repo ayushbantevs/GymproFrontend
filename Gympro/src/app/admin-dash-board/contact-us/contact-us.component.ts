@@ -1,3 +1,5 @@
+import { DatePipe } from '@angular/common';
+import { element } from 'protractor';
 import { AdminServiceService } from './../../Services/admin-service.service';
 import { ContactUsMesgComponent } from './../contact-us-mesg/contact-us-mesg.component';
 
@@ -10,6 +12,7 @@ import { interval } from 'rxjs';
 
 
 export interface UserData {
+  msgid:string;
   Name: string;
   Message: string;
   Contact: string;
@@ -31,10 +34,12 @@ export class ContactUsComponent implements OnInit {
    
   message:string="b";
   DataSource1:any[];
-  cantactus:any;
+  contactus:any;
+  newdate:any;
+ currentDate:string;
+  showNewIcon:boolean=false;
 
-
-  displayedColumns: string[] = ['Name', 'Message', 'Contact', 'email','date','action'];
+  displayedColumns: string[] = ['newmessage','Name', 'Message', 'Contact', 'email','date','action'];
  // expandedElement: UserData | null;
 
   dataSource: MatTableDataSource<UserData>;
@@ -43,7 +48,7 @@ export class ContactUsComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(public dialog: MatDialog,private httpservice:AdminServiceService) { 
+  constructor(public dialog: MatDialog,private httpservice:AdminServiceService,private datePipe:DatePipe) { 
 
     // this.DataSource1 =[{Name:"Amar",Message:this.message,Contact:"9552065205",email:"amar@gamil.com",date:"01/01/2020"},
     // {Name:"Amar",Message:this.message,Contact:"9552065205",email:"amar@gamil.com",date:"01/01/2020"},
@@ -61,17 +66,35 @@ export class ContactUsComponent implements OnInit {
 
   ngOnInit() {
 
-
+    this.newdate=new Date();
+    this.currentDate = this.datePipe.transform(this.newdate, 'dd-MM-yyyy 00:00:00');
+    console.log(this.currentDate);
     interval(1000).subscribe(x => 
       {
+
         this.httpservice.getAllContactMessage().subscribe(data=>{ 
 
       // console.log(data)
         var result = JSON.parse(JSON.stringify(data))
-      
-       // console.log(result);
-        this.cantactus=result;
-        this.dataSource = new MatTableDataSource(this.cantactus);
+          //result.ContactUs_Date
+     // console.log( result.ContactUs_Date);
+        this.contactus=result;
+       // this.contactus.forEach(element => { 
+      //  console.log(element.ContactUs_Status)
+          //console.log(element.ContactUs_Date)
+
+          // if(element.ContactUs_Date==this.currentDate)
+          // {
+          //   //console.log(element.ContactUs_Id)
+          //   this.showNewIcon=true
+          // }
+          // else{
+          //   this.showNewIcon=false;
+          // }
+         // console.log(element.ContactUs_Date );
+       // });
+       
+        this.dataSource = new MatTableDataSource(this.contactus);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
@@ -92,11 +115,12 @@ export class ContactUsComponent implements OnInit {
   }
 
 
-  openDialog(Message:string,email:string,Name:string):void{
+  openDialog(Message:string,email:string,Name:string,msgid:string):void{
+   // alert(msgid)
     const dialogRef = this.dialog.open(ContactUsMesgComponent, {
        width: 'auto',
        height:'auto',  
-       data: {message: Message, email: email,name:Name}
+       data: {message: Message, email: email,name:Name,msgid:msgid}
     });
 
    

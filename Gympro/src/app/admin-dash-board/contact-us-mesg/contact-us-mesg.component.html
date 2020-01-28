@@ -4,8 +4,7 @@
 
 
 
-<div fxLayout="row">
-  <div   class="listdiv" fxFlex.gt-sm="100%" >
+
           <mat-card>
                   <mat-card-content>
                       <mat-card-title>Contact Messages</mat-card-title>
@@ -15,11 +14,23 @@
                           </div>
                           <p >From: {{data.name}}</p>
                           <h6>{{data.email}}</h6>
-                          <div mat-dialog-actions>
-                            <button mat-button (click)="onNoClick()">Mark Read</button>
-                            <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
-                          </div>
+                         
+                          <mat-divider></mat-divider>
+                          <br>
+                          <mat-label>SEND REPLY</mat-label>
+                          <mat-form-field style="color: rgb(0, 0, 0); background-color: #fff; width: 100%;">
+                             
+                              <textarea matInput 
+                                        cdkTextareaAutosize
+                                        #autosize="cdkTextareaAutosize"
+                                        cdkAutosizeMinRows="3"
+                                        cdkAutosizeMaxRows="10"></textarea>
+                            </mat-form-field>
+
+                            <div mat-dialog-actions>
+                                <button mat-button [mat-dialog-close]="" cdkFocusInitial>Send Reply</button>
+                                <button mat-button (click)="MarkReadMessageClick(data.msgid)">Mark Read</button>
+                                <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
+                              </div>
                   </mat-card-content>        
           </mat-card>
-  </div>
-</div> 

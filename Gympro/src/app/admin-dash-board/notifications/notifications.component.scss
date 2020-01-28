@@ -46,6 +46,10 @@ background-color: rgb(24, 22, 22);
 cursor: pointer;
 
 }
+.scrollit {
+  overflow:scroll;
+  height:700px;
+}
 
 @media only screen and (max-width: 600px) {
   mat-card {

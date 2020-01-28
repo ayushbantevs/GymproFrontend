@@ -1,45 +1,47 @@
 
-<mat-list >
-    <h3 matSubheader>Active Users</h3>
-    <mat-divider></mat-divider>
-    <mat-list-item *ngFor="let customer of data" >
+ <h3 style="padding-left: 10px;">Active Users</h3>
+ <mat-divider></mat-divider>
+ <cdk-virtual-scroll-viewport itemSize="rowSpanValue" class="example-viewport">
+    <div *cdkVirtualFor="let customer of data" style="padding-left: 3px; padding-top: 5px; padding-right: 10px;">
+
+        <mat-card class=" matcard" *ngIf="customer.subs_Status"> 
+            <div class="row">
+            <div class="col-sm-2">
+                  <mat-icon mat-list-icon color="accent">account_circle</mat-icon> <br>
+                </div>
+                <div class="col-sm-4">
+                  <h4 mat-line>Name:{{customer.customer_name}}</h4>
+                  <p mat-line>Joining Date:{{dateReturn(customer.user_Joining_date)}} </p>
+                </div>
+                <div class="col-sm-5">
+                <h4 mat-line>Subscription Type:{{customer.gym_Subscription_Type}}</h4>
+             <p mat-line>Paid Fees: INR {{customer.paid_Fees}}</p>
+              </div> 
+              <div col="col-sm-1">
+                  <mat-icon mat-list-icon (click)="changeStatus(customer.gymId,customer.userId,customer.subs_Status)">clear icon</mat-icon> 
+              </div>
+              <div col="col-sm-1">
+                  <mat-icon mat-list-icon>update</mat-icon> 
+              </div>
+              <div col="col-sm-1">
+                  <mat-icon mat-list-icon>account_circle</mat-icon><br>
+             
+              </div>
+             
       
-  <mat-card class=" matcard" *ngIf="customer.subs_Status"> 
+          </div>
+          </mat-card>
+        </div>
+    </cdk-virtual-scroll-viewport>
+
+ <h3 style="padding-left: 10px;">Inactive Users</h3>
+    <mat-divider></mat-divider>
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+        <div *cdkVirtualFor="let customer of data"  style="padding-left: 3px; padding-right: 10px; padding-top: 5px;">
+           <mat-card class=" matcard" *ngIf="!customer.subs_Status"> 
       <div class="row">
       <div class="col-sm-2">
-            <mat-icon mat-list-icon>account_circle</mat-icon> 
-          </div>
-          <div class="col-sm-4">
-            <h4 mat-line>Name:{{customer.customer_name}}</h4>
-            <p mat-line>Joining Date:{{dateReturn(customer.user_Joining_date)}} </p>
-          </div>
-          <div class="col-sm-5">
-          <h4 mat-line>Subscription Type:{{customer.gym_Subscription_Type}}</h4>
-       <p mat-line>Paid Fees: INR {{customer.paid_Fees}}</p>
-        </div> 
-        <div col="col-sm-1">
-            <mat-icon mat-list-icon (click)="changeStatus(customer.gymId,customer.userId,customer.subs_Status)">clear icon</mat-icon> 
-        </div>
-        <div col="col-sm-1">
-            <mat-icon mat-list-icon>update</mat-icon> 
-        </div>
-        <div col="col-sm-1">
-            <mat-icon mat-list-icon>account_circle</mat-icon> 
-        </div>
-
-    </div>
-    </mat-card>
- </mat-list-item>
-
-
- <h3 matSubheader>Inactive Users</h3>
-    <mat-divider></mat-divider>
-    <mat-list-item *ngFor="let customer of data" >
-      
-  <mat-card class=" matcard" *ngIf="!customer.subs_Status"> 
-      <div class="row">
-      <div class="col-sm-2">
-            <mat-icon mat-list-icon>account_circle</mat-icon> 
+            <mat-icon mat-list-icon color="warn">account_circle</mat-icon> <br>
           </div>
           <div class="col-sm-4">
             <h4 mat-line>Name:{{customer.customer_name}}</h4>
@@ -56,12 +58,11 @@
             <mat-icon mat-list-icon>update</mat-icon> 
         </div>
         <div col="col-sm-1">
-            <mat-icon mat-list-icon>account_circle</mat-icon> 
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+         
         </div>
 
     </div>
-    </mat-card>
- </mat-list-item>
-
-
-</mat-list>
+</mat-card>
+</div>
+</cdk-virtual-scroll-viewport>

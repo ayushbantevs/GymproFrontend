@@ -1,3 +1,4 @@
+import { MatChipsModule } from '@angular/material/chips';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
 import { MatMenuModule } from '@angular/material/menu';
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule, MatDatepickerModule, MatFormFieldModule, MatGridListModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { SankbartemmplateComponent } from './sankbartemmplate/sankbartemmplate.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 
@@ -49,7 +51,9 @@ import { SankbartemmplateComponent } from './sankbartemmplate/sankbartemmplate.c
    MatButtonModule,
    MatMenuModule,
    MatCarouselModule,
-   MatSnackBarModule
+   MatSnackBarModule,
+   MatChipsModule,
+   ScrollingModule
   ],
 providers: [
     DatePipe,

@@ -14,7 +14,9 @@ export class GymoffersComponent implements OnInit {
   startDate: any;
   endDate: any;
   ofprice= new FormControl('0');
+  offerDiscription= new FormControl('');
   expandedValue:boolean=false;
+  rowSpanValue;
   constructor() { }
 
   ngOnInit() {
@@ -28,9 +30,11 @@ export class GymoffersComponent implements OnInit {
      offer.GymId="G101";
      offer.OfferId="OF101";
      offer.OfferPrice=this.ofprice.value;
+     offer.OfferDiscription=this.offerDiscription.value;
      offer.startDate=this.startDate as Date;
      offer.endDate=this.endDate as Date;
-     this.Offers.push(offer);
+     this.Offers.push(JSON.parse(JSON.stringify(offer)));
+     this.rowSpanValue=((this.Getcount()/2));
       console.log(this.Offers);
   }
 
@@ -47,11 +51,18 @@ export class GymoffersComponent implements OnInit {
       }
   }
 
+  Getcount()
+  {
+    var count=0;
+    this.Offers.forEach(element => {
+      count++;
+    });
+    return count;
+  }
+
   onExpanded()
   {
     this.expandedValue=!this.expandedValue;
-   
-
   }
   onCollapsed()
   {

@@ -33,11 +33,12 @@ export class GymcoustomersComponent implements OnInit {
     this.Totallength=i;
     console.log(i);
   }
-
-   dateReturn(dateObj:string)
+  dateReturn(dateObj:string="")
   {
-       var convertedDate=new Date(dateObj.substring(1,10));
-      return convertedDate.toDateString();
+     console.log(dateObj);
+    var obj=dateObj.substring(0,10).split('-');
+       var convertedDate=new Date(obj[2]+'-'+obj[1]+'-'+obj[0]);
+      return convertedDate.getUTCDate()+"-"+(convertedDate.getUTCMonth()+1)+"-"+convertedDate.getUTCFullYear();
     
   }
 

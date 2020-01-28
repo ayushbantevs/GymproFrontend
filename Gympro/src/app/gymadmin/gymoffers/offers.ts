@@ -4,5 +4,6 @@ export class offers{
     OfferPrice:number;
     startDate:Date;
     endDate:Date;
+    OfferDiscription:string;
 
 }

@@ -13,5 +13,15 @@ mat-form-field {
 }
 
   .example-card {
-    width: 500px;
+    width: 100px;
+    height : 100px;
   }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+.example-viewport {
+    height:500px;
+    width: 500px;
+}

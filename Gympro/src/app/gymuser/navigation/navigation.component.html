@@ -2,13 +2,13 @@
 
 <div class="row"> 
     <div class="col-lg-12 col-md-12 col-sm-12"  >
-      <mat-card style=" background-color: #50d890;">
+      <mat-card style=" background-color: #c9485b;">
         <button mat-icon-button class="menu" style="margin-left: 15px;">
           <mat-icon (click)="right.toggle()">menu</mat-icon>
         </button>
             <img mat-list-avatar src="../assets/Images/GYM_LOGO.PNG" alt="" class="image" style="margin-left: 30px;"> 
-              <button mat-button style="margin-left: 10px; color: rgb(0, 0, 0); font-size: 30px;" id="Home">Welcome User..</button>
-                    <a><button mat-button style="margin-left: 20px;color: rgb(0, 0, 0);" [routerLink]="['/userhome']" >Home</button></a>
+              <button mat-button style="margin-left: 10px; color: rgb(255, 255, 255); font-size: 30px;" id="Home">Welcome User..</button>
+                    <a><button mat-button style="margin-left: 20px; color: rgb(255, 255, 255);" [routerLink]="['/userhome']" >Home</button></a>
     
                     <button class="abc"  mat-button  style="color: rgb(24, 74, 212); margin-left: 40%;"> 
                       <mat-icon class="abcd" aria-placeholder="end">notifications_active</mat-icon>
@@ -16,8 +16,8 @@
                   <button class="abc"  mat-button  style="color: rgb(24, 74, 212);"> 
                     <mat-icon class="abcd" aria-placeholder="end"> help</mat-icon>
                 </button> 
-               <button class="abc"  mat-button [matMenuTriggerFor]="menu" style="color: rgb(253, 0, 0);"> 
-                    <mat-icon class="abcd" aria-placeholder="end">account_circle</mat-icon>
+               <button class="abc"  mat-button [matMenuTriggerFor]="menu"> 
+                    <mat-icon class="abcd" aria-placeholder="end" style="color: rgb(255, 255, 255);">account_circle</mat-icon>
                 </button> 
                
               <mat-menu #menu="matMenu"  [class]="myMenu">

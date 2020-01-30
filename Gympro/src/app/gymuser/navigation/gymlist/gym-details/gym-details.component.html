@@ -1,0 +1,70 @@
+
+
+
+  <!-- <div class="row" style="width:480px" > -->
+      <!-- <div class="col-lg-2"></div> --> 
+       <form
+          class="text-center"
+          style="color: #757575;"
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          >
+            <div class="row">
+              <mat-card class="mat-card">
+                <h2 style="text-align: center; font-family:Arial, Helvetica, sans-serif; font-weight: bold;">Book_Gym</h2>
+                  <div class="col-md-3">
+                    
+                        <mat-form-field  appearance="outline" class="map-Field">
+                          <mat-label>Gym_Id</mat-label>
+                          <input matInput placeholder="Gym ID" value={{data.id}} formControlName="controlforGymid" >
+                        </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                            <mat-label>Gym_Name</mat-label>
+                            <input matInput placeholder="Gym Name"  value={{data.Name}} formControlName="controlforGymName"  >
+                        </mat-form-field>
+                        
+                         
+                  </div>
+                  <div class="col-md-3">
+
+                        <mat-form-field appearance="outline">
+                          <mat-label>Gym_Address</mat-label>
+                          <input matInput placeholder="Gym Address"  value={{data.Address}} formControlName="controlforGymAddress">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                          <mat-label>Contact_Number</mat-label>
+                          <input type="number" matInput placeholder="Gym Name"  value={{data.Phone}} formControlName="controlforGymContact">
+                      </mat-form-field>
+
+                     
+                  </div>
+                  <div class="col-md-3">
+
+                          <mat-form-field>
+                            <mat-label>Select_Package</mat-label>
+                              <mat-select>
+                                  <mat-option>{{data.Mfee}}</mat-option>
+                                  <mat-option>{{data.Qfee}}</mat-option>
+                                  <mat-option>{{data.YFee}}</mat-option>
+                              </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Date</mat-label>
+                            <input type="date" matInput placeholder="Feed_Back Date" style="color: gray;" formControlName="controlfordate">
+                        </mat-form-field>
+                        
+                  </div>
+                  <div>
+
+                    <button  style=" outline: none; background-color: #28b5d8; border-radius: 20px; margin-top: 10px;width: 200px;height:40px;font-weight: bold;" type="submit" [disabled]="disabledSubmitButton">Book</button>
+                    <button style=" outline: none; background-color: #fd5e53; border-radius: 20px; margin-top: 10px; margin-left: 20px; width: 200px;height:40px; font-weight: bold;">Cancel</button>
+                
+                  </div>
+                   
+                </mat-card>
+           </div>
+       </form> 
+    <!-- </div> -->

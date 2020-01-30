@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GymuserService {
-
+  url: string = 'http://localhost:3000/send';
   constructor(private http:HttpClient) { }
 
 
@@ -15,6 +15,9 @@ getdata(){
 //  getAllEmployee(): Observable<Employee[]> {
 //     return this.http.get<Employee[]>(this.url + '/AllEmployeeDetails');
 //   }
-    
-  
+sendMessage(messageContent: any) {
+  return this.http.post(this.url,
+  JSON.stringify(messageContent),
+  { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), responseType: 'text' });
+}
 }

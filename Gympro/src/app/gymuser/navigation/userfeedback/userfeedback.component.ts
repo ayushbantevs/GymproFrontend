@@ -1,6 +1,8 @@
+import { GymuserService } from './../../gymuser.service';
 
-import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation, HostListener } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 
@@ -12,6 +14,23 @@ import { MatSnackBar } from '@angular/material';
 })
 export class UserfeedbackComponent implements OnInit {
 
+  contactForm: FormGroup;
+  disabledSubmitButton: boolean = true;
+  optionsSelect: Array<any>;
+
+  @HostListener('input') oninput() {
+
+    if (this.contactForm.valid) {
+      this.disabledSubmitButton = false;
+    }
+    else{
+      this.disabledSubmitButton = true;
+    }
+  }
+
+
+
+
    @Input('rating') private rating1: number = 2;
    @Input('starCount') private starCount: number = 5;
    @Input('color') private color: string = 'accent';
@@ -22,9 +41,20 @@ export class UserfeedbackComponent implements OnInit {
   
   rt:number;
    
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(private snackBar: MatSnackBar,
+    fb: FormBuilder, private connectionService: GymuserService
+    ) {
 
-
+      this.contactForm = fb.group({
+        'controlforuserid': ['', Validators.required],
+        'controlforgymid': ['', Validators.required],
+        // 'contactFormEmail': ['', Validators.compose([Validators.required, Validators.email])],
+       'controlformessage': ['', Validators.required],
+        'controlfordate': ['', Validators.required],
+        //'controlforicon': ['', Validators.requiredTrue],
+        });
+      }
+      
   ngOnInit() {
     console.log("a "+this.starCount)
     for (let index = 0; index < this.starCount; index++) {
@@ -38,6 +68,16 @@ export class UserfeedbackComponent implements OnInit {
     });
  
    
+  }
+
+  onSubmit(){
+    this.connectionService.sendMessage(this.contactForm.value).subscribe(() => {
+      alert('Your message has been sent.');
+      this.contactForm.reset();
+      this.disabledSubmitButton = true;
+    }, (error: any) => {
+      console.log('Error', error);
+    });
   }
 
   showIcon(index:number) {

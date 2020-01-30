@@ -86,6 +86,8 @@ import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonm
 import { SliderModule } from 'angular-image-slider';
 import { UserfeedbackComponent } from './gymuser/navigation/userfeedback/userfeedback.component';
 import { UserlogoutComponent } from './gymuser/navigation/userlogout/userlogout.component';
+import { GymuserService } from './gymuser/gymuser.service';
+import { GymDetailsComponent } from './gymuser/navigation/gymlist/gym-details/gym-details.component';
 
 
 
@@ -139,6 +141,7 @@ import { UserlogoutComponent } from './gymuser/navigation/userlogout/userlogout.
     UserprofileComponent,
     UserfeedbackComponent,
     UserlogoutComponent,
+    GymDetailsComponent,
     
 
   ],
@@ -170,7 +173,7 @@ import { UserlogoutComponent } from './gymuser/navigation/userlogout/userlogout.
   ],
   providers: [
     EventEmmiterService,
-    DatePipe,
+    GymuserService, DatePipe,
     MatSnackBar,
     MatCarouselModule,
     BrowserModule,

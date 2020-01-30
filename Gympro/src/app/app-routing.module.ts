@@ -38,6 +38,7 @@ import { MaplistComponent } from './gymuser/navigation/maplist/maplist.component
 import { GymsonmapComponent } from './gymuser/navigation/gymlist/gymlist/gymsonmap/gymsonmap.component';
 import { UserfeedbackComponent } from './gymuser/navigation/userfeedback/userfeedback.component';
 import { UserlogoutComponent } from './gymuser/navigation/userlogout/userlogout.component';
+import { GymDetailsComponent } from './gymuser/navigation/gymlist/gym-details/gym-details.component';
 
 
 
@@ -102,7 +103,12 @@ const routes: Routes = [
              component: GymsonmapComponent,
              children:[
               { path: 'location', component: LocationComponent},
-              { path: 'gymlist', component: GymlistComponent},
+              { path: 'gymlist', component: GymlistComponent,
+            
+               children:[
+                { path: 'gymDeatails', component: GymDetailsComponent},
+               ] },
+
 
             ]
             },

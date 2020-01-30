@@ -10,6 +10,7 @@ export class GymsonmapComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

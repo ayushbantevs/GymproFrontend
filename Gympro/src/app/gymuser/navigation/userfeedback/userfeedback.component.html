@@ -2,29 +2,35 @@
 
     <div class="row">
         <div class="col-lg-2"></div>
+        <form
+    class="text-center"
+    style="color: #757575;"
+    [formGroup]="contactForm"
+    (ngSubmit)="onSubmit()"
+  >
                 <mat-card class="mat-card">
                     <h2 style="text-align: center; font-family:Arial, Helvetica, sans-serif; font-weight: bold;">Feed_Back Form</h2>
                 <div class="col-lg-12  example-container">
                   <mat-form-field  appearance="outline">
                     <mat-label>User_Id</mat-label>
-                    <input matInput placeholder="ID">
+                    <input matInput placeholder="ID" formControlName="controlforuserid">
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                   <mat-label>Gym_Id</mat-label>
-                  <input matInput placeholder="ID">
+                  <input matInput placeholder="ID" formControlName="controlforgymid">
               </mat-form-field>
                 
                 <mat-form-field appearance="outline">
                   <mat-label>Feed_Back</mat-label>
-                  <textarea matInput placeholder="Message"></textarea>
+                  <textarea matInput placeholder="Message" formControlName="controlformessage"></textarea>
                 </mat-form-field>
                 <mat-form-field appearance="outline" style="margin-top: 40px;">
                     <mat-label>Date</mat-label>
-                    <input type="date" matInput placeholder="Feed_Back Date">
+                    <input type="date" matInput placeholder="Feed_Back Date" style="color: gray;" formControlName="controlfordate">
                 </mat-form-field>
 
                  <div style="margin-top: 15px;">
-                  <button mat-icon-button [color]="color" *ngFor="let ratingId of ratingArr;index as i" [id]="'star_'+i" (click)="onClick(i+1)" [matTooltip]="ratingId+1" matTooltipPosition="above">
+                  <button mat-icon-button [color]="color"  *ngFor="let ratingId of ratingArr;index as i" [id]="'star_'+i" (click)="onClick(i+1)" [matTooltip]="ratingId+1" matTooltipPosition="above">
                     <mat-icon class="star">
                       {{showIcon(i)}}
                     </mat-icon>
@@ -41,13 +47,14 @@
                
 
                 <div>
-                  <button  style=" outline: none; background-color: #21bf73; border-radius: 20px; margin-top: 10px;width: 200px;height:40px;font-weight: bold;">Send</button>
+                  <button  style=" outline: none; background-color: #26e98b; border-radius: 20px; margin-top: 10px;width: 200px;height:40px;font-weight: bold;"type="submit" [disabled]="disabledSubmitButton">Send</button>
                   <button style=" outline: none; background-color: #fd5e53; border-radius: 20px; margin-top: 10px; margin-left: 20px; width: 200px;height:40px; font-weight: bold;">Cancel</button>
                 </div>
               
               
         </div>
     </mat-card>
+  </form>
     </div>
 <!-- 
 

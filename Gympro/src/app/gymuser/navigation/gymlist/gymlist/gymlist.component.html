@@ -4,40 +4,39 @@
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" style="color: rgb(0, 0, 0);">
   </mat-form-field>
-  
-</div>
+  </div>
 
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
 
     <!-- ID Column -->
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="Gymid">
       <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Gym ID </th>
       <td mat-cell *matCellDef="let row"> {{row.GymId}} </td>
     </ng-container>
 
     <!-- Progress Column -->
-    <ng-container matColumnDef="progress">
+    <ng-container matColumnDef="GymName">
       <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Gym Name </th>
       <td mat-cell *matCellDef="let row"> {{row.Gym_Name}} </td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Owner Name </th>
-      <td mat-cell *matCellDef="let row"> {{row.Gym_Owner_Name}} </td>
+    <ng-container matColumnDef="Contact">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Contact Number </th>
+      <td mat-cell *matCellDef="let row"> {{row.phonenumber}} </td>
     </ng-container>
 
     <!-- Color Column -->
-    <ng-container matColumnDef="color">
+    <ng-container matColumnDef="Address">
       <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Address </th>
       <td mat-cell *matCellDef="let row"> {{row.Gym_Address}} </td>
     </ng-container>
 
     <ng-container matColumnDef="mfee">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Monthly Fee </th>
-      <td mat-cell *matCellDef="let row"> {{row.Monthly_Fees_Amount}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tablehead"> Owner Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.Gym_Owner_Name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="qfee">
@@ -51,8 +50,8 @@
     </ng-container>
 
     <ng-container matColumnDef="view">
-      <th mat-header-cell *matHeaderCellDef class="tablehead"> View_Gym </th>
-      <td mat-cell *matCellDef="let element"><button mat-raised-button style="background-color: #4a73e2; font-weight: bold;color: white;" routerLink="/gymadmin" >View</button></td>
+      <th mat-header-cell *matHeaderCellDef class="tablehead" > View_Gym </th>
+      <td  mat-cell *matCellDef="let row"><button style="background-color: #4a73e2; font-weight: bold;color: white;" (click)="gymdetails(row.GymId,row.Gym_Name,row.Gym_Address,row.Gym_Owner_Name,row.phonenumber,row.Monthly_Fees_Amount,row.Quarterly_Fees_Amount,row.Yearly_Fees_Amount)">View</button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -63,7 +62,6 @@
   <mat-paginator [pageSizeOptions]="[ 5, 10, 25, 50, 100]"></mat-paginator>
 
 </div>
-
 
 
 

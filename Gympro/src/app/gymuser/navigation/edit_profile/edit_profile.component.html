@@ -1,18 +1,14 @@
 <div class="backgroundImage" fxLayout="row" fxLayoutAlign="flex-end" >
     <form class="form-container" [formGroup]="profileForm" (ngSubmit)="onSubmit()" fxFlex.lt-md="100%">
       
-        <div  class="full-width">
-          <div class="full-width">
+      <div  class="full-width">
+           <div class="full-width">
             <img mat-image [src]="imgURL" class="img">
-          </div>
-           
-            <!-- <input matInput placeholder="User profile"> -->
+          </div> 
             <div >
-              <input class="btnchose" *ngIf="file"  #file type="file" accept='image/*' (change)="preview(file.files)"/> 
+             <input class="btnchose" *ngIf="file"  #file type="file" accept='image/*' (change)="preview(file.files)"/>  -->
             </div>
             <h1>Edit Profile</h1>
-
-   
         </div>
           <div>
             <mat-form-field appearance="standard">

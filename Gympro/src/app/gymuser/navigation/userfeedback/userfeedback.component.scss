@@ -18,7 +18,7 @@ mat-form-field:hover{
       border-radius: 30px;
      // margin-top: 10px;
       text-emphasis: after 10px;
-      color: white;
+      color: rgb(0, 0, 0);
       font-size: 14px;
       width:auto;
       height:50px;
@@ -28,6 +28,7 @@ mat-form-field:hover{
      margin-top: 30px;
      width:500px;
      height:auto;
+     border-radius: 20px;
    //  background-color: rgb(117, 117, 117);
   }
   .col-lg-12{
